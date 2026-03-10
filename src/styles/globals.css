@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   GOOGLE FONTS FALLBACK + CSS VARIABLES
+========================================================= */
+:root {
+  --rose-deep:  #9F4A5A;
+  --rose-mid:   #C07A86;
+  --rose-light: #E8C4CB;
+  --rose-wash:  #FAF2F3;
+  --ink:        #2E2E2E;
+  --ink-soft:   #5A5A5A;
+  --ink-faint:  #9A9A9A;
+  --surface:    #FDFBFB;
+  --border:     rgba(159, 74, 90, 0.15);
+  --header-h:   72px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================================
+   BASE RESET
+========================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   TYPOGRAPHY UTILITIES
+========================================================= */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* =========================================================
+   SCROLL PROGRESS BAR
+========================================================= */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rose-deep), var(--rose-mid));
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--rose-wash); }
+::-webkit-scrollbar-thumb { background: var(--rose-mid); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rose-deep); }
+
+/* =========================================================
+   SELECTION COLOR
+========================================================= */
+::selection {
+  background: var(--rose-light);
+  color: var(--rose-deep);
+}
+
+/* =========================================================
+   NAV ACTIVE LINK
+========================================================= */
+.nav-link {
+  position: relative;
+  transition: color var(--transition);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--rose-deep);
+  transition: width var(--transition);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+.timeline-item {
+  padding: 1.5rem 0 1.5rem 2rem;
+  position: relative;
+  border-left: 1.5px solid var(--border);
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 1.75rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rose-mid);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1.5px var(--rose-mid);
+}
+
+/* =========================================================
+   CV TABLE
+========================================================= */
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cv-table thead tr {
+  background: var(--rose-deep);
+  color: #ffffff;
+}
+.cv-table thead th {
+  padding: 1rem 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+.cv-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+.cv-table tbody tr:last-child { border-bottom: none; }
+.cv-table tbody tr:hover { background: var(--rose-wash); }
+.cv-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.88rem;
+  vertical-align: top;
+}
+
+/* =========================================================
+   TESTIMONIAL QUOTE DECORATION
+========================================================= */
+.testimonial-quote-mark::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 1.75rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 5rem;
+  color: var(--rose-light);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* =========================================================
+   PRICE CARD RIBBON
+========================================================= */
+.price-ribbon::before {
+  content: attr(data-badge);
+  position: absolute;
+  top: 1rem;
+  right: -1.5rem;
+  background: var(--rose-deep);
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 2rem;
+  transform: rotate(45deg);
+  white-space: nowrap;
+}

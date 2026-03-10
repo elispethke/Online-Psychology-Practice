@@ -1,0 +1,275 @@
+{
+  "header": {
+    "subtitle": "Intercultural Psychologist"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "counselling": "Counselling",
+    "consulting": "Consulting",
+    "cv": "Mini CV",
+    "testimonials": "Testimonials",
+    "prices": "Fees",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Berlin · Online & In-Person Sessions",
+    "tagline": "Intercultural Psychologist · MHPSS Consultant · Migration & HIV",
+    "headline": "Mental Health Without Borders",
+    "subheadline": "Care, Prevention and Integration",
+    "description": "Psychological support and psychosocial consulting in migration, HIV and international work contexts. Over 20 years of experience across Brazil, Africa and Europe.",
+    "pillar1": "Intercultural psychological counselling",
+    "pillar2": "Institutional MHPSS consulting",
+    "pillar3": "Preventive mental health in the workplace",
+    "location": "Based in Berlin",
+    "languages": "Sessions in Portuguese, English, Spanish and German",
+    "cta": "Get in touch",
+    "cta2": "Discover my work",
+    "card1Label": "Experience",
+    "card1Sub": "years of practice",
+    "card2Label": "Languages",
+    "card2Sub": "PT · EN · ES · DE"
+  },
+  "about": {
+    "label": "Background",
+    "title": "My professional journey",
+    "desc1": "I am a psychologist with international practice, specialised in mental health and psychosocial support in complex settings, including humanitarian interventions.",
+    "desc2": "My work focuses on supporting the quality of life and mental health of people in vulnerable situations.",
+    "quote": "\"Geographic borders should not be barriers to accessing mental health care.\"",
+    "timeline": {
+      "t1": {
+        "period": "2023 – Present",
+        "title": "Intercultural Psychologist – Brazilian Embassy Berlin",
+        "desc": "Clinical and advisory services for the Brazilian community and expatriates in Germany."
+      },
+      "t2": {
+        "period": "Current",
+        "title": "Psychologist – Malengo Foundation",
+        "desc": "Psychosocial support for refugees and migrants integrating into Europe."
+      },
+      "t3": {
+        "period": "2014 – Present",
+        "title": "Clinical Practice & Consulting: Migration, HIV and MHPSS",
+        "desc": "Focus on mental health in migration contexts, empowerment of migrant women, integration into the German job market, HIV stigma, structural racism and psychosocial vulnerability."
+      },
+      "t4": {
+        "period": "2007 – 2014",
+        "title": "Humanitarian Projects – MSF & ARK · Africa",
+        "desc": "Psychosocial coordination with Médecins Sans Frontières and Absolute Return for Kids in Mozambique and Eswatini. HIV/AIDS and Tuberculosis work."
+      },
+      "t5": {
+        "period": "1998 – 2014",
+        "title": "Clinical Psychology & Project Management · Brazil",
+        "desc": "Clinical psychology practice and social project management in Brazil."
+      }
+    }
+  },
+  "counselling": {
+    "label": "Psychology",
+    "title": "Intercultural Psychological Counselling",
+    "description": "Migration brings profound changes — to identity, belonging and routine. Intercultural counselling provides a safe space to process these challenges in all their complexity.",
+    "audienceTitle": "Who I work with",
+    "audience": [
+      "Migrants and expatriates",
+      "International students",
+      "Women re-entering the workforce",
+      "People living with HIV",
+      "Brazilians abroad",
+      "Multicultural professionals",
+      "Migrant mothers",
+      "People going through divorce"
+    ],
+    "preventionTitle": "Prevention and emotional wellbeing",
+    "preventionDesc": "Preventive support reduces risks and strengthens inner resources:",
+    "prevention": [
+      "Reducing depression and anxiety",
+      "Preventing professional burnout",
+      "Building emotional resilience",
+      "Supporting professional decisions",
+      "Supporting integration in the host country"
+    ]
+  },
+  "consulting": {
+    "label": "Institutional",
+    "title": "MHPSS, Migration and Preventive Mental Health Consulting",
+    "description": "I work with NGOs, international organisations, companies and humanitarian projects to develop and implement effective psychosocial mental health strategies.",
+    "features": [
+      {
+        "num": "01",
+        "title": "MHPSS Programmes",
+        "desc": "Development and implementation of mental health and psychosocial support programmes for humanitarian organisations."
+      },
+      {
+        "num": "02",
+        "title": "HIV & Psychosocial Support",
+        "desc": "Integrated strategies for stigma reduction, emotional support and access to care."
+      },
+      {
+        "num": "03",
+        "title": "Corporate Mental Health",
+        "desc": "Burnout prevention and wellbeing promotion in multicultural and international workplaces."
+      },
+      {
+        "num": "04",
+        "title": "Migration & Integration",
+        "desc": "Specialist consulting on psychosocial support policies for migrant and refugee populations."
+      }
+    ],
+    "clientsLabel": "For",
+    "clients": ["International NGOs", "UN Agencies", "Embassies", "Multinational Companies", "Humanitarian Projects"],
+    "cta": "Request a Proposal"
+  },
+  "cv": {
+    "label": "CV",
+    "title": "Professional Experience",
+    "colPeriod": "Period",
+    "colRole": "Role / Organisation",
+    "colContext": "Context",
+    "currentBadge": "Current",
+    "rows": [
+      {
+        "period": "Current",
+        "role": "Intercultural Psychologist",
+        "org": "Brazilian Embassy Berlin",
+        "context": "Clinical support for the Brazilian community and expatriates"
+      },
+      {
+        "period": "Current",
+        "role": "Psychologist",
+        "org": "Malengo Foundation",
+        "context": "Psychosocial support for refugees and migrants in Europe"
+      },
+      {
+        "period": "2014 – Present",
+        "role": "Clinical Practice & Consulting",
+        "org": "Berlin, Germany",
+        "context": "Migration, HIV and MHPSS — clinical and consulting work"
+      },
+      {
+        "period": "2007 – 2014",
+        "role": "Psychosocial Coordinator",
+        "org": "MSF · ARK — Mozambique & Eswatini",
+        "context": "Humanitarian projects: HIV/AIDS and TB in Africa"
+      },
+      {
+        "period": "1998 – 2014",
+        "role": "Clinical Psychologist",
+        "org": "Brazil",
+        "context": "Clinical psychology and social project management"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title": "What people say about my work",
+    "items": [
+      {
+        "text": "\"Elaine combines deep listening with strategic vision — a rare combination that transforms both individuals and institutions.\"",
+        "name": "Mariana C.",
+        "role": "Humanitarian project manager",
+        "initials": "MC"
+      },
+      {
+        "text": "\"Her work brought genuine intercultural sensitivity and solid technical structure to our mental health programme.\"",
+        "name": "Thomas R.",
+        "role": "International NGO Director",
+        "initials": "TR"
+      },
+      {
+        "text": "\"The preventive support made a real difference to my emotional health during a very challenging period of adjustment.\"",
+        "name": "Ana F.",
+        "role": "Brazilian migrant, Berlin",
+        "initials": "AF"
+      }
+    ]
+  },
+  "prices": {
+    "label": "Fees",
+    "title": "Investing in mental health",
+    "subtitle": "All sessions respect confidentiality and professional ethics. Online sessions available worldwide.",
+    "plans": [
+      {
+        "category": "Individual",
+        "title": "Individual Session",
+        "amount": "70",
+        "unit": "€",
+        "duration": "50 minutes · Online or In-person",
+        "featured": false,
+        "badge": "",
+        "features": [
+          "Individual psychological consultation",
+          "Intercultural support",
+          "PT · EN · ES · DE"
+        ]
+      },
+      {
+        "category": "Package",
+        "title": "4-Session Package",
+        "amount": "240",
+        "unit": "€",
+        "duration": "4 × 50 min · Save €40",
+        "featured": true,
+        "badge": "Popular",
+        "features": [
+          "4 consecutive sessions",
+          "Follow-up plan",
+          "Between-session communication",
+          "Progress report"
+        ]
+      },
+      {
+        "category": "Institutional",
+        "title": "Institutional Consulting",
+        "amount": "On request",
+        "unit": "",
+        "duration": "Projects and organisations",
+        "featured": false,
+        "badge": "",
+        "features": [
+          "Organisational diagnosis",
+          "Programme development",
+          "Workshops and training",
+          "Tailored proposal"
+        ]
+      }
+    ],
+    "cta": "Book now",
+    "ctaInstitutional": "Request a Proposal"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk",
+    "description": "I'm available for individual sessions and institutional consulting. Get in touch to take the first step.",
+    "locationLabel": "Location",
+    "locationValue": "Berlin — Germany",
+    "sessionsLabel": "Sessions",
+    "sessionsValue": "International Online · In-Person Berlin",
+    "linkedinValue": "View Professional Profile",
+    "langsLabel": "Session languages",
+    "form": {
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Select...",
+      "subjectOpt1": "Individual Session",
+      "subjectOpt2": "Session Package",
+      "subjectOpt3": "Institutional Consulting",
+      "subjectOpt4": "Other",
+      "messagePlaceholder": "Write your message...",
+      "sendBtn": "Send message",
+      "successMsg": "Thank you, {{name}}! Your message has been sent. I'll be in touch soon.",
+      "errorMsg": "Please fill in all fields."
+    }
+  },
+  "footer": {
+    "subtitle": "Intercultural Psychologist",
+    "description": "Psychological support and psychosocial consulting in migration, HIV and international contexts. Berlin, Germany.",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "cta": "Book a session",
+    "copyright": "© 2024 Elaine Teixeira — Intercultural Psychologist. All rights reserved.",
+    "legal": "Practice subject to CRP and EAPA professional standards",
+    "dev": "Website developed by Elis Pethke"
+
+  }
+}

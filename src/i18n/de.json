@@ -1,0 +1,274 @@
+{
+  "header": {
+    "subtitle": "Interkulturelle Psychologin"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Über mich",
+    "counselling": "Beratung",
+    "consulting": "Consulting",
+    "cv": "Mini-CV",
+    "testimonials": "Referenzen",
+    "prices": "Honorare",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Berlin · Online & Persönliche Sitzungen",
+    "tagline": "Interkulturelle Psychologin · MHPSS-Beraterin · Migration & HIV",
+    "headline": "Psychische Gesundheit ohne Grenzen",
+    "subheadline": "Fürsorge, Prävention und Integration",
+    "description": "Psychologische Unterstützung und psychosoziale Beratung in Migrations-, HIV- und internationalen Arbeitskontexten. Über 20 Jahre Erfahrung in Brasilien, Afrika und Europa.",
+    "pillar1": "Interkulturelle psychologische Beratung",
+    "pillar2": "Institutionelle MHPSS-Beratung",
+    "pillar3": "Präventive psychische Gesundheit am Arbeitsplatz",
+    "location": "Ansässig in Berlin",
+    "languages": "Sitzungen auf Portugiesisch, Englisch, Spanisch und Deutsch",
+    "cta": "Kontakt aufnehmen",
+    "cta2": "Meine Arbeit entdecken",
+    "card1Label": "Erfahrung",
+    "card1Sub": "Jahre Praxis",
+    "card2Label": "Sprachen",
+    "card2Sub": "PT · EN · ES · DE"
+  },
+  "about": {
+    "label": "Werdegang",
+    "title": "Mein beruflicher Werdegang",
+    "desc1": "Ich bin Psychologin mit internationaler Praxis, spezialisiert auf psychische Gesundheit und psychosoziale Unterstützung in komplexen Umgebungen, einschließlich humanitärer Einsätze.",
+    "desc2": "Meine Arbeit konzentriert sich auf die Unterstützung der Lebensqualität und psychischen Gesundheit von Menschen in vulnerablen Situationen.",
+    "quote": "\"Geografische Grenzen sollten keine Barrieren für den Zugang zur psychischen Gesundheitsversorgung sein.\"",
+    "timeline": {
+      "t1": {
+        "period": "2023 – Heute",
+        "title": "Interkulturelle Psychologin – Brasilianische Botschaft Berlin",
+        "desc": "Klinische und beratende Dienste für die brasilianische Gemeinschaft und Expatriates in Deutschland."
+      },
+      "t2": {
+        "period": "Aktuell",
+        "title": "Psychologin – Malengo Foundation",
+        "desc": "Psychosoziale Unterstützung für Flüchtlinge und Migranten bei der Integration in Europa."
+      },
+      "t3": {
+        "period": "2014 – Heute",
+        "title": "Klinische Praxis & Beratung: Migration, HIV und MHPSS",
+        "desc": "Schwerpunkt auf psychischer Gesundheit im Migrationskontext, Empowerment von Migrantinnen, Integration in den deutschen Arbeitsmarkt, HIV-Stigma und psychosoziale Vulnerabilität."
+      },
+      "t4": {
+        "period": "2007 – 2014",
+        "title": "Humanitäre Projekte – MSF & ARK · Afrika",
+        "desc": "Psychosoziale Koordination mit Ärzte ohne Grenzen und ARK in Mosambik und Eswatini. HIV/AIDS und Tuberkulose."
+      },
+      "t5": {
+        "period": "1998 – 2014",
+        "title": "Klinische Psychologie & Projektmanagement · Brasilien",
+        "desc": "Klinische Psychologie und soziales Projektmanagement in Brasilien."
+      }
+    }
+  },
+  "counselling": {
+    "label": "Psychologie",
+    "title": "Interkulturelle psychologische Beratung",
+    "description": "Migration bringt tiefgreifende Veränderungen mit sich — der Identität, Zugehörigkeit und Routine. Interkulturelle Beratung bietet einen sicheren Raum, diese Herausforderungen zu verarbeiten.",
+    "audienceTitle": "Zielgruppen",
+    "audience": [
+      "Migranten und Expatriates",
+      "Internationale Studierende",
+      "Frauen bei beruflicher Wiedereingliederung",
+      "Menschen mit HIV",
+      "Brasilianer im Ausland",
+      "Multikulturelle Fachkräfte",
+      "Migrantenmütter",
+      "Menschen in Scheidungsprozessen"
+    ],
+    "preventionTitle": "Prävention und emotionales Wohlbefinden",
+    "preventionDesc": "Präventive Begleitung reduziert Risiken und stärkt innere Ressourcen:",
+    "prevention": [
+      "Depression und Angst reduzieren",
+      "Beruflichem Burnout vorbeugen",
+      "Emotionale Resilienz stärken",
+      "Berufliche Entscheidungen unterstützen",
+      "Integration im Aufnahmeland fördern"
+    ]
+  },
+  "consulting": {
+    "label": "Institutionell",
+    "title": "MHPSS-, Migrations- und Präventionsberatung",
+    "description": "Ich arbeite mit NGOs, internationalen Organisationen, Unternehmen und humanitären Projekten zusammen.",
+    "features": [
+      {
+        "num": "01",
+        "title": "MHPSS-Programme",
+        "desc": "Entwicklung und Umsetzung von Programmen für psychische Gesundheit und psychosoziale Unterstützung."
+      },
+      {
+        "num": "02",
+        "title": "HIV & Psychosoziale Unterstützung",
+        "desc": "Integrierte Strategien zur Stigma-Reduktion, emotionalen Unterstützung und Versorgungszugang."
+      },
+      {
+        "num": "03",
+        "title": "Betriebliche Gesundheit",
+        "desc": "Burnout-Prävention und Wohlbefindensförderung in multikulturellen Arbeitsumgebungen."
+      },
+      {
+        "num": "04",
+        "title": "Migration & Integration",
+        "desc": "Fachberatung zu psychosozialen Unterstützungsrichtlinien für Migranten und Flüchtlinge."
+      }
+    ],
+    "clientsLabel": "Für",
+    "clients": ["Internationale NGOs", "UN-Agenturen", "Botschaften", "Multinationale Unternehmen", "Humanitäre Projekte"],
+    "cta": "Angebot anfordern"
+  },
+  "cv": {
+    "label": "Lebenslauf",
+    "title": "Berufserfahrung",
+    "colPeriod": "Zeitraum",
+    "colRole": "Funktion / Organisation",
+    "colContext": "Kontext",
+    "currentBadge": "Aktuell",
+    "rows": [
+      {
+        "period": "Aktuell",
+        "role": "Interkulturelle Psychologin",
+        "org": "Brasilianische Botschaft Berlin",
+        "context": "Klinische Unterstützung der brasilianischen Gemeinschaft"
+      },
+      {
+        "period": "Aktuell",
+        "role": "Psychologin",
+        "org": "Malengo Foundation",
+        "context": "Psychosoziale Unterstützung für Flüchtlinge in Europa"
+      },
+      {
+        "period": "2014 – Heute",
+        "role": "Klinische Praxis & Beratung",
+        "org": "Berlin, Deutschland",
+        "context": "Migration, HIV und MHPSS"
+      },
+      {
+        "period": "2007 – 2014",
+        "role": "Psychosoziale Koordinatorin",
+        "org": "MSF · ARK — Mosambik & Eswatini",
+        "context": "Humanitäre Projekte: HIV/AIDS und TBC in Afrika"
+      },
+      {
+        "period": "1998 – 2014",
+        "role": "Klinische Psychologin",
+        "org": "Brasilien",
+        "context": "Klinische Psychologie und Projektmanagement"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Referenzen",
+    "title": "Was andere über meine Arbeit sagen",
+    "items": [
+      {
+        "text": "\"Elaine verbindet tiefes Zuhören mit strategischer Vision — eine seltene Kombination, die Individuen und Institutionen verändert.\"",
+        "name": "Mariana C.",
+        "role": "Projektmanagerin für humanitäre Hilfe",
+        "initials": "MC"
+      },
+      {
+        "text": "\"Ihre Arbeit brachte echte interkulturelle Sensibilität und fachliche Struktur in unser Programm.\"",
+        "name": "Thomas R.",
+        "role": "Direktor einer internationalen NGO",
+        "initials": "TR"
+      },
+      {
+        "text": "\"Die präventive Begleitung hat meine emotionale Gesundheit in einer schwierigen Anpassungsphase wirklich verändert.\"",
+        "name": "Ana F.",
+        "role": "Brasilianische Migrantin, Berlin",
+        "initials": "AF"
+      }
+    ]
+  },
+  "prices": {
+    "label": "Honorare",
+    "title": "Investition in psychische Gesundheit",
+    "subtitle": "Alle Sitzungen unterliegen der Schweigepflicht. Online-Sitzungen weltweit verfügbar.",
+    "plans": [
+      {
+        "category": "Einzeln",
+        "title": "Einzelsitzung",
+        "amount": "70",
+        "unit": "€",
+        "duration": "50 Minuten · Online oder Persönlich",
+        "featured": false,
+        "badge": "",
+        "features": [
+          "Psychologische Einzelberatung",
+          "Interkulturelle Begleitung",
+          "PT · EN · ES · DE"
+        ]
+      },
+      {
+        "category": "Paket",
+        "title": "4-Sitzungen-Paket",
+        "amount": "240",
+        "unit": "€",
+        "duration": "4 × 50 Min · 40 € sparen",
+        "featured": true,
+        "badge": "Beliebt",
+        "features": [
+          "4 aufeinanderfolgende Sitzungen",
+          "Begleitplan",
+          "Kommunikation zwischen Sitzungen",
+          "Fortschrittsbericht"
+        ]
+      },
+      {
+        "category": "Institutionell",
+        "title": "Institutionelle Beratung",
+        "amount": "Auf Anfrage",
+        "unit": "",
+        "duration": "Projekte und Organisationen",
+        "featured": false,
+        "badge": "",
+        "features": [
+          "Organisationsdiagnose",
+          "Programmentwicklung",
+          "Workshops und Schulungen",
+          "Maßgeschneidertes Angebot"
+        ]
+      }
+    ],
+    "cta": "Buchen",
+    "ctaInstitutional": "Angebot anfordern"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Lassen Sie uns sprechen",
+    "description": "Ich stehe für Einzelsitzungen und institutionelle Beratungen zur Verfügung. Nehmen Sie Kontakt auf.",
+    "locationLabel": "Standort",
+    "locationValue": "Berlin — Deutschland",
+    "sessionsLabel": "Sitzungen",
+    "sessionsValue": "International Online · Persönlich in Berlin",
+    "linkedinValue": "Berufliches Profil ansehen",
+    "langsLabel": "Sitzungssprachen",
+    "form": {
+      "namePlaceholder": "Ihr Name",
+      "emailPlaceholder": "ihre@email.com",
+      "subjectLabel": "Betreff",
+      "subjectPlaceholder": "Auswählen...",
+      "subjectOpt1": "Einzelsitzung",
+      "subjectOpt2": "Sitzungspaket",
+      "subjectOpt3": "Institutionelle Beratung",
+      "subjectOpt4": "Sonstiges",
+      "messagePlaceholder": "Schreiben Sie Ihre Nachricht...",
+      "sendBtn": "Nachricht senden",
+      "successMsg": "Danke, {{name}}! Ihre Nachricht wurde gesendet. Ich melde mich bald.",
+      "errorMsg": "Bitte füllen Sie alle Felder aus."
+    }
+  },
+  "footer": {
+    "subtitle": "Interkulturelle Psychologin",
+    "description": "Psychologische Unterstützung und psychosoziale Beratung in Migrations- und HIV-Kontexten. Berlin, Deutschland.",
+    "navTitle": "Navigation",
+    "contactTitle": "Kontakt",
+    "cta": "Sitzung buchen",
+    "copyright": "© 2024 Elaine Teixeira — Interkulturelle Psychologin. Alle Rechte vorbehalten.",
+    "legal": "Praxis nach CRP- und EAPA-Berufsstandards",
+    "dev": "Website entwickelt von Elis Pethke"
+  }
+}

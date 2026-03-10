@@ -1,0 +1,274 @@
+{
+  "header": {
+    "subtitle": "Psicóloga Intercultural"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Sobre",
+    "counselling": "Counselling",
+    "consulting": "Consultoria",
+    "cv": "Mini CV",
+    "testimonials": "Testemunhos",
+    "prices": "Preços",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Berlim · Atendimento Online & Presencial",
+    "tagline": "Psicóloga Intercultural · Consultora MHPSS · Migração & HIV",
+    "headline": "Saúde Mental Sem Fronteiras",
+    "subheadline": "Cuidado, Prevenção e Integração",
+    "description": "Apoio psicológico e consultoria psicossocial em contextos de migração, HIV e ambientes internacionais de trabalho. Com mais de 20 anos de experiência no Brasil, África e Europa.",
+    "pillar1": "Atendimento psicológico intercultural",
+    "pillar2": "Consultoria institucional em MHPSS",
+    "pillar3": "Saúde mental preventiva em ambientes de trabalho",
+    "location": "Baseada em Berlim",
+    "languages": "Atendimento em português, inglês, espanhol e alemão",
+    "cta": "Entrar em contato",
+    "cta2": "Conheça meu trabalho",
+    "card1Label": "Experiência",
+    "card1Sub": "anos de prática",
+    "card2Label": "Idiomas",
+    "card2Sub": "PT · EN · ES · DE"
+  },
+  "about": {
+    "label": "Trajetória",
+    "title": "Minha trajetória profissional",
+    "desc1": "Sou psicóloga com atuação internacional, especializada em saúde mental e apoio psicossocial em ambientes complexos, incluindo intervenções em contextos humanitários.",
+    "desc2": "Minha atuação é focada em apoiar a qualidade de vida e a saúde mental de pessoas em situação de vulnerabilidade.",
+    "quote": "\"Fronteiras geográficas não devem ser barreiras para o acesso à saúde mental.\"",
+    "timeline": {
+      "t1": {
+        "period": "2023 – Presente",
+        "title": "Psicóloga Intercultural – Embaixada do Brasil em Berlim",
+        "desc": "Atendimento clínico e consultivo à comunidade brasileira e expatriados na Alemanha."
+      },
+      "t2": {
+        "period": "Atual",
+        "title": "Psicóloga – Malengo Foundation",
+        "desc": "Apoio psicossocial a refugiados e migrantes em processo de integração na Europa."
+      },
+      "t3": {
+        "period": "2014 – Presente",
+        "title": "Clínica & Consultoria: Migração, HIV e MHPSS",
+        "desc": "Foco em saúde mental no contexto migratório, empoderamento de mulheres migrantes, integração no mercado de trabalho alemão, estigma e HIV, racismo estrutural e vulnerabilidade psicossocial."
+      },
+      "t4": {
+        "period": "2007 – 2014",
+        "title": "Projetos Humanitários – MSF & ARK · África",
+        "desc": "Coordenação psicossocial com Médicos Sem Fronteiras e Absolute Return for Kids em Moçambique e Eswatini. Trabalho em HIV/AIDS e Tuberculose."
+      },
+      "t5": {
+        "period": "1998 – 2014",
+        "title": "Psicologia Clínica & Gestão de Projetos · Brasil",
+        "desc": "Atuação em psicologia clínica e gestão de projetos sociais no Brasil."
+      }
+    }
+  },
+  "counselling": {
+    "label": "Psicologia",
+    "title": "Aconselhamento Psicológico Intercultural",
+    "description": "A migração traz consigo mudanças profundas — de identidade, de pertencimento, de rotina. O aconselhamento intercultural oferece um espaço seguro para processar esses desafios em toda a sua complexidade.",
+    "audienceTitle": "Públicos atendidos",
+    "audience": [
+      "Migrantes e expatriados",
+      "Estudantes internacionais",
+      "Mulheres em reinserção profissional",
+      "Pessoas vivendo com HIV",
+      "Brasileiros no exterior",
+      "Profissionais em ambientes multiculturais",
+      "Mães migrantes",
+      "Pessoas em processos de divórcio"
+    ],
+    "preventionTitle": "Prevenção e bem-estar emocional",
+    "preventionDesc": "O acompanhamento preventivo reduz riscos e fortalece recursos internos:",
+    "prevention": [
+      "Reduzir depressão e ansiedade",
+      "Prevenir burnout profissional",
+      "Fortalecer resiliência emocional",
+      "Apoiar decisões profissionais",
+      "Apoiar integração no país receptor"
+    ]
+  },
+  "consulting": {
+    "label": "Institucional",
+    "title": "Consultoria em MHPSS, Migração e Saúde Mental Preventiva",
+    "description": "Trabalho com ONGs, organizações internacionais, empresas e projetos humanitários para desenvolver e implementar estratégias de saúde mental psicossocial eficazes.",
+    "features": [
+      {
+        "num": "01",
+        "title": "Programas MHPSS",
+        "desc": "Desenvolvimento e implementação de programas de saúde mental e apoio psicossocial para organizações humanitárias."
+      },
+      {
+        "num": "02",
+        "title": "HIV & Apoio Psicossocial",
+        "desc": "Estratégias integradas para redução de estigma, suporte emocional e acesso a cuidados."
+      },
+      {
+        "num": "03",
+        "title": "Saúde Mental Corporativa",
+        "desc": "Prevenção de burnout e promoção de bem-estar em ambientes de trabalho multiculturais."
+      },
+      {
+        "num": "04",
+        "title": "Migração & Integração",
+        "desc": "Consultoria em políticas e práticas de apoio psicossocial para populações migrantes."
+      }
+    ],
+    "clientsLabel": "Para",
+    "clients": ["ONGs Internacionais", "Agências da ONU", "Embaixadas", "Empresas Multinacionais", "Projetos Humanitários"],
+    "cta": "Solicitar Proposta"
+  },
+  "cv": {
+    "label": "Currículo",
+    "title": "Experiência Profissional",
+    "colPeriod": "Período",
+    "colRole": "Função / Organização",
+    "colContext": "Contexto",
+    "currentBadge": "Atual",
+    "rows": [
+      {
+        "period": "Atual",
+        "role": "Psicóloga Intercultural",
+        "org": "Embaixada do Brasil em Berlim",
+        "context": "Atendimento clínico à comunidade brasileira e expatriados"
+      },
+      {
+        "period": "Atual",
+        "role": "Psicóloga",
+        "org": "Malengo Foundation",
+        "context": "Apoio psicossocial a refugiados e migrantes na Europa"
+      },
+      {
+        "period": "2014 – Atual",
+        "role": "Clínica & Consultoria",
+        "org": "Berlim, Alemanha",
+        "context": "Migração, HIV e MHPSS — prática clínica e consultoria"
+      },
+      {
+        "period": "2007 – 2014",
+        "role": "Coordenadora Psicossocial",
+        "org": "MSF · ARK — Moçambique & Eswatini",
+        "context": "Projetos humanitários: HIV/AIDS e Tuberculose em África"
+      },
+      {
+        "period": "1998 – 2014",
+        "role": "Psicóloga Clínica",
+        "org": "Brasil",
+        "context": "Psicologia clínica e gestão de projetos sociais"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Testemunhos",
+    "title": "O que dizem sobre meu trabalho",
+    "items": [
+      {
+        "text": "\"Elaine combina escuta profunda com visão estratégica — uma combinação rara que transforma tanto o indivíduo quanto a instituição.\"",
+        "name": "Mariana C.",
+        "role": "Gestora de projetos humanitários",
+        "initials": "MC"
+      },
+      {
+        "text": "\"Seu trabalho trouxe sensibilidade intercultural genuína e estrutura técnica sólida ao nosso programa de saúde mental.\"",
+        "name": "Thomas R.",
+        "role": "Diretor de ONG Internacional",
+        "initials": "TR"
+      },
+      {
+        "text": "\"O acompanhamento preventivo fez uma diferença real na minha saúde emocional durante um período difícil de adaptação.\"",
+        "name": "Ana F.",
+        "role": "Migrante brasileira, Berlim",
+        "initials": "AF"
+      }
+    ]
+  },
+    "prices": {
+    "label": "Valores",
+    "title": "Investimento em saúde mental",
+    "subtitle": "Todos os atendimentos respeitam a confidencialidade e ética profissional. Sessões online para qualquer país.",
+    "plans": [
+      {
+        "category": "Individual",
+        "title": "Sessão Individual",
+        "amount": "70",
+        "unit": "€",
+        "duration": "50 minutos · Online ou Presencial",
+        "featured": false,
+        "badge": "",
+        "features": [
+          "Consulta psicológica individual",
+          "Acompanhamento intercultural",
+          "PT · EN · ES · DE"
+        ]
+      },
+      {
+        "category": "Pacote",
+        "title": "Pacote 4 Sessões",
+        "amount": "240",
+        "unit": "€",
+        "duration": "4 × 50 min · Economia de €40",
+        "featured": true,
+        "badge": "Popular",
+        "features": [
+          "4 sessões consecutivas",
+          "Plano de acompanhamento",
+          "Comunicação entre sessões",
+          "Relatório de progresso"
+        ]
+      },
+      {
+        "category": "Institucional",
+        "title": "Consultoria Institucional",
+        "amount": "Sob consulta",
+        "unit": "",
+        "duration": "Projetos e organizações",
+        "featured": false,
+        "badge": "",
+        "features": [
+          "Diagnóstico organizacional",
+          "Desenvolvimento de programas",
+          "Workshops e treinamentos",
+          "Proposta personalizada"
+        ]
+      }
+    ],
+    "cta": "Agendar",
+    "ctaInstitutional": "Solicitar Proposta"
+  },
+  "contact": {
+    "label": "Contato",
+    "title": "Vamos conversar",
+    "description": "Estou disponível para atendimentos individuais e consultorias institucionais. Entre em contato para dar o primeiro passo.",
+    "locationLabel": "Localização",
+    "locationValue": "Berlim — Alemanha",
+    "sessionsLabel": "Atendimento",
+    "sessionsValue": "Online Internacional · Presencial Berlim",
+    "linkedinValue": "Ver Perfil Profissional",
+    "langsLabel": "Idiomas de atendimento",
+    "form": {
+      "namePlaceholder": "Seu nome",
+      "emailPlaceholder": "seu@email.com",
+      "subjectLabel": "Assunto",
+      "subjectPlaceholder": "Selecione...",
+      "subjectOpt1": "Sessão Individual",
+      "subjectOpt2": "Pacote de Sessões",
+      "subjectOpt3": "Consultoria Institucional",
+      "subjectOpt4": "Outro",
+      "messagePlaceholder": "Escreva sua mensagem...",
+      "sendBtn": "Enviar mensagem",
+      "successMsg": "Obrigada, {{name}}! Sua mensagem foi enviada. Responderei em breve.",
+      "errorMsg": "Por favor, preencha todos os campos."
+    }
+  },
+  "footer": {
+    "subtitle": "Psicóloga Intercultural · CRP",
+    "description": "Apoio psicológico e consultoria psicossocial em contextos de migração, HIV e ambientes internacionais. Berlim, Alemanha.",
+    "navTitle": "Navegação",
+    "contactTitle": "Contato",
+    "cta": "Agendar sessão",
+    "copyright": "© 2024 Elaine Teixeira — Psicóloga Intercultural. Todos os direitos reservados.",
+    "legal": "Atendimento sujeito às normas do CFP e EAPA",
+    "dev": "Site Desenvolvido Por Elis Pethke"
+  }
+}

@@ -4,6 +4,7 @@ import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useMemo } from 'react'
+import { staggerContainer, cardVariant } from '@/lib/motionVariants'
 
 interface PricePlan {
   category: string
@@ -14,16 +15,6 @@ interface PricePlan {
   featured: boolean
   badge: string
   features: string[]
-}
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } }
-}
-
-const cardVariant = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 }
 
 export function Prices () {
@@ -51,8 +42,8 @@ export function Prices () {
         </div>
         ;
         <motion.div
-         key={i18n.language}
-          variants={stagger}
+          key={i18n.language}
+          variants={staggerContainer}
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.1 }}

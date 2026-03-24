@@ -3,22 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Menu, X } from 'lucide-react'
 import { LANGUAGES, type LanguageCode } from '@/i18n/i18n'
 import logo from '../../assets/img/logo.png'
-
-interface NavItem {
-  key: string
-  href: string
-}
-
-const NAV_ITEMS: NavItem[] = [
-  { key: 'nav.home', href: '#hero' },
-  { key: 'nav.about', href: '#about' },
-  { key: 'nav.counselling', href: '#counselling' },
-  { key: 'nav.consulting', href: '#consulting' },
-  { key: 'nav.cv', href: '#mini-cv' },
-  { key: 'nav.testimonials', href: '#testimonials' },
-  { key: 'nav.prices', href: '#prices' },
-  { key: 'nav.contact', href: '#contact' }
-]
+import { NAV_ITEMS } from '@/constants/navigation'
 
 export function Header () {
   const { t, i18n } = useTranslation()
@@ -89,11 +74,7 @@ export function Header () {
           {/* Lang switcher + hamburger */}
           <div className='flex items-center gap-4'>
             <div
-              className='hidden md:flex items-center gap-1 rounded-full px-2 py-1 border'
-              style={{
-                background: 'var(--rose-wash)',
-                borderColor: 'var(--border)'
-              }}
+              className='hidden md:flex items-center gap-1 rounded-full px-2 py-1 border bg-rose-wash border-[var(--border)]'
             >
               {LANGUAGES.map(lang => (
                 <button
@@ -128,11 +109,8 @@ export function Header () {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div
-          className='fixed z-40 left-0 right-0 bg-white/97 backdrop-blur-xl shadow-md border-t'
-          style={{
-            top: 'var(--header-h)',
-            borderColor: 'var(--border)'
-          }}
+          className='fixed z-40 left-0 right-0 bg-white/97 backdrop-blur-xl shadow-md border-t border-[var(--border)]'
+          style={{ top: 'var(--header-h)' }}
           role='dialog'
           aria-modal='true'
           aria-label='Navigation menu'
@@ -143,8 +121,7 @@ export function Header () {
                 key={item.key}
                 href={item.href}
                 onClick={closeMobile}
-                className='py-3.5 text-[0.95rem] text-ink border-b hover:text-[var(--rose-deep)] transition-colors'
-                style={{ borderColor: 'var(--border)' }}
+                className='py-3.5 text-[0.95rem] text-ink border-b border-[var(--border)] hover:text-[var(--rose-deep)] transition-colors'
               >
                 {t(item.key)}
               </a>

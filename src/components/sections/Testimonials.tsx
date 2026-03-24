@@ -2,21 +2,13 @@ import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { staggerContainer, cardVariant } from '@/lib/motionVariants'
 
 interface TestimonialItem {
   text: string
   name: string
   role: string
   initials: string
-}
-
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-}
-const cardVariant = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65 } },
 }
 
 export function Testimonials() {
@@ -38,7 +30,7 @@ export function Testimonials() {
         </div>
 
         <motion.div
-          variants={stagger}
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}

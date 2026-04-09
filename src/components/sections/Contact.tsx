@@ -20,7 +20,9 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [honeypot, setHoneypot] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const infoItems: ContactInfoItem[] = [
     { icon: '📍', label: t('contact.locationLabel'), value: t('contact.locationValue') },
@@ -36,16 +38,40 @@ export function Contact() {
     { flag: '🇩🇪', lang: 'Deutsch' },
   ]
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!name.trim() || !email.trim() || !message.trim()) {
+      setErrorMessage(t('contact.form.errorMsg'))
       setStatus('error')
       return
     }
-    setStatus('success')
-    setName('')
-    setEmail('')
-    setSubject('')
-    setMessage('')
+
+    setStatus('loading')
+    setErrorMessage('')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message, honeypot }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setErrorMessage((data as { error?: string }).error ?? t('contact.form.errorMsg'))
+        setStatus('error')
+        return
+      }
+
+      setStatus('success')
+      setName('')
+      setEmail('')
+      setSubject('')
+      setMessage('')
+      setHoneypot('')
+    } catch {
+      setErrorMessage(t('contact.form.errorMsg'))
+      setStatus('error')
+    }
   }
 
   const inputClass = [
@@ -173,7 +199,7 @@ export function Contact() {
                 style={{ background: '#fff5f5', color: '#c0392b', borderColor: '#fecaca' }}
                 role="alert"
               >
-                {t('contact.form.errorMsg')}
+                {errorMessage || t('contact.form.errorMsg')}
               </div>
             )}
 
@@ -241,8 +267,23 @@ export function Contact() {
               />
             </div>
 
-            <Button onClick={handleSubmit} fullWidth>
-              {t('contact.form.sendBtn')}
+            {/* Honeypot — hidden from real users, catches bots */}
+            <input
+              type="text"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              aria-hidden="true"
+              tabIndex={-1}
+              style={{ display: 'none' }}
+              autoComplete="off"
+            />
+
+            <Button
+              onClick={() => { void handleSubmit() }}
+              fullWidth
+              aria-label={t('contact.form.sendBtn')}
+            >
+              {status === 'loading' ? t('contact.form.sendingBtn') : t('contact.form.sendBtn')}
             </Button>
           </motion.div>
         </div>

@@ -257,6 +257,7 @@
       "subjectOpt4": "Other",
       "messagePlaceholder": "Write your message...",
       "sendBtn": "Send message",
+      "sendingBtn": "Sending...",
       "successMsg": "Thank you, {{name}}! Your message has been sent. I'll be in touch soon.",
       "errorMsg": "Please fill in all fields."
     }

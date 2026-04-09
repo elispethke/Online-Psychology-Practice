@@ -257,6 +257,7 @@
       "subjectOpt4": "Outro",
       "messagePlaceholder": "Escreva sua mensagem...",
       "sendBtn": "Enviar mensagem",
+      "sendingBtn": "Enviando...",
       "successMsg": "Obrigada, {{name}}! Sua mensagem foi enviada. Responderei em breve.",
       "errorMsg": "Por favor, preencha todos os campos."
     }

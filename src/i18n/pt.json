@@ -29,7 +29,7 @@
     "card1Label": "Experiência",
     "card1Sub": "anos de prática",
     "card2Label": "Idiomas",
-    "card2Sub": "PT · EN · ES · DE"
+    "card2Sub": "PT · EN · ES"
   },
   "intercultural": {
     "label": "Vivendo Entre Culturas",
@@ -323,7 +323,8 @@
       "sendBtn": "Enviar mensagem",
       "sendingBtn": "Enviando...",
       "successMsg": "Obrigada, {{name}}! Sua mensagem foi enviada. Responderei em breve.",
-      "errorMsg": "Por favor, preencha todos os campos obrigatórios."
+      "errorMsg": "Por favor, preencha todos os campos obrigatórios.",
+      "rateLimitMsg": "Você já enviou uma mensagem recentemente. Por favor, aguarde 1 hora antes de enviar novamente."
     }
   },
   "footer": {

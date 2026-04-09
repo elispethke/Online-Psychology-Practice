@@ -10,6 +10,7 @@ interface ButtonProps {
   className?: string
   fullWidth?: boolean
   type?: 'button' | 'submit'
+  disabled?: boolean
   'aria-label'?: string
 }
 
@@ -41,12 +42,14 @@ export function Button({
   className = '',
   fullWidth = false,
   type = 'button',
+  disabled = false,
   'aria-label': ariaLabel,
 }: ButtonProps) {
   const classes = [
     BASE,
     VARIANTS[variant],
     fullWidth ? 'w-full justify-center' : '',
+    disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : '',
     'group',
     className,
   ]
@@ -66,6 +69,7 @@ export function Button({
     <button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       className={classes}
       aria-label={ariaLabel}
     >

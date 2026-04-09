@@ -8,6 +8,8 @@ build
 # environment variables
 .env
 .env.local
+.env.*.local
+.env*
 
 # logs
 npm-debug.log*
@@ -20,4 +22,6 @@ yarn-error.log*
 # editor
 .vscode
 .idea
+
+# deployment
 .vercel

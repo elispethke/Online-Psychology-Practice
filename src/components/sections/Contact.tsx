@@ -6,9 +6,26 @@ import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
-const EMAILJS_SERVICE_ID = 'service_dvtkmwu'
-const EMAILJS_TEMPLATE_ID = 'template_6wq5cy5'
-const EMAILJS_PUBLIC_KEY = 'ZlabIDAwB6Uw0ICvt'
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
+
+const RATE_LIMIT_MS = 60 * 60 * 1000 // 1 hour
+
+function isRateLimited(email: string): boolean {
+  try {
+    const raw = localStorage.getItem('contact_last_submit')
+    if (!raw) return false
+    const { email: lastEmail, timestamp } = JSON.parse(raw) as { email: string; timestamp: number }
+    return lastEmail === email.toLowerCase() && Date.now() - timestamp < RATE_LIMIT_MS
+  } catch {
+    return false
+  }
+}
+
+function markSubmitted(email: string) {
+  localStorage.setItem('contact_last_submit', JSON.stringify({ email: email.toLowerCase(), timestamp: Date.now() }))
+}
 
 
 interface ContactInfoItem {
@@ -26,7 +43,7 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'rate_limited'>('idle')
 
   const infoItems: ContactInfoItem[] = [
     { icon: '📍', label: t('contact.locationLabel'), value: t('contact.locationValue') },
@@ -39,7 +56,6 @@ export function Contact() {
     { flag: '🇧🇷', lang: 'Português' },
     { flag: '🇬🇧', lang: 'English' },
     { flag: '🇪🇸', lang: 'Español' },
-    { flag: '🇩🇪', lang: 'Deutsch' },
   ]
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,15 +66,21 @@ export function Contact() {
       return
     }
 
+    if (isRateLimited(email)) {
+      setStatus('rate_limited')
+      return
+    }
+
     setStatus('loading')
 
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        { name, email, message },
+        { name, email, subject, message },
         EMAILJS_PUBLIC_KEY,
       )
+      markSubmitted(email)
       setStatus('success')
       setName('')
       setEmail('')
@@ -199,6 +221,15 @@ export function Contact() {
                 {t('contact.form.errorMsg')}
               </div>
             )}
+            {status === 'rate_limited' && (
+              <div
+                className="p-4 rounded-sm text-[0.85rem] font-medium border"
+                style={{ background: '#fffbeb', color: '#92400e', borderColor: '#fde68a' }}
+                role="alert"
+              >
+                {t('contact.form.rateLimitMsg')}
+              </div>
+            )}
 
             {/* Name + Email row */}
             <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}>
@@ -268,6 +299,7 @@ export function Contact() {
               type="submit"
               fullWidth
               aria-label={t('contact.form.sendBtn')}
+              disabled={status === 'loading' || status === 'success'}
             >
               {status === 'loading' ? t('contact.form.sendingBtn') : t('contact.form.sendBtn')}
             </Button>

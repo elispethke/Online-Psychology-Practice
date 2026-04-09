@@ -4,25 +4,26 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
-    "counselling": "Counselling",
+    "intercultural": "Living Between Cultures",
+    "counselling": "Therapy",
+    "about": "About Me",
     "consulting": "Consulting",
-    "cv": "Mini CV",
+    "cv": "Experience",
     "testimonials": "Testimonials",
     "prices": "Fees",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Berlin · Online & In-Person Sessions",
-    "tagline": "Intercultural Psychologist · MHPSS Consultant · Migration & HIV",
-    "headline": "Mental Health Without Borders",
-    "subheadline": "Care, Prevention and Integration",
-    "description": "Psychological support and psychosocial consulting in migration, HIV and international work contexts. Over 20 years of experience across Brazil, Africa and Europe.",
+    "badge": "Berlin · Online Sessions",
+    "tagline": "Intercultural Psychologist · MHPSS Consultant",
+    "headline": "Psychologist for Brazilians and English speakers living abroad",
+    "subheadline": "Therapy and emotional support for those who live far from home",
+    "description": "Online sessions available — in-person sessions in Berlin coming soon.",
     "pillar1": "Intercultural psychological counselling",
-    "pillar2": "Institutional MHPSS consulting",
-    "pillar3": "Preventive mental health in the workplace",
-    "location": "Based in Berlin",
-    "languages": "Sessions in Portuguese, English, Spanish and German",
+    "pillar2": "Mental health consulting (MHPSS)",
+    "pillar3": "Emotional support for migrants and expatriates",
+    "location": "Berlin, Germany",
+    "languages": "Sessions in Portuguese and English",
     "cta": "Get in touch",
     "cta2": "Discover my work",
     "card1Label": "Experience",
@@ -30,133 +31,197 @@
     "card2Label": "Languages",
     "card2Sub": "PT · EN · ES · DE"
   },
+  "intercultural": {
+    "label": "Living Between Cultures",
+    "title": "Living between cultures",
+    "intro": "Living between cultures can be enriching, but also profoundly challenging.",
+    "p1": "The migration process and the difficulties of adapting abroad can trigger emotional responses and emotional instability. It is very common for migrants to begin feeling depressed, anxious, and to develop mental health challenges while living in another country.",
+    "question1": "Do you feel overwhelmed living outside Brazil?",
+    "question2": "Are you experiencing difficulty adapting, loneliness, anxiety, or uncertainty about your future and professional integration?",
+    "answer": "If you answered yes to any of these, I — as a Psychologist and Therapist — can help you find a path to emotional balance and support you through your migration journey abroad.",
+    "challengesTitle": "Many people living outside their home country face:",
+    "challenges": [
+      "Social isolation",
+      "Anxiety",
+      "Depression",
+      "Post-traumatic stress disorder",
+      "Adjustment disorder",
+      "Integration challenges",
+      "Migratory grief",
+      "Identity and belonging conflicts",
+      "Worsening of pre-existing mental health conditions"
+    ],
+    "quote": "\"There is no health without mental health.\"",
+    "quoteAuthor": "Vikram Patel, psychiatrist",
+    "p2": "Mental health is a fundamental part of overall wellbeing. Caring for the emotional dimension is essential for facing life's challenges, especially in contexts of change, adaptation and vulnerability.",
+    "p3": "If you feel this might be an important moment to seek support, therapy can offer a space for listening, understanding and strengthening.",
+    "cta": "Schedule a conversation",
+    "ctaNote": "Booking a first conversation can be the beginning of this process."
+  },
+  "counselling": {
+    "label": "Therapy",
+    "title": "Intercultural Psychological Counselling",
+    "description": "Migration brings profound changes — to identity, belonging and routine. Living between cultures can be enriching, but also challenging in ways that are often invisible.",
+    "intro": "Intercultural counselling offers a safe and qualified space to understand and work through these experiences in all their complexity.",
+    "p1": "I work with people going through processes of change and adaptation, including migrants, expatriates and international students, as well as women re-entering the workforce, mothers living outside their home country, and people facing health, stigma, or significant life transitions such as separations and new beginnings.",
+    "p2": "Psychological support can also play an important preventive role, helping to recognise early signs of emotional overload, anxiety or exhaustion before they become more intense.",
+    "p3": "Throughout the process, we work on strengthening internal resources, expanding emotional awareness and building more sustainable ways of dealing with challenges — whether in the personal, professional or relational sphere.",
+    "modalitiesTitle": "Modalities",
+    "individual": {
+      "title": "Individual psychological counselling",
+      "p1": "Living between cultures can be a rich experience, but also profoundly challenging. Often, what is lost is not only the physical space we once occupied in our country, but our history, our social and professional connections, our emotional and family ties — and the specific experiences of those who migrate from the southern to the northern hemisphere, where we lose the tropical climate, the sun, and other aspects of our culture.",
+      "p2": "In this limbo of intercultural adaptation, we lose our internal reference points: the sense of belonging, identity and continuity. Adapting to a new country can bring loneliness, anxiety, emotional overload, and a feeling that is hard to explain — of not belonging, 'neither here nor there'. Has it ever happened to you that you went back to your home country and missed the host country? (or vice versa).",
+      "p3": "Individual psychological support offers a safe and welcoming space for you to talk about all of this, at your own pace, in your own language, from your own story.",
+      "p4": "Through an intercultural approach, the therapeutic process allows you to understand and integrate migration experiences, working through losses, transitions and internal conflicts that are part of this journey — enabling you to develop personal strategies and resources to support your integration in the host country and your psychosocial wellbeing, which is crucial in preventing the worsening of your emotional challenges.",
+      "p5": "Rather than diagnosing mental pathologies or symptoms, the aim is to investigate the triggers causing these emotional difficulties, develop resilience and coping mechanisms, and recover emotional balance and health. From this perspective, the goal is to develop autonomous and functional individuals in their migration journey, strengthen internal resources and rebuild a sense of self, even in contexts of change and uncertainty.",
+      "closing": "You do not need to go through this process alone."
+    },
+    "group": {
+      "title": "Group counselling",
+      "p1": "Group sessions offer a structured space for sharing, reflection and collective processing.",
+      "p2": "Through an intercultural approach, group work integrates therapeutic elements with the strength of shared experience. The exchange between people facing similar challenges fosters identification, belonging and new forms of understanding. At the same time, the group is facilitated in a careful, professional and empathic way, ensuring a safe, ethical and welcoming environment where each participant can express themselves at their own pace, whenever they wish. Knowledge is built through this exchange, and collective listening becomes a tool for transformation and motivation in situations that can feel paralysing for the individual.",
+      "p3": "This combination of clinical listening and peer support allows participants not only to better understand their own experiences, but also to expand their internal resources and strengthen their ability to deal with everyday challenges."
+    },
+    "approach": {
+      "title": "The intercultural psychology approach",
+      "p1": "Intercultural psychology is a field of psychology dedicated to understanding how cultural factors influence the way we think, feel and relate to the world.",
+      "p2": "In the context of migration, this approach recognises that emotional experiences cannot be separated from culture, language, life history and the social contexts in which each person exists. Living between cultures involves more than practical adaptation — it entails transformations in identity, in the sense of belonging, and in the way a person perceives themselves and is perceived by others.",
+      "p3": "This approach considers these dimensions in an integrated way, offering a listening space that takes into account not only the individual, but also their history, culture and life context.",
+      "p4": "From this perspective, psychological support is not limited to symptoms, but seeks to understand suffering in its full complexity, taking into account processes such as displacement, loss of reference points, rebuilding of bonds and negotiation between different cultural systems.",
+      "p5": "At the same time, this approach allows us to recognise both the challenges and the resources that emerge from the intercultural experience, supporting the integration of these experiences and the construction of new ways of being in the world — with greater internal coherence and emotional grounding."
+    },
+    "techniques": {
+      "title": "Other therapeutic techniques used",
+      "items": [
+        "Cognitive Behavioural Therapy (CBT) techniques",
+        "Narrative Exposure Therapy (NET) / Forensic Narrative Exposure Therapy (FORNET)"
+      ]
+    },
+    "challenges": {
+      "title": "Main challenges addressed in counselling",
+      "items": [
+        "Integration into the job market and life in Germany",
+        "Strategies for interacting with government institutions (Child Protection Services, Employment Agency, Job Centre, Local Authority)",
+        "Bicultural relationships",
+        "Separation/Divorce and child custody disputes",
+        "Preventive sexual health",
+        "Racism and xenophobia (in school, workplace and daily life)",
+        "Domestic violence against women",
+        "Parenting and supporting children with digital burnout",
+        "Lack of access to public mental health services",
+        "Migratory grief",
+        "Support for people with substance dependency",
+        "Motherhood abroad"
+      ]
+    }
+  },
   "about": {
-    "label": "Background",
-    "title": "My professional journey",
-    "desc1": "I am a psychologist with international practice, specialised in mental health and psychosocial support in complex settings, including humanitarian interventions.",
-    "desc2": "My work focuses on supporting the quality of life and mental health of people in vulnerable situations.",
-    "quote": "\"Geographic borders should not be barriers to accessing mental health care.\"",
+    "label": "About Me",
+    "title": "About me",
+    "desc1": "I am a Psychologist trained at Universidade São Marcos in São Paulo (CRP: 06/55288) with a postgraduate specialisation in Psychology and Migration from PUC Minas. I have over 20 years of experience in therapeutic intervention and psychological counselling with people in situations of psychosocial vulnerability and psychological distress.",
+    "desc2": "In Brazil, I worked for nearly 9 years as a volunteer for GIV – Grupo de Incentivo à Vida, providing psychotherapy and preventive counselling for antiretroviral treatment, primarily for the LGBTQI+ community, women, children and adolescents living with HIV-Aids. I also held a private psychotherapy practice in São Paulo.",
+    "quote": "\"For 11 years, my migration journey in Berlin has become an instrument of my work — combined with my solid academic and therapeutic training.\"",
     "timeline": {
       "t1": {
-        "period": "2023 – Present",
-        "title": "Intercultural Psychologist – Brazilian Embassy Berlin",
-        "desc": "Clinical and advisory services for the Brazilian community and expatriates in Germany."
+        "period": "Feb. 2025 – Present",
+        "title": "Psychologist — Brazilian Embassy in Berlin",
+        "desc": "Since February 2025, I have been working as Psychologist at the Brazilian Embassy in Berlin, providing psychological and psychosocial counselling to Brazilians in vulnerable situations. This service is free of charge to the Brazilian community and is based on a brief intercultural intervention approach. Alongside this, I see Brazilian migrants and English-speaking clients online."
       },
       "t2": {
-        "period": "Current",
-        "title": "Psychologist – Malengo Foundation",
-        "desc": "Psychosocial support for refugees and migrants integrating into Europe."
+        "period": "2014 – Present",
+        "title": "Intercultural Psychologist — Berlin",
+        "desc": "In 2014, I migrated to Berlin for family reasons, and it became my permanent home. Experiencing motherhood for the first time as a migrant woman, I deepened my studies in psychology and migration, finding in this approach practical tools for psychological and psychosocial support that make a real difference to the quality of life of Brazilians living in Europe."
       },
       "t3": {
-        "period": "2014 – Present",
-        "title": "Clinical Practice & Consulting: Migration, HIV and MHPSS",
-        "desc": "Focus on mental health in migration contexts, empowerment of migrant women, integration into the German job market, HIV stigma, structural racism and psychosocial vulnerability."
+        "period": "2023 – 2025",
+        "title": "Psychologist — German Red Cross · ZIK",
+        "desc": "Psychological support for migrants, refugees and people in vulnerable situations in Berlin."
       },
       "t4": {
         "period": "2007 – 2014",
-        "title": "Humanitarian Projects – MSF & ARK · Africa",
-        "desc": "Psychosocial coordination with Médecins Sans Frontières and Absolute Return for Kids in Mozambique and Eswatini. HIV/AIDS and Tuberculosis work."
+        "title": "Psychosocial Coordinator — MSF · ARK · Africa",
+        "desc": "In 2007, I began my migration journey working with Médecins Sans Frontières (MSF) in Mozambique, where I coordinated a mental health and psychosocial support (MHPSS) department in humanitarian projects focused on HIV-Aids, drug-resistant Tuberculosis and natural disasters. I also worked in Eswatini and with organisations such as ARK and the Government of Mozambique, in cooperation with the UN, World Bank, UNICEF and PEPFAR."
       },
       "t5": {
-        "period": "1998 – 2014",
-        "title": "Clinical Psychology & Project Management · Brazil",
-        "desc": "Clinical psychology practice and social project management in Brazil."
+        "period": "1998 – 2007",
+        "title": "Clinical Psychologist — Brazil",
+        "desc": "Nearly 9 years as a volunteer at GIV – Grupo de Incentivo à Vida, providing psychotherapy and preventive counselling for the LGBTQI+ community, women, children and adolescents living with HIV-Aids, alongside private clinical practice in São Paulo."
       }
     }
   },
-  "counselling": {
-    "label": "Psychology",
-    "title": "Intercultural Psychological Counselling",
-    "description": "Migration brings profound changes — to identity, belonging and routine. Intercultural counselling provides a safe space to process these challenges in all their complexity.",
-    "audienceTitle": "Who I work with",
-    "audience": [
-      "Migrants and expatriates",
-      "International students",
-      "Women re-entering the workforce",
-      "People living with HIV",
-      "Brazilians abroad",
-      "Multicultural professionals",
-      "Migrant mothers",
-      "People going through divorce"
-    ],
-    "preventionTitle": "Prevention and emotional wellbeing",
-    "preventionDesc": "Preventive support reduces risks and strengthens inner resources:",
-    "prevention": [
-      "Reducing depression and anxiety",
-      "Preventing professional burnout",
-      "Building emotional resilience",
-      "Supporting professional decisions",
-      "Supporting integration in the host country"
-    ]
-  },
   "consulting": {
-    "label": "Institutional",
-    "title": "MHPSS, Migration and Preventive Mental Health Consulting",
-    "description": "I work with NGOs, international organisations, companies and humanitarian projects to develop and implement effective psychosocial mental health strategies.",
-    "features": [
-      {
-        "num": "01",
-        "title": "MHPSS Programmes",
-        "desc": "Development and implementation of mental health and psychosocial support programmes for humanitarian organisations."
-      },
-      {
-        "num": "02",
-        "title": "HIV & Psychosocial Support",
-        "desc": "Integrated strategies for stigma reduction, emotional support and access to care."
-      },
-      {
-        "num": "03",
-        "title": "Corporate Mental Health",
-        "desc": "Burnout prevention and wellbeing promotion in multicultural and international workplaces."
-      },
-      {
-        "num": "04",
-        "title": "Migration & Integration",
-        "desc": "Specialist consulting on psychosocial support policies for migrant and refugee populations."
-      }
-    ],
-    "clientsLabel": "For",
-    "clients": ["International NGOs", "UN Agencies", "Embassies", "Multinational Companies", "Humanitarian Projects"],
-    "cta": "Request a Proposal"
+    "label": "Consulting",
+    "thirdSector": {
+      "label": "Third Sector",
+      "title": "Mental Health and Psychosocial Support (MHPSS)",
+      "description": "I offer consulting for organisations, institutions and projects working in multicultural, humanitarian and complex contexts, with a focus on developing and strengthening mental health and psychosocial support (MHPSS) strategies.",
+      "p1": "My work combines clinical experience, programme coordination and the development of policies and guidelines across different international contexts.",
+      "p2": "Throughout my career with Médecins Sans Frontières and other organisations, I have worked on HIV/AIDS, tuberculosis and community health projects in African countries including Mozambique and Eswatini, developing and coordinating MHPSS programmes in contexts of high vulnerability. This experience also includes protocol development, team training, technical supervision and implementation of innovative community-centred care models.",
+      "p3": "In collaboration with the Ministry of Health of Mozambique, I developed national psychosocial support guidelines in the context of HIV/AIDS, which were subsequently integrated into the country's treatment programme.",
+      "areasTitle": "Areas of work",
+      "areas": [
+        "Development and implementation of Mental Health and Psychosocial Support (MHPSS) programmes, including needs assessment, strategy design and intervention monitoring",
+        "Consulting on HIV/AIDS and public health contexts, with a focus on treatment adherence, stigma reduction and strengthening psychosocial care",
+        "Training, supervision and capacity building of multidisciplinary teams in mental health, psychosocial support and intercultural work",
+        "Supporting organisations in developing preventive mental health strategies and wellbeing in institutional and corporate environments"
+      ],
+      "audienceTitle": "Who I work with",
+      "audience": "Non-governmental organisations (NGOs), international agencies, humanitarian projects, public and private institutions working with populations in vulnerable situations or in multicultural contexts.",
+      "contactDesc": "Development and evaluation of projects in non-governmental and humanitarian organisations, mental health and psychosocial support (MHPSS) programmes and interventions. Also consulting for private companies implementing preventive mental health programmes for employees with a migration background. For projects and partnerships, get in touch to start a conversation and develop a tailored proposal.",
+      "cta": "Request a proposal"
+    },
+    "corporate": {
+      "label": "Workplace Mental Health",
+      "title": "Corporate environments and international teams",
+      "description": "I develop and facilitate workshops and training programmes aimed at promoting mental health and psychological wellbeing in institutional and corporate environments.",
+      "p1": "These interventions help prevent psychological illness at work, supporting organisations in reducing stress, strengthening individual and collective resources, and promoting healthier and more sustainable workplaces.",
+      "p2": "Through an intercultural approach, content is tailored to the specific needs of each organisation, particularly in contexts marked by cultural diversity and the presence of international teams.",
+      "topicsTitle": "Topics covered",
+      "topicsIntro": "Workshops may include, among others:",
+      "topics": [
+        "Emotional regulation and stress management",
+        "Mindfulness and mindful awareness practices in professional life",
+        "Burnout prevention and emotional overload",
+        "Psychological resilience in contexts of change",
+        "Mental health in multicultural environments",
+        "Communication and interpersonal relationships at work",
+        "Work-life balance",
+        "Mental health in migration and cultural adaptation"
+      ],
+      "methodologyTitle": "Methodology and approach",
+      "methodology": "The training programmes combine psychoeducational elements, individual reflection and group dynamics, creating safe spaces for learning and exchange. In addition to group activities, it is possible to integrate individual sessions for employees who need psychological support, broadening the care and effectiveness of the interventions. I also offer psychosocial support for the integration of international professionals and their families, focusing on cultural adaptation, reduction of stressors and strengthening wellbeing through the migration process.",
+      "impactTitle": "Organisational impact",
+      "impact": [
+        "Reduction in absenteeism related to stress and psychological illness",
+        "Decreased risk factors associated with burnout",
+        "Improved organisational climate and working relationships",
+        "Strengthened retention of professionals, especially in international teams",
+        "Support for diversity and inclusion strategies for international professionals in multicultural contexts"
+      ],
+      "formatTitle": "Format",
+      "format": "Workshops, training sessions and learning programmes can be delivered online or in person, in Portuguese or English, for small teams or large groups.",
+      "cta": "Request a proposal"
+    }
   },
   "cv": {
-    "label": "CV",
+    "label": "Experience",
     "title": "Professional Experience",
     "colPeriod": "Period",
     "colRole": "Role / Organisation",
-    "colContext": "Context",
+    "colContext": "Location · Context",
     "currentBadge": "Current",
     "rows": [
-      {
-        "period": "Current",
-        "role": "Intercultural Psychologist",
-        "org": "Brazilian Embassy Berlin",
-        "context": "Clinical support for the Brazilian community and expatriates"
-      },
-      {
-        "period": "Current",
-        "role": "Psychologist",
-        "org": "Malengo Foundation",
-        "context": "Psychosocial support for refugees and migrants in Europe"
-      },
-      {
-        "period": "2014 – Present",
-        "role": "Clinical Practice & Consulting",
-        "org": "Berlin, Germany",
-        "context": "Migration, HIV and MHPSS — clinical and consulting work"
-      },
-      {
-        "period": "2007 – 2014",
-        "role": "Psychosocial Coordinator",
-        "org": "MSF · ARK — Mozambique & Eswatini",
-        "context": "Humanitarian projects: HIV/AIDS and TB in Africa"
-      },
-      {
-        "period": "1998 – 2014",
-        "role": "Clinical Psychologist",
-        "org": "Brazil",
-        "context": "Clinical psychology and social project management"
-      }
+      { "period": "Current", "role": "Intercultural Psychologist", "org": "Brazilian Embassy", "context": "Berlin / Online" },
+      { "period": "Current", "role": "Psychologist", "org": "Malengo", "context": "Online / Germany" },
+      { "period": "2023 – 2025", "role": "Psychologist", "org": "German Red Cross", "context": "Berlin" },
+      { "period": "2022 – 2023", "role": "Psychologist", "org": "ZIK – Betreutes Wohnen", "context": "Berlin" },
+      { "period": "2017 – 2022", "role": "Volunteer Psychologist", "org": "Support for migrants and women in vulnerability", "context": "Berlin / Online" },
+      { "period": "2013 – 2014", "role": "Preventive Health Manager", "org": "Médecins Sans Frontières (MSF)", "context": "Mozambique" },
+      { "period": "2012 – 2013", "role": "Psychosocial Consultant", "org": "Ministry of Health (HIV)", "context": "Mozambique" },
+      { "period": "2011 – 2012", "role": "Psychosocial Consultant", "org": "ARK (Absolute Return for Kids)", "context": "Mozambique" },
+      { "period": "2011", "role": "HIV-Aids Lobbying & Emergency Psychology", "org": "Médecins Sans Frontières (MSF)", "context": "Brazil / Mozambique" },
+      { "period": "2007 – 2010", "role": "Psychosocial Coordinator", "org": "Médecins Sans Frontières (MSF)", "context": "Mozambique / Eswatini" },
+      { "period": "1998 – 2007", "role": "Clinical Psychologist", "org": "Private practice and HIV projects", "context": "Brazil" }
     ]
   },
   "testimonials": {
@@ -185,21 +250,21 @@
   },
   "prices": {
     "label": "Fees",
-    "title": "Investing in mental health",
-    "subtitle": "All sessions respect confidentiality and professional ethics. Online sessions available worldwide.",
+    "title": "Session fees",
+    "subtitle": "All sessions are conducted confidentially and in accordance with the ethical principles of psychological practice. Online sessions available worldwide. In-person sessions starting soon.",
     "plans": [
       {
         "category": "Individual",
         "title": "Individual Session",
         "amount": "70",
         "unit": "€",
-        "duration": "50 minutes · Online or In-person",
+        "duration": "50 minutes",
         "featured": false,
         "badge": "",
         "features": [
-          "Individual psychological consultation",
-          "Intercultural support",
-          "PT · EN · ES · DE"
+          "Individual psychological session",
+          "Fortnightly or as needed",
+          "Online or in-person (Berlin, coming soon)"
         ]
       },
       {
@@ -207,43 +272,42 @@
         "title": "4-Session Package",
         "amount": "240",
         "unit": "€",
-        "duration": "4 × 50 min · Save €40",
+        "duration": "4 sessions of 50 minutes",
         "featured": true,
         "badge": "Popular",
         "features": [
-          "4 consecutive sessions",
-          "Follow-up plan",
-          "Between-session communication",
-          "Progress report"
+          "Recommended for weekly continuity",
+          "Greater consistency in the therapeutic process",
+          "Online or in-person (Berlin, coming soon)"
         ]
       },
       {
-        "category": "Institutional",
-        "title": "Institutional Consulting",
-        "amount": "On request",
-        "unit": "",
-        "duration": "Projects and organisations",
+        "category": "Group",
+        "title": "Group Session",
+        "amount": "75",
+        "unit": "€",
+        "duration": "2 hours · twice a month",
         "featured": false,
         "badge": "",
         "features": [
-          "Organisational diagnosis",
-          "Programme development",
-          "Workshops and training",
-          "Tailored proposal"
+          "Group of up to 8 people",
+          "Fortnightly sessions",
+          "Can be combined with individual sessions",
+          "Start subject to minimum of 8 participants"
         ]
       }
     ],
     "cta": "Book now",
-    "ctaInstitutional": "Request a Proposal"
+    "ctaInstitutional": "Request a proposal"
   },
   "contact": {
     "label": "Contact",
     "title": "Let's talk",
-    "description": "I'm available for individual sessions and institutional consulting. Get in touch to take the first step.",
+    "description": "If you are going through a challenging time, seeking support can be an important first step. I am available for individual sessions, group sessions and institutional consulting, online or in person in Berlin. Get in touch to ask questions or schedule a first conversation.",
     "locationLabel": "Location",
     "locationValue": "Berlin — Germany",
     "sessionsLabel": "Sessions",
-    "sessionsValue": "International Online · In-Person Berlin",
+    "sessionsValue": "International Online · In-Person Berlin (coming soon)",
     "linkedinValue": "View Professional Profile",
     "langsLabel": "Session languages",
     "form": {
@@ -259,18 +323,17 @@
       "sendBtn": "Send message",
       "sendingBtn": "Sending...",
       "successMsg": "Thank you, {{name}}! Your message has been sent. I'll be in touch soon.",
-      "errorMsg": "Please fill in all fields."
+      "errorMsg": "Please fill in all required fields."
     }
   },
   "footer": {
-    "subtitle": "Intercultural Psychologist",
-    "description": "Psychological support and psychosocial consulting in migration, HIV and international contexts. Berlin, Germany.",
+    "subtitle": "Intercultural Psychologist · CRP: 06/55288",
+    "description": "Psychological support and psychosocial consulting for Brazilians and English speakers living abroad. Berlin, Germany.",
     "navTitle": "Navigation",
     "contactTitle": "Contact",
     "cta": "Book a session",
-    "copyright": "© 2024 Elaine Teixeira — Intercultural Psychologist. All rights reserved.",
+    "copyright": "© 2025 Elaine Teixeira — Intercultural Psychologist. All rights reserved.",
     "legal": "Practice subject to CRP and EAPA professional standards",
     "dev": "Website developed by Elis Pethke"
-
   }
 }

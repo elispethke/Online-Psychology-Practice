@@ -20,9 +20,8 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
-  const [honeypot, setHoneypot] = useState('')
+  const [gotcha, setGotcha] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
 
   const infoItems: ContactInfoItem[] = [
     { icon: '📍', label: t('contact.locationLabel'), value: t('contact.locationValue') },
@@ -38,26 +37,25 @@ export function Contact() {
     { flag: '🇩🇪', lang: 'Deutsch' },
   ]
 
+  // Replace YOUR_FORM_ID with the ID from your Formspree dashboard
+  const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID'
+
   const handleSubmit = async () => {
     if (!name.trim() || !email.trim() || !message.trim()) {
-      setErrorMessage(t('contact.form.errorMsg'))
       setStatus('error')
       return
     }
 
     setStatus('loading')
-    setErrorMessage('')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message, honeypot }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name, email, subject, message, _gotcha: gotcha }),
       })
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
-        setErrorMessage((data as { error?: string }).error ?? t('contact.form.errorMsg'))
         setStatus('error')
         return
       }
@@ -67,9 +65,8 @@ export function Contact() {
       setEmail('')
       setSubject('')
       setMessage('')
-      setHoneypot('')
+      setGotcha('')
     } catch {
-      setErrorMessage(t('contact.form.errorMsg'))
       setStatus('error')
     }
   }
@@ -199,7 +196,7 @@ export function Contact() {
                 style={{ background: '#fff5f5', color: '#c0392b', borderColor: '#fecaca' }}
                 role="alert"
               >
-                {errorMessage || t('contact.form.errorMsg')}
+                {t('contact.form.errorMsg')}
               </div>
             )}
 
@@ -267,11 +264,11 @@ export function Contact() {
               />
             </div>
 
-            {/* Honeypot — hidden from real users, catches bots */}
+            {/* _gotcha — Formspree native honeypot, silently rejects bot submissions */}
             <input
               type="text"
-              value={honeypot}
-              onChange={(e) => setHoneypot(e.target.value)}
+              value={gotcha}
+              onChange={(e) => setGotcha(e.target.value)}
               aria-hidden="true"
               tabIndex={-1}
               style={{ display: 'none' }}

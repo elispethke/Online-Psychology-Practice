@@ -1,8 +1,9 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
-import { About } from '@/components/sections/About'
+import { Intercultural } from '@/components/sections/Intercultural'
 import { Counselling } from '@/components/sections/Counselling'
+import { About } from '@/components/sections/About'
 import { Consulting } from '@/components/sections/Consulting'
 import { MiniCV } from '@/components/sections/MiniCV'
 import { Testimonials } from '@/components/sections/Testimonials'
@@ -15,8 +16,9 @@ export function Home () {
       <Header />
       <main>
         <Hero />
-        <About />
+        <Intercultural />
         <Counselling />
+        <About />
         <Consulting />
         <MiniCV />
         <Testimonials />

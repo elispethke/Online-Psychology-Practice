@@ -4,25 +4,26 @@
   },
   "nav": {
     "home": "Home",
-    "about": "Sobre",
-    "counselling": "Counselling",
-    "consulting": "Consultoria",
-    "cv": "Mini CV",
+    "intercultural": "Vivendo Entre Culturas",
+    "counselling": "Terapia",
+    "about": "Sobre Mim",
+    "consulting": "Consultorias",
+    "cv": "Experiência",
     "testimonials": "Testemunhos",
-    "prices": "Preços",
+    "prices": "Valores",
     "contact": "Contato"
   },
   "hero": {
-    "badge": "Berlim · Atendimento Online & Presencial",
-    "tagline": "Psicóloga Intercultural · Consultora MHPSS · Migração & HIV",
-    "headline": "Saúde Mental Sem Fronteiras",
-    "subheadline": "Cuidado, Prevenção e Integração",
-    "description": "Apoio psicológico e consultoria psicossocial em contextos de migração, HIV e ambientes internacionais de trabalho. Com mais de 20 anos de experiência no Brasil, África e Europa.",
-    "pillar1": "Atendimento psicológico intercultural",
-    "pillar2": "Consultoria institucional em MHPSS",
-    "pillar3": "Saúde mental preventiva em ambientes de trabalho",
-    "location": "Baseada em Berlim",
-    "languages": "Atendimento em português, inglês, espanhol e alemão",
+    "badge": "Berlim · Atendimento Online",
+    "tagline": "Psicóloga Intercultural · Consultora MHPSS",
+    "headline": "Psicóloga para brasileiros e falantes da língua inglesa no exterior",
+    "subheadline": "Terapia e apoio emocional para quem vive longe de casa",
+    "description": "Atendimento online — atendimento presencial em Berlim em breve.",
+    "pillar1": "Aconselhamento psicológico intercultural",
+    "pillar2": "Consultoria em saúde mental (MHPSS)",
+    "pillar3": "Apoio emocional a migrantes e expatriados",
+    "location": "Berlim, Alemanha",
+    "languages": "Atendimento em português e inglês",
     "cta": "Entrar em contato",
     "cta2": "Conheça meu trabalho",
     "card1Label": "Experiência",
@@ -30,133 +31,197 @@
     "card2Label": "Idiomas",
     "card2Sub": "PT · EN · ES · DE"
   },
+  "intercultural": {
+    "label": "Vivendo Entre Culturas",
+    "title": "Vivendo entre culturas",
+    "intro": "Viver entre culturas pode ser enriquecedor, mas também profundamente desafiador.",
+    "p1": "O processo migratório e as dificuldades de adaptação no exterior podem encadear gatilhos emocionais e instabilidade emocional. É muito comum migrantes começarem a se sentir deprimidos, ansiosos e começarem a desenvolver problemas de saúde mental no exterior.",
+    "question1": "Você se sente sobrecarregada vivendo fora do Brasil?",
+    "question2": "Tem dificuldade de adaptação, solidão, ansiedade ou dúvidas sobre o futuro e integração profissional?",
+    "answer": "Se você responder sim para 1 dessas respostas, eu como Psicóloga e Terapeuta posso te ajudar a encontrar um caminho de equilíbrio emocional e te apoiar no seu processo migratório no exterior.",
+    "challengesTitle": "Muitas pessoas que vivem fora do seu país enfrentam:",
+    "challenges": [
+      "Isolamento social",
+      "Ansiedade",
+      "Depressão",
+      "Transtorno do stress pós traumático",
+      "Transtorno de adaptação",
+      "Desafios de integração",
+      "Luto migratório",
+      "Conflitos de identidade e pertencimento",
+      "Agravamento da situação de saúde mental (já pré-existente)"
+    ],
+    "quote": "\"There is no health without mental health.\"",
+    "quoteAuthor": "Vikram Patel, psiquiatra",
+    "p2": "A saúde mental é parte fundamental do bem-estar global. Cuidar da dimensão emocional é essencial para lidar com os desafios da vida, especialmente em contextos de mudança, adaptação e vulnerabilidade.",
+    "p3": "Se você sente que este pode ser um momento importante para buscar apoio, a terapia pode oferecer um espaço de escuta, compreensão e fortalecimento.",
+    "cta": "Agendar uma conversa",
+    "ctaNote": "Agendar uma primeira conversa pode ser o início desse processo."
+  },
+  "counselling": {
+    "label": "Terapia",
+    "title": "Aconselhamento Psicológico Intercultural",
+    "description": "A migração traz consigo mudanças profundas, de identidade, de pertencimento e de rotina. Viver entre culturas pode ser enriquecedor, mas também desafiador em níveis muitas vezes invisíveis.",
+    "intro": "O aconselhamento intercultural oferece um espaço seguro e qualificado para compreender e elaborar essas experiências em toda a sua complexidade.",
+    "p1": "Atendo pessoas que vivem processos de mudança e adaptação, incluindo migrantes, expatriados e estudantes internacionais, bem como mulheres em momentos de reinserção profissional, mães vivendo fora do seu país de origem e pessoas que enfrentam questões relacionadas à saúde, ao estigma ou a transformações importantes na vida, como separações e recomeços.",
+    "p2": "O acompanhamento psicológico também pode ter um papel preventivo importante, ajudando a reconhecer sinais precoces de sobrecarga emocional, ansiedade ou esgotamento, antes que se tornem mais intensos.",
+    "p3": "Ao longo do processo, trabalhamos no fortalecimento dos recursos internos, na ampliação da consciência emocional e na construção de formas mais sustentáveis de lidar com os desafios, seja no campo pessoal, profissional ou relacional.",
+    "modalitiesTitle": "Modalidades de Atendimento",
+    "individual": {
+      "title": "Aconselhamento psicológico individual",
+      "p1": "Viver entre culturas pode ser uma experiência rica, mas também profundamente desafiadora. Muitas vezes, o que se perde não é apenas o espaço físico que ocupávamos no nosso país, mas a nossa história, nossas conexões sociais, profissionais, laços afetivos e familiares, e especificidades de quem migra do hemisfério sul para o norte, então perdemos a tropicalidade, o sol, entre outras perdas da nossa cultura.",
+      "p2": "E nesse limbo da adaptação intercultural, perdemos referências internas: a sensação de pertencimento, de identidade e de continuidade. A adaptação a um novo país pode trazer solidão, ansiedade, sobrecarga emocional e um sentimento difícil de explicar de não pertencimento, \"nem de lá, nem de cá\". Já aconteceu contigo de ir para seu país de origem e sentir saudade do país receptor? (ou vice-versa).",
+      "p3": "O acompanhamento psicológico individual oferece um espaço seguro e acolhedor para você poder falar sobre tudo isso, no seu tempo, na sua língua, a partir da sua história.",
+      "p4": "A partir de uma abordagem intercultural, o processo terapêutico permite compreender e integrar experiências de migração, elaborando perdas, transições e conflitos internos que fazem parte desse percurso, permitindo a você desenvolver estratégias pessoais e recursos para apoiar sua integração no país receptor, e seu bem-estar psicossocial, que é super importante para prevenir o agravamento das suas questões emocionais desafiadoras.",
+      "p5": "Mais do que diagnosticar patologias mentais ou sintomas, é investigar os gatilhos que estão causando esses problemas emocionais, desenvolver resiliência e mecanismos de enfrentamento e proteção, a fim de recuperar o equilíbrio e a saúde emocional. Nessa perspectiva o objetivo é desenvolver indivíduos autônomos e funcionais na sua história migratória, fortalecer recursos internos e reconstruir um sentido de si, mesmo em contextos de mudança e incerteza.",
+      "closing": "Você não precisa atravessar esse processo sozinho(a)."
+    },
+    "group": {
+      "title": "Aconselhamento em grupo",
+      "p1": "Os encontros em grupo oferecem um espaço estruturado de partilha, reflexão e elaboração coletiva.",
+      "p2": "A partir de uma abordagem intercultural, o trabalho em grupo integra elementos terapêuticos com a força da experiência compartilhada. A troca entre pessoas que vivem desafios semelhantes favorece identificação, pertencimento e novas formas de compreensão. Ao mesmo tempo, o grupo é conduzido de forma cuidadosa, profissional e empática, garantindo um ambiente seguro, ético e acolhedor, onde cada participante pode se expressar no seu ritmo, sempre e quando quiser. A construção do saber vem dessa troca, e a escuta coletiva se torna uma ferramenta de transformação e motivação para muitas situações que são para o indivíduo paralisantes.",
+      "p3": "Essa combinação entre escuta clínica e apoio entre pares permite não apenas compreender melhor as próprias vivências, mas também ampliar recursos internos e fortalecer a capacidade de lidar com os desafios do cotidiano."
+    },
+    "approach": {
+      "title": "Abordagem da psicologia intercultural",
+      "p1": "A psicologia intercultural é um campo da psicologia que se dedica a compreender como fatores culturais influenciam a forma como pensamos, sentimos e nos relacionamos com o mundo.",
+      "p2": "No contexto da migração, essa abordagem considera que experiências emocionais não podem ser separadas da cultura, da língua, da história de vida e dos contextos sociais em que cada pessoa está inserida. Viver entre culturas envolve mais do que adaptação prática, implica transformações na identidade, no sentido de pertencimento e na forma como a pessoa se percebe e é percebida.",
+      "p3": "Essa abordagem considera essas dimensões de forma integrada, oferecendo um espaço de escuta que leva em conta não apenas o indivíduo, mas também sua história, cultura e contexto de vida.",
+      "p4": "A partir dessa perspectiva, o acompanhamento psicológico não se limita aos sintomas, mas busca compreender o sofrimento em sua complexidade, levando em conta processos como deslocamento, perda de referências, reconstrução de vínculos e negociação entre diferentes sistemas culturais.",
+      "p5": "Ao mesmo tempo, essa abordagem permite reconhecer tanto os desafios quanto os recursos que emergem da experiência intercultural, favorecendo a integração dessas vivências e a construção de novas formas de estar no mundo, com mais coerência interna e sustentação emocional."
+    },
+    "techniques": {
+      "title": "Outras técnicas terapêuticas utilizadas",
+      "items": [
+        "Técnicas da Terapia Cognitivo Comportamental",
+        "Terapia de Exposição Narrativa (NET) / Terapia de Exposição Narrativa Forense (FORNET)"
+      ]
+    },
+    "challenges": {
+      "title": "Principais desafios abordados no aconselhamento",
+      "items": [
+        "Integração no mercado de trabalho e na Alemanha",
+        "Estratégias de interação com instituições governamentais (Conselho Tutelar, Agência de Trabalho, Job Center, Prefeitura)",
+        "Relação bicultural",
+        "Separação/Divórcio e disputa de guarda dos filhos",
+        "Saúde preventiva sexual",
+        "Racismo e xenofobia (ambiente escolar, profissional e cotidiano)",
+        "Violência doméstica contra a mulher",
+        "Parentalidade e apoio no burnout digital dos filhos",
+        "Não acesso a profissionais de saúde mental do serviço público",
+        "Luto migratório",
+        "Assistência a pessoas com dependência química",
+        "Maternidade no exterior"
+      ]
+    }
+  },
   "about": {
-    "label": "Trajetória",
-    "title": "Minha trajetória profissional",
-    "desc1": "Sou psicóloga com atuação internacional, especializada em saúde mental e apoio psicossocial em ambientes complexos, incluindo intervenções em contextos humanitários.",
-    "desc2": "Minha atuação é focada em apoiar a qualidade de vida e a saúde mental de pessoas em situação de vulnerabilidade.",
-    "quote": "\"Fronteiras geográficas não devem ser barreiras para o acesso à saúde mental.\"",
+    "label": "Sobre Mim",
+    "title": "Sobre mim",
+    "desc1": "Sou Psicóloga formada pela Universidade São Marcos em São Paulo (CRP: 06/55288) e com especialização em Psicologia e Migração pela PUC Minas. Tenho mais de 20 anos de experiência em intervenção terapêutica e no aconselhamento psicológico de pessoas em situações de vulnerabilidade psicossocial e sofrimento psíquico.",
+    "desc2": "No Brasil trabalhei quase 9 anos como voluntária para a Organização GIV – Grupo de Incentivo à Vida, onde oferecia psicoterapia e aconselhamento preventivo e de tratamento da terapia antiretroviral, principalmente para a comunidade LGBTQI+, mulheres, crianças e adolescentes vivendo com HIV-Aids. Além disto, atendia na minha clínica de psicoterapia em São Paulo.",
+    "quote": "\"Há 11 anos, minha história migratória em Berlim se tornou um instrumento para meu trabalho — somada à minha sólida formação acadêmica e terapêutica.\"",
     "timeline": {
       "t1": {
-        "period": "2023 – Presente",
-        "title": "Psicóloga Intercultural – Embaixada do Brasil em Berlim",
-        "desc": "Atendimento clínico e consultivo à comunidade brasileira e expatriados na Alemanha."
+        "period": "Fev. 2025 – Presente",
+        "title": "Psicóloga — Embaixada do Brasil em Berlim",
+        "desc": "Desde fevereiro de 2025, trabalho como Psicóloga da Embaixada do Brasil em Berlim, oferecendo aconselhamento psicológico e psicossocial para brasileiros em situação de vulnerabilidade. Esta assistência não tem custo para a comunidade brasileira e se baseia em uma abordagem intercultural e de intervenção breve. Paralelamente, atendo no modo online migrantes brasileiros e falantes da língua inglesa."
       },
       "t2": {
-        "period": "Atual",
-        "title": "Psicóloga – Malengo Foundation",
-        "desc": "Apoio psicossocial a refugiados e migrantes em processo de integração na Europa."
+        "period": "2014 – Presente",
+        "title": "Psicóloga Intercultural — Berlim",
+        "desc": "No ano de 2014, por motivos familiares, migrei para Berlim, que se tornou minha moradia permanente. Vivenciando a maternidade pela primeira vez como mulher migrante, aprofundei meus estudos na psicologia e migração, encontrando nessa abordagem ferramentas práticas de suporte psicológico e psicossocial que fazem diferença na qualidade de vida de brasileiros vivendo na Europa."
       },
       "t3": {
-        "period": "2014 – Presente",
-        "title": "Clínica & Consultoria: Migração, HIV e MHPSS",
-        "desc": "Foco em saúde mental no contexto migratório, empoderamento de mulheres migrantes, integração no mercado de trabalho alemão, estigma e HIV, racismo estrutural e vulnerabilidade psicossocial."
+        "period": "2023 – 2025",
+        "title": "Psicóloga — Cruz Vermelha Alemã · ZIK",
+        "desc": "Atendimento psicológico a migrantes, refugiados e pessoas em situação de vulnerabilidade em Berlim."
       },
       "t4": {
         "period": "2007 – 2014",
-        "title": "Projetos Humanitários – MSF & ARK · África",
-        "desc": "Coordenação psicossocial com Médicos Sem Fronteiras e Absolute Return for Kids em Moçambique e Eswatini. Trabalho em HIV/AIDS e Tuberculose."
+        "title": "Coordenadora Psicossocial — MSF · ARK · África",
+        "desc": "Em 2007, iniciei minha trajetória migratória trabalhando com Médicos Sem Fronteiras (MSF) em Moçambique, onde coordenei um departamento de saúde mental e apoio psicossocial (MHPSS) em projetos humanitários nas áreas de HIV-Aids, Tuberculose multirresistente e catástrofes naturais. Trabalhei também em Eswatini e com organizações como ARK e o governo de Moçambique, em cooperação com ONU, World Bank, UNICEF e PEPFAR."
       },
       "t5": {
-        "period": "1998 – 2014",
-        "title": "Psicologia Clínica & Gestão de Projetos · Brasil",
-        "desc": "Atuação em psicologia clínica e gestão de projetos sociais no Brasil."
+        "period": "1998 – 2007",
+        "title": "Psicóloga Clínica — Brasil",
+        "desc": "Quase 9 anos como voluntária no GIV – Grupo de Incentivo à Vida, oferecendo psicoterapia e aconselhamento preventivo para a comunidade LGBTQI+, mulheres, crianças e adolescentes vivendo com HIV-Aids, além de atendimento clínico em consultório privado em São Paulo."
       }
     }
   },
-  "counselling": {
-    "label": "Psicologia",
-    "title": "Aconselhamento Psicológico Intercultural",
-    "description": "A migração traz consigo mudanças profundas — de identidade, de pertencimento, de rotina. O aconselhamento intercultural oferece um espaço seguro para processar esses desafios em toda a sua complexidade.",
-    "audienceTitle": "Públicos atendidos",
-    "audience": [
-      "Migrantes e expatriados",
-      "Estudantes internacionais",
-      "Mulheres em reinserção profissional",
-      "Pessoas vivendo com HIV",
-      "Brasileiros no exterior",
-      "Profissionais em ambientes multiculturais",
-      "Mães migrantes",
-      "Pessoas em processos de divórcio"
-    ],
-    "preventionTitle": "Prevenção e bem-estar emocional",
-    "preventionDesc": "O acompanhamento preventivo reduz riscos e fortalece recursos internos:",
-    "prevention": [
-      "Reduzir depressão e ansiedade",
-      "Prevenir burnout profissional",
-      "Fortalecer resiliência emocional",
-      "Apoiar decisões profissionais",
-      "Apoiar integração no país receptor"
-    ]
-  },
   "consulting": {
-    "label": "Institucional",
-    "title": "Consultoria em MHPSS, Migração e Saúde Mental Preventiva",
-    "description": "Trabalho com ONGs, organizações internacionais, empresas e projetos humanitários para desenvolver e implementar estratégias de saúde mental psicossocial eficazes.",
-    "features": [
-      {
-        "num": "01",
-        "title": "Programas MHPSS",
-        "desc": "Desenvolvimento e implementação de programas de saúde mental e apoio psicossocial para organizações humanitárias."
-      },
-      {
-        "num": "02",
-        "title": "HIV & Apoio Psicossocial",
-        "desc": "Estratégias integradas para redução de estigma, suporte emocional e acesso a cuidados."
-      },
-      {
-        "num": "03",
-        "title": "Saúde Mental Corporativa",
-        "desc": "Prevenção de burnout e promoção de bem-estar em ambientes de trabalho multiculturais."
-      },
-      {
-        "num": "04",
-        "title": "Migração & Integração",
-        "desc": "Consultoria em políticas e práticas de apoio psicossocial para populações migrantes."
-      }
-    ],
-    "clientsLabel": "Para",
-    "clients": ["ONGs Internacionais", "Agências da ONU", "Embaixadas", "Empresas Multinacionais", "Projetos Humanitários"],
-    "cta": "Solicitar Proposta"
+    "label": "Consultorias",
+    "thirdSector": {
+      "label": "Terceiro Setor",
+      "title": "Saúde Mental e Apoio Psicossocial (MHPSS)",
+      "description": "Ofereço consultoria para organizações, instituições e projetos que atuam em contextos multiculturais, humanitários e de alta complexidade, com foco no desenvolvimento e fortalecimento de estratégias em saúde mental e apoio psicossocial (MHPSS).",
+      "p1": "Minha atuação combina experiência clínica, coordenação de programas e desenvolvimento de políticas e diretrizes em diferentes contextos internacionais.",
+      "p2": "Ao longo da minha trajetória com Médecins Sans Frontières e outras organizações, atuei em projetos de HIV/AIDS, tuberculose e saúde comunitária em países da África, incluindo Moçambique e Eswatini, desenvolvendo e coordenando programas de saúde mental e apoio psicossocial em contextos de elevada vulnerabilidade. Essa experiência inclui a elaboração de protocolos, formação de equipes, supervisão técnica e implementação de modelos inovadores de cuidado centrados na comunidade.",
+      "p3": "Em colaboração com o Ministério da Saúde de Moçambique, desenvolvi diretrizes nacionais de apoio psicossocial no contexto do HIV/AIDS, posteriormente integradas ao programa de tratamento no país.",
+      "areasTitle": "Áreas de atuação",
+      "areas": [
+        "Desenvolvimento e implementação de programas de Saúde Mental e Apoio Psicossocial (MHPSS), incluindo avaliação de necessidades, desenho de estratégias e monitoramento de intervenções",
+        "Consultoria em HIV/AIDS e contextos de saúde pública, com foco em adesão ao tratamento, redução de estigma e fortalecimento do cuidado psicossocial",
+        "Formação, supervisão e capacitação de equipes multidisciplinares em saúde mental, apoio psicossocial e trabalho em contextos interculturais",
+        "Apoio a organizações no desenvolvimento de estratégias de saúde mental preventiva e bem-estar em ambientes institucionais e corporativos"
+      ],
+      "audienceTitle": "Para quem eu ofereço consultoria",
+      "audience": "Organizações não governamentais (ONGs), agências internacionais, projetos humanitários, instituições públicas e privadas que atuam com populações em situação de vulnerabilidade ou em contextos multiculturais.",
+      "contactDesc": "Desenvolvimento e avaliação de projetos em organizações não-governamentais e humanitárias, programas e intervenções em saúde mental e apoio psicossocial (MHPSS). Também consultoria para empresas privadas na implementação de programas de saúde mental preventivo para funcionários com histórico migratório. Para projetos e parcerias, entre em contato para uma conversa inicial e desenvolvimento de proposta personalizada.",
+      "cta": "Solicitar proposta"
+    },
+    "corporate": {
+      "label": "Saúde Mental no Trabalho",
+      "title": "Ambientes corporativos e equipes internacionais",
+      "description": "Desenvolvo e facilito workshops e formações voltados à promoção da saúde mental e ao bem-estar psicológico em ambientes institucionais e corporativos.",
+      "p1": "Essas intervenções contribuem para a prevenção do adoecimento psíquico no trabalho, apoiando organizações na redução do estresse, no fortalecimento de recursos individuais e coletivos e na promoção de ambientes de trabalho mais saudáveis e sustentáveis.",
+      "p2": "A partir de uma abordagem intercultural, os conteúdos são adaptados às necessidades específicas de cada organização, especialmente em contextos marcados pela diversidade cultural e pela presença de equipes internacionais.",
+      "topicsTitle": "Temas abordados",
+      "topicsIntro": "Os workshops podem incluir, entre outros:",
+      "topics": [
+        "Regulação emocional e manejo do estresse",
+        "Mindfulness e práticas de atenção plena no cotidiano profissional",
+        "Prevenção de burnout e sobrecarga emocional",
+        "Resiliência psicológica em contextos de mudança",
+        "Saúde mental em ambientes multiculturais",
+        "Comunicação e relações interpessoais no trabalho",
+        "Equilíbrio entre vida pessoal e profissional",
+        "Saúde mental na migração e adaptação cultural"
+      ],
+      "methodologyTitle": "Metodologia e abordagem",
+      "methodology": "As formações combinam elementos psicoeducativos, reflexão individual e dinâmicas de grupo, criando espaços seguros de aprendizagem e troca. Além das atividades em grupo, é possível integrar atendimentos individuais para colaboradores que necessitam de acompanhamento psicológico, ampliando o cuidado e a efetividade das intervenções. Também ofereço suporte psicossocial à integração de profissionais internacionais e suas famílias, com foco na adaptação cultural, redução de fatores estressores e fortalecimento do bem-estar no processo migratório.",
+      "impactTitle": "Impacto para a organização",
+      "impact": [
+        "Redução do absenteísmo relacionado ao estresse e ao adoecimento psíquico",
+        "Diminuição de fatores de risco associados ao burnout",
+        "Melhoria do clima organizacional e das relações de trabalho",
+        "Fortalecimento da retenção de profissionais, especialmente em equipes internacionais",
+        "Apoio a estratégias de diversidade e inclusão de profissionais internacionais em contextos multiculturais"
+      ],
+      "formatTitle": "Formato",
+      "format": "Workshops, treinamentos e ciclos formativos podem ser realizados online ou presencialmente, em português ou inglês, para equipes pequenas ou grandes grupos.",
+      "cta": "Solicitar proposta"
+    }
   },
   "cv": {
-    "label": "Currículo",
+    "label": "Experiência",
     "title": "Experiência Profissional",
     "colPeriod": "Período",
     "colRole": "Função / Organização",
-    "colContext": "Contexto",
+    "colContext": "Local · Contexto",
     "currentBadge": "Atual",
     "rows": [
-      {
-        "period": "Atual",
-        "role": "Psicóloga Intercultural",
-        "org": "Embaixada do Brasil em Berlim",
-        "context": "Atendimento clínico à comunidade brasileira e expatriados"
-      },
-      {
-        "period": "Atual",
-        "role": "Psicóloga",
-        "org": "Malengo Foundation",
-        "context": "Apoio psicossocial a refugiados e migrantes na Europa"
-      },
-      {
-        "period": "2014 – Atual",
-        "role": "Clínica & Consultoria",
-        "org": "Berlim, Alemanha",
-        "context": "Migração, HIV e MHPSS — prática clínica e consultoria"
-      },
-      {
-        "period": "2007 – 2014",
-        "role": "Coordenadora Psicossocial",
-        "org": "MSF · ARK — Moçambique & Eswatini",
-        "context": "Projetos humanitários: HIV/AIDS e Tuberculose em África"
-      },
-      {
-        "period": "1998 – 2014",
-        "role": "Psicóloga Clínica",
-        "org": "Brasil",
-        "context": "Psicologia clínica e gestão de projetos sociais"
-      }
+      { "period": "Atual", "role": "Psicóloga intercultural", "org": "Embaixada do Brasil", "context": "Berlim / Online" },
+      { "period": "Atual", "role": "Psicóloga", "org": "Malengo", "context": "Online / Alemanha" },
+      { "period": "2023 – 2025", "role": "Psicóloga", "org": "Cruz Vermelha Alemã", "context": "Berlim" },
+      { "period": "2022 – 2023", "role": "Psicóloga", "org": "ZIK – Betreutes Wohnen", "context": "Berlim" },
+      { "period": "2017 – 2022", "role": "Psicóloga voluntária", "org": "Apoio a migrantes e mulheres em vulnerabilidade", "context": "Berlim / Online" },
+      { "period": "2013 – 2014", "role": "Gerente de saúde preventiva", "org": "Médicos Sem Fronteiras (MSF)", "context": "Moçambique" },
+      { "period": "2012 – 2013", "role": "Consultora Psicossocial", "org": "Ministério da Saúde (HIV)", "context": "Moçambique" },
+      { "period": "2011 – 2012", "role": "Consultora Psicossocial", "org": "ARK (Absolute Return for Kids)", "context": "Moçambique" },
+      { "period": "2011", "role": "Lobbying HIV-Aids & Psicologia em emergência", "org": "Médicos Sem Fronteiras (MSF)", "context": "Brasil / Moçambique" },
+      { "period": "2007 – 2010", "role": "Coordenadora Psicossocial", "org": "Médicos Sem Fronteiras (MSF)", "context": "Moçambique / Eswatini" },
+      { "period": "1998 – 2007", "role": "Psicóloga clínica", "org": "Prática privada e projetos HIV", "context": "Brasil" }
     ]
   },
   "testimonials": {
@@ -183,67 +248,66 @@
       }
     ]
   },
-    "prices": {
+  "prices": {
     "label": "Valores",
-    "title": "Investimento em saúde mental",
-    "subtitle": "Todos os atendimentos respeitam a confidencialidade e ética profissional. Sessões online para qualquer país.",
+    "title": "Valores das sessões",
+    "subtitle": "Os atendimentos são realizados de forma confidencial e em conformidade com os princípios éticos da prática da psicologia. Sessões online disponíveis internacionalmente. Atendimentos presenciais iniciam em breve.",
     "plans": [
       {
         "category": "Individual",
         "title": "Sessão Individual",
         "amount": "70",
         "unit": "€",
-        "duration": "50 minutos · Online ou Presencial",
+        "duration": "50 minutos",
         "featured": false,
         "badge": "",
         "features": [
-          "Consulta psicológica individual",
-          "Acompanhamento intercultural",
-          "PT · EN · ES · DE"
+          "Atendimento psicológico individual",
+          "Quinzenal ou conforme necessidade",
+          "Online ou presencial (Berlim, em breve)"
         ]
       },
       {
         "category": "Pacote",
-        "title": "Pacote 4 Sessões",
+        "title": "Pacote de 4 Sessões",
         "amount": "240",
         "unit": "€",
-        "duration": "4 × 50 min · Economia de €40",
+        "duration": "4 sessões de 50 minutos",
         "featured": true,
         "badge": "Popular",
         "features": [
-          "4 sessões consecutivas",
-          "Plano de acompanhamento",
-          "Comunicação entre sessões",
-          "Relatório de progresso"
+          "Indicado para continuidade semanal",
+          "Maior consistência no processo terapêutico",
+          "Online ou presencial (Berlim, em breve)"
         ]
       },
       {
-        "category": "Institucional",
-        "title": "Consultoria Institucional",
-        "amount": "Sob consulta",
-        "unit": "",
-        "duration": "Projetos e organizações",
+        "category": "Grupo",
+        "title": "Sessão em Grupo",
+        "amount": "75",
+        "unit": "€",
+        "duration": "2 horas · 2 vezes ao mês",
         "featured": false,
         "badge": "",
         "features": [
-          "Diagnóstico organizacional",
-          "Desenvolvimento de programas",
-          "Workshops e treinamentos",
-          "Proposta personalizada"
+          "Grupo de até 8 pessoas",
+          "Sessões quinzenais",
+          "Pode ser intercalada com sessões individuais",
+          "Início sujeito à formação mínima de 8 participantes"
         ]
       }
     ],
     "cta": "Agendar",
-    "ctaInstitutional": "Solicitar Proposta"
+    "ctaInstitutional": "Solicitar proposta"
   },
   "contact": {
     "label": "Contato",
     "title": "Vamos conversar",
-    "description": "Estou disponível para atendimentos individuais e consultorias institucionais. Entre em contato para dar o primeiro passo.",
+    "description": "Se você está passando por um momento desafiador, buscar apoio pode ser um primeiro passo importante. Estou disponível para atendimentos individuais, em grupo e consultorias institucionais, online ou presencialmente em Berlim. Entre em contato para tirar dúvidas ou agendar uma primeira conversa.",
     "locationLabel": "Localização",
     "locationValue": "Berlim — Alemanha",
     "sessionsLabel": "Atendimento",
-    "sessionsValue": "Online Internacional · Presencial Berlim",
+    "sessionsValue": "Online Internacional · Presencial Berlim (em breve)",
     "linkedinValue": "Ver Perfil Profissional",
     "langsLabel": "Idiomas de atendimento",
     "form": {
@@ -259,17 +323,17 @@
       "sendBtn": "Enviar mensagem",
       "sendingBtn": "Enviando...",
       "successMsg": "Obrigada, {{name}}! Sua mensagem foi enviada. Responderei em breve.",
-      "errorMsg": "Por favor, preencha todos os campos."
+      "errorMsg": "Por favor, preencha todos os campos obrigatórios."
     }
   },
   "footer": {
-    "subtitle": "Psicóloga Intercultural · CRP",
-    "description": "Apoio psicológico e consultoria psicossocial em contextos de migração, HIV e ambientes internacionais. Berlim, Alemanha.",
+    "subtitle": "Psicóloga Intercultural · CRP: 06/55288",
+    "description": "Apoio psicológico e consultoria psicossocial para brasileiros e falantes da língua inglesa no exterior. Berlim, Alemanha.",
     "navTitle": "Navegação",
     "contactTitle": "Contato",
     "cta": "Agendar sessão",
-    "copyright": "© 2024 Elaine Teixeira — Psicóloga Intercultural. Todos os direitos reservados.",
+    "copyright": "© 2025 Elaine Teixeira — Psicóloga Intercultural. Todos os direitos reservados.",
     "legal": "Atendimento sujeito às normas do CFP e EAPA",
-    "dev": "Site Desenvolvido Por Elis Pethke"
+    "dev": "Site desenvolvido por Elis Pethke"
   }
 }

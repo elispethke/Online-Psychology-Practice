@@ -8,7 +8,8 @@ const TAGS = [
   { icon: '🌍', text: 'Brasil · África · Europa' },
   { icon: '🧬', text: 'HIV/AIDS' },
   { icon: '🏥', text: 'MHPSS' },
-  { icon: '✈️', text: 'Migração' },
+  { icon: '✈️', text: 'Migração · Berlim' },
+  { icon: '🎓', text: 'PUC Minas · CRP 06/55288' },
 ]
 
 export function About() {

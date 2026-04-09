@@ -10,6 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "emailjs-com": "^3.2.0",
     "esbuild": "^0.27.3",
     "framer-motion": "^11.0.0",
     "i18next": "^23.0.0",

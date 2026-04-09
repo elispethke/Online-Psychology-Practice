@@ -1,9 +1,15 @@
 import { useState } from 'react'
+import emailjs from 'emailjs-com'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+
+const EMAILJS_SERVICE_ID = 'service_dvtkmwu'
+const EMAILJS_TEMPLATE_ID = 'template_6wq5cy5'
+const EMAILJS_PUBLIC_KEY = 'ZlabIDAwB6Uw0ICvt'
+
 
 interface ContactInfoItem {
   icon: string
@@ -20,7 +26,6 @@ export function Contact() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
-  const [gotcha, setGotcha] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const infoItems: ContactInfoItem[] = [
@@ -37,10 +42,9 @@ export function Contact() {
     { flag: '🇩🇪', lang: 'Deutsch' },
   ]
 
-  // Replace YOUR_FORM_ID with the ID from your Formspree dashboard
-  const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID'
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
 
-  const handleSubmit = async () => {
     if (!name.trim() || !email.trim() || !message.trim()) {
       setStatus('error')
       return
@@ -49,24 +53,19 @@ export function Contact() {
     setStatus('loading')
 
     try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ name, email, subject, message, _gotcha: gotcha }),
-      })
-
-      if (!res.ok) {
-        setStatus('error')
-        return
-      }
-
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { name, email, message },
+        EMAILJS_PUBLIC_KEY,
+      )
       setStatus('success')
       setName('')
       setEmail('')
       setSubject('')
       setMessage('')
-      setGotcha('')
-    } catch {
+    } catch (err) {
+      console.error('EmailJS error:', err)
       setStatus('error')
     }
   }
@@ -180,6 +179,7 @@ export function Contact() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="flex flex-col gap-4"
           >
+            <form onSubmit={(e) => { void handleSubmit(e) }} className="flex flex-col gap-4">
             {/* Status notifications */}
             {status === 'success' && (
               <div
@@ -264,24 +264,14 @@ export function Contact() {
               />
             </div>
 
-            {/* _gotcha — Formspree native honeypot, silently rejects bot submissions */}
-            <input
-              type="text"
-              value={gotcha}
-              onChange={(e) => setGotcha(e.target.value)}
-              aria-hidden="true"
-              tabIndex={-1}
-              style={{ display: 'none' }}
-              autoComplete="off"
-            />
-
             <Button
-              onClick={() => { void handleSubmit() }}
+              type="submit"
               fullWidth
               aria-label={t('contact.form.sendBtn')}
             >
               {status === 'loading' ? t('contact.form.sendingBtn') : t('contact.form.sendBtn')}
             </Button>
+            </form>
           </motion.div>
         </div>
       </div>

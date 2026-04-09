@@ -11,6 +11,7 @@
     "cv": "Experience",
     "testimonials": "Testimonials",
     "prices": "Fees",
+    "faq": "FAQ",
     "contact": "Contact"
   },
   "hero": {
@@ -326,6 +327,47 @@
       "errorMsg": "Please fill in all required fields.",
       "rateLimitMsg": "You have already sent a message recently. Please wait 1 hour before sending again."
     }
+  },
+  "cookie": {
+    "label": "Cookie notice",
+    "text": "This site uses essential functional cookies required for it to work. By continuing to browse, you agree to the use of necessary cookies. For more information, contact us:",
+    "learnMore": "elaine.teixeira.psy@gmail.com",
+    "accept": "Accept",
+    "reject": "Decline"
+  },
+  "whatsapp": {
+    "label": "Contact via WhatsApp"
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Frequently asked questions",
+    "subtitle": "Answers to the most common questions before getting started.",
+    "items": [
+      {
+        "question": "How does the first session work?",
+        "answer": "The first session is a space for listening and welcoming. We talk about what brought you here, your expectations, and how I can support you. It is also an opportunity for you to get to know my approach and decide whether you would like to continue."
+      },
+      {
+        "question": "What platform is used for online sessions?",
+        "answer": "Sessions take place via video call on secure platforms such as Google Meet or Zoom. You will receive the access link before each session."
+      },
+      {
+        "question": "How long are the sessions?",
+        "answer": "Individual sessions last 50 minutes. Group sessions last 2 hours and take place fortnightly."
+      },
+      {
+        "question": "Is confidentiality guaranteed in online sessions?",
+        "answer": "Yes. Professional confidentiality is a fundamental ethical principle of psychology and applies fully to online sessions, in accordance with the professional code of ethics."
+      },
+      {
+        "question": "Do you accept health insurance?",
+        "answer": "At the moment, sessions are self-funded and not covered by health insurance. For questions about fees and payment options, please get in touch."
+      },
+      {
+        "question": "How often should I attend therapy?",
+        "answer": "The ideal frequency varies depending on each person's situation. In general, weekly or fortnightly sessions support the continuity and depth of the therapeutic process. We will discuss together what makes most sense for you."
+      }
+    ]
   },
   "footer": {
     "subtitle": "Intercultural Psychologist · CRP: 06/55288",

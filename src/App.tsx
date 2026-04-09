@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Home } from './pages/Home'
+import { CookieBanner } from '@/components/ui/CookieBanner'
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 
 function ScrollProgress() {
   const [width, setWidth] = useState(0)
@@ -56,6 +58,8 @@ export default function App() {
       <ScrollProgress />
       <Home />
       <BackToTop />
+      <WhatsAppButton />
+      <CookieBanner />
     </>
   )
 }

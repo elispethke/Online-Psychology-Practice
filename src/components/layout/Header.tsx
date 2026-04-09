@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Menu, X } from 'lucide-react'
 import { LANGUAGES, type LanguageCode } from '@/i18n/i18n'
-import logo from '../../assets/img/logo.png'
+import logo from '../../assets/img/logo.webp'
 import { NAV_ITEMS } from '@/constants/navigation'
 
 export function Header () {

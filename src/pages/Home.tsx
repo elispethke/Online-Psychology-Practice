@@ -8,6 +8,7 @@ import { Consulting } from '@/components/sections/Consulting'
 import { MiniCV } from '@/components/sections/MiniCV'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { Prices } from '@/components/sections/Prices'
+import { FAQ } from '@/components/sections/FAQ'
 import { Contact } from '@/components/sections/Contact'
 
 export function Home () {
@@ -23,6 +24,7 @@ export function Home () {
         <MiniCV />
         <Testimonials />
         <Prices />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

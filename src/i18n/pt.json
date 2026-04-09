@@ -11,6 +11,7 @@
     "cv": "Experiência",
     "testimonials": "Testemunhos",
     "prices": "Valores",
+    "faq": "FAQ",
     "contact": "Contato"
   },
   "hero": {
@@ -326,6 +327,47 @@
       "errorMsg": "Por favor, preencha todos os campos obrigatórios.",
       "rateLimitMsg": "Você já enviou uma mensagem recentemente. Por favor, aguarde 1 hora antes de enviar novamente."
     }
+  },
+  "cookie": {
+    "label": "Aviso de cookies",
+    "text": "Este site utiliza cookies funcionais essenciais para o seu funcionamento. Ao continuar navegando, você concorda com o uso de cookies necessários. Para mais informações, entre em contato:",
+    "learnMore": "elaine.teixeira.psy@gmail.com",
+    "accept": "Aceitar",
+    "reject": "Recusar"
+  },
+  "whatsapp": {
+    "label": "Contato via WhatsApp"
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Perguntas frequentes",
+    "subtitle": "Respostas para as dúvidas mais comuns antes de começar.",
+    "items": [
+      {
+        "question": "Como funciona a primeira sessão?",
+        "answer": "A primeira sessão é um espaço de escuta e acolhimento. Conversamos sobre o que te trouxe até aqui, suas expectativas e como posso te apoiar. É também um momento para você conhecer minha abordagem e decidir se quer seguir em frente."
+      },
+      {
+        "question": "Qual plataforma é usada para as sessões online?",
+        "answer": "As sessões acontecem por videoconferência, em plataformas seguras como Google Meet ou Zoom. Você receberá o link de acesso antes de cada sessão."
+      },
+      {
+        "question": "Qual a duração das sessões?",
+        "answer": "As sessões individuais têm duração de 50 minutos. As sessões em grupo têm duração de 2 horas, realizadas quinzenalmente."
+      },
+      {
+        "question": "O sigilo é garantido nas sessões online?",
+        "answer": "Sim. O sigilo profissional é um princípio ético fundamental da psicologia e se aplica integralmente às sessões online, em conformidade com o Código de Ética do CFP."
+      },
+      {
+        "question": "Atende pelo plano de saúde?",
+        "answer": "Atualmente não atendo por planos de saúde. Os atendimentos são realizados de forma particular. Para questões sobre valores e formas de pagamento, entre em contato."
+      },
+      {
+        "question": "Com que frequência devo fazer terapia?",
+        "answer": "A frequência ideal varia de acordo com cada caso. Em geral, sessões semanais ou quinzenais favorecem a continuidade e a profundidade do processo terapêutico. Conversaremos juntas sobre o que faz mais sentido para você."
+      }
+    ]
   },
   "footer": {
     "subtitle": "Psicóloga Intercultural · CRP: 06/55288",

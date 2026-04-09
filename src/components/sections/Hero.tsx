@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
-import imgHero from '@/assets/img/elaine-hero.png'
+import imgHero from '@/assets/img/elaine-hero.webp'
 import { fadeUp } from '@/lib/motionVariants'
 import { Brain, Globe, Shield } from 'lucide-react'
 
@@ -196,7 +196,7 @@ function HeroImageColumn () {
         <HeroStatCard
           side='right'
           labelKey='hero.card2Label'
-          value='4'
+          value='3'
           subKey='hero.card2Sub'
           delayMs={1000}
         />

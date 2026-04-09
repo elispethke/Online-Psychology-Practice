@@ -6,6 +6,15 @@ import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useMemo } from 'react'
 import { staggerContainer, cardVariant } from '@/lib/motionVariants'
 
+const BOOKING_EMAIL = 'elaine.teixeira.psy@gmail.com'
+
+function getBookingHref(category: string, hasUnit: boolean): string {
+  if (!hasUnit) {
+    return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent('Solicitação de Proposta / Proposal Request')}`
+  }
+  return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(`Agendamento / Booking — ${category}`)}`
+}
+
 interface PricePlan {
   category: string
   title: string
@@ -140,7 +149,7 @@ export function Prices () {
               </ul>
 
               <Button
-                href='#contact'
+                href={getBookingHref(plan.category, !!plan.unit)}
                 variant={plan.featured ? 'primary' : 'outline'}
                 fullWidth
               >

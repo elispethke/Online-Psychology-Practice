@@ -61,7 +61,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/elaine-teixeira-psy"
+                  href="https://www.linkedin.com/in/elaine-teixeira-20a90459/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[0.83rem] text-white/60 transition-colors hover:text-[var(--rose-light)]"

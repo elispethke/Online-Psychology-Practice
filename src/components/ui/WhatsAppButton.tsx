@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const WHATSAPP_NUMBER = '4915237131480'
+const WHATSAPP_NUMBER = '4915232713148'
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`
 
 export function WhatsAppButton() {

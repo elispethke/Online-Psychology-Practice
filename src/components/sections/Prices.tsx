@@ -4,7 +4,6 @@ import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useMemo } from 'react'
-import { staggerContainer, cardVariant } from '@/lib/motionVariants'
 
 const BOOKING_EMAIL = 'elaine.teixeira.psy@gmail.com'
 
@@ -49,97 +48,51 @@ export function Prices () {
             subtitle={t('prices.subtitle')}
           />
         </div>
-        ;
-        <motion.div
-          key={i18n.language}
-          variants={staggerContainer}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.1 }}
-          className='grid gap-6 mt-10'
-          style={{
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'
-          }}
-        >
+
+        {/* Editorial rate sheet — each plan is a full-width row, not a boxed card */}
+        <div key={i18n.language} className='mt-12 border-t border-[var(--border-soft)]'>
           {plans.map((plan, index) => (
             <motion.div
               key={`${i18n.language}-${plan.title}-${index}`}
-              variants={cardVariant}
-              data-badge={plan.badge}
-              className={[
-                'relative rounded-md border text-center p-8 transition-all duration-300',
-                'hover:-translate-y-1 hover:scale-[1.02] hover:shadow-md',
-                plan.featured
-                  ? 'border-2 bg-gradient-to-b from-white to-[var(--rose-wash)] overflow-hidden price-ribbon'
-                  : 'bg-white overflow-hidden'
-              ].join(' ')}
-              style={{
-                borderColor: plan.featured ? 'var(--rose-mid)' : 'var(--border)'
-              }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              className='grid grid-cols-1 lg:grid-cols-[1.1fr_1.3fr_auto] gap-6 lg:gap-12 items-start lg:items-center py-10 border-b border-[var(--border-soft)]'
+              style={plan.featured ? { background: 'var(--rose-wash)', marginInline: '-1.5rem', paddingInline: '1.5rem' } : undefined}
             >
-              <p
-                className='text-2xs font-medium tracking-[0.18em] uppercase mb-1'
-                style={{ color: 'var(--rose-mid)' }}
-              >
-                {plan.category}
-              </p>
-
-              <h3
-                className='font-display font-medium text-ink mb-5'
-                style={{ fontSize: '1.25rem' }}
-              >
-                {plan.title}
-              </h3>
-
-              <div className='mb-1'>
-                {plan.unit ? (
-                  <>
-                    <span
-                      className='font-display font-light leading-none'
-                      style={{
-                        fontSize: '3rem',
-                        color: 'var(--rose-deep)'
-                      }}
-                    >
-                      {plan.amount}
-                    </span>
-
-                    <span
-                      className='block text-base'
-                      style={{ color: 'var(--ink-faint)' }}
-                    >
-                      {plan.unit}
-                    </span>
-                  </>
-                ) : (
-                  <span
-                    className='font-display font-light leading-tight block'
-                    style={{
-                      fontSize: '1.8rem',
-                      color: 'var(--rose-deep)'
-                    }}
-                  >
-                    {plan.amount}
-                  </span>
+              {/* Identity */}
+              <div>
+                <p
+                  className='text-2xs font-medium tracking-[0.18em] uppercase mb-2'
+                  style={{ color: 'var(--rose-mid)' }}
+                >
+                  {plan.category}
+                </p>
+                <h3 className='font-display font-medium text-ink leading-snug' style={{ fontSize: '1.5rem' }}>
+                  {plan.title}
+                </h3>
+                {plan.badge && (
+                  <p className='text-[0.72rem] font-medium italic mt-1' style={{ color: 'var(--rose-deep)' }}>
+                    {plan.badge}
+                  </p>
                 )}
+                <p className='mt-2 text-[0.8rem]' style={{ color: 'var(--ink-faint)' }}>
+                  {plan.duration}
+                </p>
               </div>
 
-              <p
-                className='mb-6 text-[0.78rem]'
-                style={{ color: 'var(--ink-faint)' }}
-              >
-                {plan.duration}
-              </p>
-
-              <ul className='text-left flex flex-col gap-2 mb-6 list-none p-0 m-0'>
+              {/* Features */}
+              <ul className='flex flex-col gap-2 list-none p-0 m-0'>
                 {plan.features.map((f, i) => (
                   <li
                     key={i}
-                    className='flex items-start gap-2 text-[0.83rem] text-ink-soft'
+                    className='flex items-start gap-2.5 text-[0.87rem] text-ink-soft leading-snug'
                   >
                     <span
                       className='font-medium mt-px flex-shrink-0'
                       style={{ color: 'var(--rose-deep)' }}
+                      aria-hidden='true'
                     >
                       ✓
                     </span>
@@ -148,16 +101,40 @@ export function Prices () {
                 ))}
               </ul>
 
-              <Button
-                href={getBookingHref(plan.category, !!plan.unit)}
-                variant={plan.featured ? 'primary' : 'outline'}
-                fullWidth
-              >
-                {plan.unit ? t('prices.cta') : t('prices.ctaInstitutional')}
-              </Button>
+              {/* Price + CTA */}
+              <div className='flex flex-col items-start lg:items-end gap-4 lg:text-right'>
+                <div>
+                  {plan.unit ? (
+                    <>
+                      <span
+                        className='font-display font-light leading-none'
+                        style={{ fontSize: '2.75rem', color: 'var(--rose-deep)' }}
+                      >
+                        {plan.amount}
+                      </span>
+                      <span className='ml-1 text-base' style={{ color: 'var(--ink-faint)' }}>
+                        {plan.unit}
+                      </span>
+                    </>
+                  ) : (
+                    <span
+                      className='font-display font-light leading-tight block'
+                      style={{ fontSize: '1.7rem', color: 'var(--rose-deep)' }}
+                    >
+                      {plan.amount}
+                    </span>
+                  )}
+                </div>
+                <Button
+                  href={getBookingHref(plan.category, !!plan.unit)}
+                  variant={plan.featured ? 'primary' : 'outline'}
+                >
+                  {plan.unit ? t('prices.cta') : t('prices.ctaInstitutional')}
+                </Button>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

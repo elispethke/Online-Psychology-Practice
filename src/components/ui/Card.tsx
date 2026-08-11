@@ -28,10 +28,10 @@ export function Card({
       }
       data-badge={badge}
       className={[
-        'relative rounded-md border transition-all duration-300',
-        'hover:-translate-y-1 hover:scale-[1.01] hover:shadow-md',
+        'relative rounded-sm border transition-all duration-300',
+        'hover:-translate-y-0.5 hover:shadow-sm',
         featured
-          ? 'border-2 border-[var(--rose-mid)] bg-gradient-to-b from-white to-[var(--rose-wash)]'
+          ? 'border-[var(--rose-mid)] bg-gradient-to-b from-white to-[var(--rose-wash)]'
           : 'border-[var(--border)] bg-white',
         featured && badge ? 'price-ribbon overflow-hidden' : '',
         className,

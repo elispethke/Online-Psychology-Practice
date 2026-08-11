@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
-import { staggerContainer, cardVariant } from '@/lib/motionVariants'
 
 export function Intercultural() {
   const { t } = useTranslation()
@@ -17,6 +16,7 @@ export function Intercultural() {
       style={{ padding: 'clamp(4rem, 8vw, 7rem) 0' }}
     >
       <div className="max-w-[1200px] mx-auto px-6">
+        {/* ── Intro ──────────────────────────────────────────────────── */}
         <div ref={ref} className="reveal">
           <SectionTitle
             label={t('intercultural.label')}
@@ -24,88 +24,65 @@ export function Intercultural() {
           />
         </div>
 
-        {/* Intro paragraph */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-8 text-ink text-[1rem] font-medium max-w-3xl"
-        >
-          {t('intercultural.intro')}
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-ink-soft text-[0.95rem] max-w-3xl leading-relaxed"
-        >
-          {t('intercultural.p1')}
-        </motion.p>
-
-        {/* Questions + answer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-8 p-6 rounded-md border"
-          style={{ background: 'var(--rose-wash)', borderColor: 'var(--border)' }}
-        >
-          <p className="text-ink font-medium text-[0.95rem] mb-2">
-            {t('intercultural.question1')}
-          </p>
-          <p className="text-ink font-medium text-[0.95rem]">
-            {t('intercultural.question2')}
-          </p>
-          <p
-            className="mt-4 text-[0.9rem] italic leading-relaxed"
-            style={{ color: 'var(--rose-deep)' }}
-          >
-            {t('intercultural.answer')}
-          </p>
-        </motion.div>
-
-        {/* Challenges grid + quote side by side */}
         <div
-          className="grid gap-12 mt-10 items-start"
+          className="grid gap-14 lg:gap-20 items-start mt-8"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))' }}
+        >
+          <div>
+            <p className="text-ink text-[1.1rem] font-medium leading-snug">
+              {t('intercultural.intro')}
+            </p>
+
+            <p className="mt-4 text-ink-soft text-[0.95rem] leading-relaxed">
+              {t('intercultural.p1')}
+            </p>
+          </div>
+
+          {/* Questions + answer */}
+          <div className="border-l-2 border-[var(--rose-light)] pl-6">
+            <p className="text-ink font-medium text-[0.95rem] mb-2">
+              {t('intercultural.question1')}
+            </p>
+            <p className="text-ink font-medium text-[0.95rem]">
+              {t('intercultural.question2')}
+            </p>
+            <p
+              className="mt-4 text-[0.9rem] italic leading-relaxed"
+              style={{ color: 'var(--rose-deep)' }}
+            >
+              {t('intercultural.answer')}
+            </p>
+          </div>
+        </div>
+
+        {/* ── Challenges + quote ───────────────────────────────────── */}
+        <div
+          className="grid gap-12 lg:gap-20 mt-20 items-start"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))' }}
         >
-          {/* Challenges list */}
+          {/* Challenges list — editorial numbered rows */}
           <div>
             <h3
-              className="font-body font-semibold mb-4 text-[0.8rem] tracking-[0.16em] uppercase"
+              className="font-body font-semibold mb-2 text-[0.8rem] tracking-[0.16em] uppercase"
               style={{ color: 'var(--rose-mid)' }}
             >
               {t('intercultural.challengesTitle')}
             </h3>
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              className="flex flex-col gap-2"
-            >
-              {challenges.map((item) => (
+            <div>
+              {challenges.map((item, i) => (
                 <motion.div
                   key={item}
-                  variants={cardVariant}
-                  className="flex items-center gap-3 px-4 py-2.5 rounded-sm bg-white border transition-all hover:border-[var(--rose-mid)]"
-                  style={{ border: '1px solid var(--border)' }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.04 }}
+                  className="ed-item"
                 >
-                  <span
-                    className="text-[0.7rem] flex-shrink-0"
-                    style={{ color: 'var(--rose-deep)' }}
-                    aria-hidden="true"
-                  >
-                    ✦
-                  </span>
-                  <span className="text-[0.88rem] text-ink-soft">{item}</span>
+                  <span className="ed-mark" aria-hidden="true" />
+                  <span className="text-[0.92rem] text-ink-soft pt-2">{item}</span>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Quote + closing paragraphs */}

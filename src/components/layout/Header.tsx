@@ -28,28 +28,30 @@ export function Header () {
       <header
         className={[
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          scrolled
+            ? 'bg-[var(--surface)]/92 backdrop-blur-md border-b border-[var(--border-soft)]'
+            : 'bg-transparent border-b border-transparent'
         ].join(' ')}
         style={{ height: 'var(--header-h)' }}
       >
-        <div className='w-full max-w-[1600px] mx-auto px-4 flex items-center justify-between h-full'>
+        <div className='w-full max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between h-full'>
           {/* Logo + Title */}
           <a
             href='#hero'
-            className='flex items-center gap-6 no-underline group'
+            className='flex items-center gap-5 no-underline group'
           >
             <img
               src={logo}
               alt='Logo site Elaine Teixeira'
-              className='h-20 w-auto object-contain'
+              className='h-16 w-auto object-contain'
             />
 
-            <div className='flex flex-col gap-px'>
-              <span className='font-display text-xl font-medium tracking-[0.06em] text-ink leading-none transition-colors group-hover:text-[var(--rose-deep)]'>
+            <div className='flex flex-col gap-1.5'>
+              <span className='font-display text-[1.35rem] font-medium tracking-[0.03em] text-ink leading-none transition-colors group-hover:text-[var(--rose-deep)]'>
                 Elaine Teixeira
               </span>
 
-              <span className='text-2xs font-medium tracking-[0.14em] uppercase text-[var(--rose-mid)]'>
+              <span className='text-2xs font-medium tracking-[0.16em] uppercase text-[var(--rose-mid)]'>
                 {t('header.subtitle')}
               </span>
             </div>
@@ -57,14 +59,14 @@ export function Header () {
 
           {/* Desktop Nav */}
           <nav
-            className='hidden lg:flex items-center gap-8'
+            className='hidden lg:flex items-center gap-7'
             aria-label={t('footer.navTitle')}
           >
             {NAV_ITEMS.map(item => (
               <a
                 key={item.key}
                 href={item.href}
-                className='nav-link text-[0.8rem] font-normal tracking-[0.06em] text-ink-soft hover:text-[var(--rose-deep)]'
+                className='nav-link text-[0.78rem] font-normal tracking-[0.04em] text-ink-soft hover:text-[var(--rose-deep)]'
               >
                 {t(item.key)}
               </a>
@@ -74,7 +76,7 @@ export function Header () {
           {/* Lang switcher + hamburger */}
           <div className='flex items-center gap-4'>
             <div
-              className='hidden md:flex items-center gap-1 rounded-full px-2 py-1 border bg-rose-wash border-[var(--border)]'
+              className='hidden md:flex items-center gap-1 rounded-sm px-1.5 py-1 border bg-rose-wash border-[var(--border)]'
             >
               {LANGUAGES.map(lang => (
                 <button
@@ -88,7 +90,6 @@ export function Header () {
                       : 'text-ink-soft hover:text-[var(--rose-deep)]'
                   ].join(' ')}
                 >
-                  <span aria-hidden='true'>{lang.flag}</span>
                   {lang.label}
                 </button>
               ))}
@@ -141,7 +142,7 @@ export function Header () {
                       : 'text-ink-soft border-[var(--border)] hover:border-[var(--rose-mid)]'
                   ].join(' ')}
                 >
-                  {lang.flag} {lang.label}
+                  {lang.label}
                 </button>
               ))}
             </div>

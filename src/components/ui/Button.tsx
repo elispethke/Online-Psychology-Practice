@@ -15,15 +15,15 @@ interface ButtonProps {
 }
 
 const BASE =
-  'inline-flex items-center gap-2 font-body text-xs font-medium tracking-widest uppercase cursor-pointer rounded-full transition-all duration-300 no-underline'
+  'inline-flex items-center gap-2.5 font-body text-[0.72rem] font-medium tracking-[0.14em] uppercase cursor-pointer rounded-sm transition-all duration-300 no-underline'
 
 const VARIANTS: Record<ButtonVariant, string> = {
   primary:
-    'bg-[var(--rose-deep)] text-white px-8 py-3.5 shadow-rose hover:-translate-y-0.5 hover:shadow-lg hover:bg-[#8a3a49]',
+    'bg-[var(--rose-deep)] text-white px-7 py-3 hover:bg-[#8a3a49]',
   outline:
-    'bg-transparent text-[var(--rose-deep)] px-8 py-3.5 border border-[var(--rose-deep)] hover:bg-[var(--rose-deep)] hover:text-white hover:-translate-y-0.5',
+    'bg-transparent text-[var(--ink)] px-7 py-3 border border-[var(--ink)]/25 hover:border-[var(--rose-deep)] hover:text-[var(--rose-deep)]',
   ghost:
-    'bg-transparent text-[var(--rose-deep)] px-8 py-3.5 hover:text-[#8a3a49]',
+    'bg-transparent text-[var(--rose-deep)] px-0 py-1 hover:text-[#8a3a49]',
 }
 
 function Arrow() {
@@ -60,7 +60,7 @@ export function Button({
     return (
       <a href={href} className={classes} aria-label={ariaLabel}>
         {children}
-        {variant === 'primary' && <Arrow />}
+        {variant !== 'ghost' && <Arrow />}
       </a>
     )
   }
@@ -74,7 +74,7 @@ export function Button({
       aria-label={ariaLabel}
     >
       {children}
-      {variant === 'primary' && <Arrow />}
+      {variant !== 'ghost' && <Arrow />}
     </button>
   )
 }

@@ -5,7 +5,15 @@ interface SectionTitleProps {
   title: ReactNode
   subtitle?: string
   align?: 'left' | 'center'
+  /** Typographic weight of the moment: 'compact' for supporting sections, 'large' for the ones that carry the most content/importance. */
+  scale?: 'compact' | 'default' | 'large'
   className?: string
+}
+
+const SCALE_SIZES: Record<NonNullable<SectionTitleProps['scale']>, string> = {
+  compact: 'clamp(1.6rem, 2.6vw, 2.2rem)',
+  default: 'clamp(1.9rem, 3.4vw, 2.9rem)',
+  large: 'clamp(2.2rem, 4.4vw, 3.6rem)',
 }
 
 export function SectionTitle({
@@ -13,50 +21,38 @@ export function SectionTitle({
   title,
   subtitle,
   align = 'left',
+  scale = 'default',
   className = '',
 }: SectionTitleProps) {
   const isCenter = align === 'center'
 
   return (
     <div className={[isCenter ? 'text-center' : '', className].join(' ')}>
-      {/* Label with line */}
+      {/* Eyebrow label */}
       <div
         className={[
-          'flex items-center gap-2 text-2xs font-medium tracking-[0.22em] uppercase text-[var(--rose-mid)] mb-3',
+          'eyebrow mb-4',
           isCenter ? 'justify-center' : '',
         ].join(' ')}
       >
         {label}
-        <span
-          className="inline-block h-px bg-[var(--rose-mid)]"
-          style={{ width: 32 }}
-          aria-hidden="true"
-        />
       </div>
 
       {/* Title */}
       <h2
-        className="font-display font-light text-ink leading-tight"
-        style={{ fontSize: 'clamp(1.7rem, 3vw, 2.5rem)' }}
+        className="font-display font-light text-ink leading-[1.08] tracking-[0.01em]"
+        style={{ fontSize: SCALE_SIZES[scale] }}
       >
         {title}
       </h2>
 
-      {/* Divider */}
-      <div
-        className={[
-          'my-5 h-[1.5px] rounded-full',
-          'bg-gradient-to-r from-[var(--rose-deep)] to-[var(--rose-light)]',
-          isCenter ? 'mx-auto' : '',
-        ].join(' ')}
-        style={{ width: 60 }}
-        aria-hidden="true"
-      />
-
       {/* Optional subtitle */}
       {subtitle && (
         <p
-          className="text-ink-soft max-w-xl"
+          className={[
+            'text-ink-soft max-w-xl mt-5 leading-relaxed',
+            isCenter ? 'mx-auto' : '',
+          ].join(' ')}
           style={{ fontSize: '0.975rem' }}
         >
           {subtitle}

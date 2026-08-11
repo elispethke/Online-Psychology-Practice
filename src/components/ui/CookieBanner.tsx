@@ -45,13 +45,13 @@ export function CookieBanner() {
         <div className="flex gap-2 flex-shrink-0">
           <button
             onClick={reject}
-            className="text-[0.75rem] font-medium tracking-[0.08em] uppercase px-4 py-2 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all"
+            className="text-[0.72rem] font-medium tracking-[0.1em] uppercase px-4 py-2 rounded-sm border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all"
           >
             {t('cookie.reject')}
           </button>
           <button
             onClick={accept}
-            className="text-[0.75rem] font-medium tracking-[0.08em] uppercase px-4 py-2 rounded-full transition-all"
+            className="text-[0.72rem] font-medium tracking-[0.1em] uppercase px-4 py-2 rounded-sm transition-all"
             style={{ background: 'var(--rose-deep)', color: 'white' }}
           >
             {t('cookie.accept')}

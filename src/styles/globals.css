@@ -10,13 +10,24 @@
   --rose-mid:   #C07A86;
   --rose-light: #E8C4CB;
   --rose-wash:  #FAF2F3;
-  --ink:        #2E2E2E;
-  --ink-soft:   #5A5A5A;
-  --ink-faint:  #9A9A9A;
-  --surface:    #FDFBFB;
-  --border:     rgba(159, 74, 90, 0.15);
-  --header-h:   72px;
+  --ink:        #2A2724;
+  --ink-soft:   #5C5650;
+  --ink-faint:  #9C948C;
+  --surface:    #FDFBF9;
+  --linen:      #F4EEE8;
+  --border:     rgba(159, 74, 90, 0.14);
+  --border-soft: rgba(42, 39, 36, 0.09);
+  --header-h:   84px;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* =========================================================
@@ -34,7 +45,7 @@ html {
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   color: var(--ink);
-  background: #ffffff;
+  background: var(--surface);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,6 +56,76 @@ body {
 ========================================================= */
 .font-display {
   font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Small uppercase label used as an "eyebrow" above editorial headings.
+   Typography alone carries the hierarchy — no decorative rule before it. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+
+/* Editorial numbered list — replaces generic bordered "card" lists */
+.ed-item {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--border-soft);
+}
+.ed-item:last-child {
+  border-bottom: 1px solid var(--border-soft);
+}
+.ed-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--rose-light);
+}
+/* Editorial drop cap — used sparingly, only on the single densest opening paragraph */
+.dropcap:first-letter {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: 3.6em;
+  line-height: 0.78;
+  float: left;
+  padding-right: 0.09em;
+  padding-top: 0.04em;
+  color: var(--rose-deep);
+}
+
+/* Non-ordinal marker for ed-item lists whose order carries no real meaning */
+.ed-mark {
+  display: block;
+  width: 1.3rem;
+  height: 1px;
+  margin-top: 0.75rem;
+  background: var(--rose-light);
+}
+
+/* Thin editorial divider */
+.hr-thin {
+  height: 1px;
+  background: var(--border-soft);
+  border: none;
+}
+
+/* Subtle image scale-on-hover, respects reduced motion via global rule above */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.035);
 }
 
 /* =========================================================
@@ -156,17 +237,25 @@ body {
   border-collapse: collapse;
 }
 .cv-table thead tr {
-  background: var(--rose-deep);
-  color: #ffffff;
+  border-bottom: 1.5px solid var(--ink);
 }
 .cv-table thead th {
-  padding: 1rem 1.25rem;
-  font-size: 0.72rem;
+  padding: 0 1.25rem 0.85rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   text-align: left;
+  color: var(--ink-faint);
   font-family: 'DM Sans', system-ui, sans-serif;
+}
+.cv-table thead th:first-child,
+.cv-table td:first-child {
+  padding-left: 0;
+}
+.cv-table thead th:last-child,
+.cv-table td:last-child {
+  padding-right: 0;
 }
 .cv-table tbody tr {
   border-bottom: 1px solid var(--border);
@@ -175,9 +264,34 @@ body {
 .cv-table tbody tr:last-child { border-bottom: none; }
 .cv-table tbody tr:hover { background: var(--rose-wash); }
 .cv-table td {
-  padding: 1rem 1.25rem;
+  padding: 1.15rem 1.25rem;
   font-size: 0.88rem;
   vertical-align: top;
+}
+
+/* =========================================================
+   TESTIMONIALS — EDITORIAL GRID
+   Deliberate composition (photo + 1 featured quote spanning
+   two columns + 2 supporting quotes) so the item count never
+   leaves an orphaned card alone in its own row.
+========================================================= */
+.testimonials-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: 0.85fr 1fr 1fr;
+    grid-template-areas: "photo featured featured" "photo q2 q3";
+  }
+  .testimonials-photo { grid-area: photo; }
+  .testimonials-featured { grid-area: featured; }
+  .testimonials-q2 { grid-area: q2; }
+  .testimonials-q3 { grid-area: q3; }
 }
 
 /* =========================================================

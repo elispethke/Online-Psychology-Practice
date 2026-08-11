@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import imgContact from '@/assets/img/elaine6.webp'
+import { MapPin, Globe2, Mail, Linkedin, type LucideIcon } from 'lucide-react'
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string
@@ -29,7 +31,7 @@ function markSubmitted(email: string) {
 
 
 interface ContactInfoItem {
-  icon: string
+  icon: LucideIcon
   label: string
   value: string
   href?: string
@@ -46,16 +48,16 @@ export function Contact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'rate_limited'>('idle')
 
   const infoItems: ContactInfoItem[] = [
-    { icon: '📍', label: t('contact.locationLabel'), value: t('contact.locationValue') },
-    { icon: '🌍', label: t('contact.sessionsLabel'), value: t('contact.sessionsValue') },
-    { icon: '📧', label: 'Email', value: 'elaine.teixeira.psy@gmail.com', href: 'mailto:elaine.teixeira.psy@gmail.com' },
-    { icon: '🔗', label: 'LinkedIn', value: t('contact.linkedinValue'), href: 'https://linkedin.com/in/elaine-teixeira-psy' },
+    { icon: MapPin, label: t('contact.locationLabel'), value: t('contact.locationValue') },
+    { icon: Globe2, label: t('contact.sessionsLabel'), value: t('contact.sessionsValue') },
+    { icon: Mail, label: 'Email', value: 'elaine.teixeira.psy@gmail.com', href: 'mailto:elaine.teixeira.psy@gmail.com' },
+    { icon: Linkedin, label: 'LinkedIn', value: t('contact.linkedinValue'), href: 'https://linkedin.com/in/elaine-teixeira-psy' },
   ]
 
   const LANGUAGE_TAGS = [
-    { flag: '🇧🇷', lang: 'Português' },
-    { flag: '🇬🇧', lang: 'English' },
-    { flag: '🇪🇸', lang: 'Español' },
+    { lang: 'Português' },
+    { lang: 'English' },
+    { lang: 'Español' },
   ]
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -93,8 +95,8 @@ export function Contact() {
   }
 
   const inputClass = [
-    'w-full px-4 py-3 rounded-sm text-[0.9rem] text-ink bg-white outline-none transition-all duration-200',
-    'border border-[var(--border)] focus:border-[var(--rose-mid)] focus:shadow-[0_0_0_3px_rgba(192,122,134,0.12)]',
+    'w-full px-0 py-3 text-[0.95rem] text-ink bg-transparent outline-none transition-all duration-200',
+    'border-0 border-b border-[var(--border)] focus:border-[var(--rose-deep)] rounded-none',
     'placeholder:text-ink-faint',
   ].join(' ')
 
@@ -103,7 +105,7 @@ export function Contact() {
       id="contact"
       style={{
         background: 'var(--rose-wash)',
-        padding: 'clamp(4rem, 8vw, 7rem) 0',
+        padding: 'clamp(5rem, 9vw, 8rem) 0',
       }}
     >
       <div className="max-w-[1200px] mx-auto px-6">
@@ -112,33 +114,51 @@ export function Contact() {
             label={t('contact.label')}
             title={t('contact.title')}
             subtitle={t('contact.description')}
+            scale="large"
           />
         </div>
 
         <div
-          className="grid gap-16 mt-12 items-start"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))' }}
+          className="grid gap-12 lg:gap-14 mt-14 items-start grid-cols-1 lg:grid-cols-[0.78fr_1fr_1.15fr]"
         >
+          {/* Portrait column */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+            className="img-zoom relative max-w-[280px] lg:max-w-none mx-auto lg:mx-0"
+          >
+            <img
+              src={imgContact}
+              alt="Elaine Teixeira"
+              width={1066}
+              height={1600}
+              loading="lazy"
+              className="w-full h-auto object-cover aspect-[3/4]"
+              style={{ objectPosition: '50% 15%' }}
+            />
+          </motion.div>
+
           {/* Info column */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col gap-4"
+            className="flex flex-col"
           >
             {infoItems.map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-4 p-4 bg-white rounded-md border transition-all hover:border-[var(--rose-mid)] hover:shadow-sm"
-                style={{ border: '1px solid var(--border)' }}
+                className="flex items-start gap-4 py-4 border-t border-[var(--border-soft)] last:border-b"
               >
                 <div
-                  className="w-10 h-10 rounded-sm flex items-center justify-center text-lg flex-shrink-0"
-                  style={{ background: 'var(--rose-wash)' }}
+                  className="w-9 h-9 rounded-sm flex items-center justify-center flex-shrink-0"
+                  style={{ background: 'white' }}
                   aria-hidden="true"
                 >
-                  {item.icon}
+                  <item.icon className="w-4 h-4 text-rose-mid" strokeWidth={1.5} />
                 </div>
                 <div>
                   <p
@@ -165,10 +185,7 @@ export function Contact() {
             ))}
 
             {/* Language tags */}
-            <div
-              className="p-5 bg-white rounded-md border"
-              style={{ border: '1px solid var(--border)' }}
-            >
+            <div className="mt-6">
               <p
                 className="text-2xs font-medium tracking-[0.12em] uppercase mb-3"
                 style={{ color: 'var(--rose-mid)' }}
@@ -181,12 +198,12 @@ export function Contact() {
                     key={lt.lang}
                     className="inline-flex items-center gap-1.5 text-[0.7rem] font-medium tracking-[0.08em] px-2.5 py-1 rounded-full border"
                     style={{
-                      background: 'var(--rose-wash)',
+                      background: 'white',
                       color: 'var(--rose-deep)',
                       borderColor: 'var(--border)',
                     }}
                   >
-                    {lt.flag} {lt.lang}
+                    {lt.lang}
                   </span>
                 ))}
               </div>

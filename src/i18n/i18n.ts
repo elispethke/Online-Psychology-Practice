@@ -4,8 +4,8 @@ import pt from "./pt.json";
 import en from "./en.json";
 
 export const LANGUAGES = [
-  { code: "pt", label: "PT", flag: "🇧🇷", name: "Português" },
-  { code: "en", label: "EN", flag: "🇬🇧", name: "English" },
+  { code: "pt", label: "PT", name: "Português" },
+  { code: "en", label: "EN", name: "English" },
 ] as const;
 
 export type LanguageCode = typeof LANGUAGES[number]["code"];

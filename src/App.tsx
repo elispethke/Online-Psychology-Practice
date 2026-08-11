@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ArrowUp } from 'lucide-react'
 import { Home } from './pages/Home'
 import { CookieBanner } from '@/components/ui/CookieBanner'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
@@ -47,7 +48,7 @@ function BackToTop() {
       ].join(' ')}
       style={{ backgroundColor: 'var(--rose-deep)' }}
     >
-      ↑
+      <ArrowUp size={18} strokeWidth={1.75} />
     </button>
   )
 }

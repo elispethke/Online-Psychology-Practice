@@ -3,15 +3,7 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import imgHero from '@/assets/img/elaine-hero.webp'
 import { fadeUp } from '@/lib/motionVariants'
-import { Brain, Globe, Shield } from 'lucide-react'
-
-/*
-const PILLARS = [
-  { icon: '🧠', key: 'hero.pillar1' },
-  { icon: '🌍', key: 'hero.pillar2' },
-  { icon: '🛡️', key: 'hero.pillar3' },
-]
-  */
+import { Brain, Globe, Shield, MapPin, Languages } from 'lucide-react'
 
 const PILLARS = [
   { icon: Brain, key: 'hero.pillar1' },
@@ -21,48 +13,30 @@ const PILLARS = [
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
-interface HeroStatCardProps {
-  side: 'left' | 'right'
+interface HeroStatProps {
   labelKey: string
   value: string
   subKey: string
   delayMs: number
 }
 
-function HeroStatCard ({
-  side,
-  labelKey,
-  value,
-  subKey,
-  delayMs
-}: HeroStatCardProps) {
+function HeroStat ({ labelKey, value, subKey, delayMs }: HeroStatProps) {
   const { t } = useTranslation()
-
-  const positionClass =
-    side === 'left'
-      ? 'left-[-1.5rem] bottom-[20%]'
-      : 'right-[-1rem] bottom-[8%]'
-
-  const initialX = side === 'left' ? -12 : 12
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: initialX }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ delay: delayMs / 1000, duration: 0.5 }}
-      className={[
-        'absolute z-20 bg-white rounded-md shadow-md px-4 py-3',
-        'border border-[var(--border)]',
-        positionClass
-      ].join(' ')}
+      className='flex flex-col gap-0.5'
     >
-      <p className='text-2xs font-medium tracking-[0.12em] uppercase text-ink-faint'>
-        {t(labelKey)}
-      </p>
-      <p className='font-display text-[1.3rem] font-medium leading-none text-rose-deep'>
+      <p className='font-display font-light leading-none text-white' style={{ fontSize: '2.2rem' }}>
         {value}
       </p>
-      <p className='text-[0.7rem] text-ink-faint'>{t(subKey)}</p>
+      <p className='text-2xs font-medium tracking-[0.14em] uppercase text-white/70'>
+        {t(labelKey)}
+      </p>
+      <p className='text-[0.7rem] text-white/50'>{t(subKey)}</p>
     </motion.div>
   )
 }
@@ -71,64 +45,66 @@ function HeroTextColumn () {
   const { t } = useTranslation()
 
   return (
-    <div className='flex flex-col gap-6'>
+    <div className='flex flex-col gap-7 max-w-xl'>
       {/* Badge */}
       <motion.span
         {...fadeUp(0)}
-        className='inline-flex items-center gap-2 w-fit rounded-full text-2xs font-medium tracking-widest uppercase px-3.5 py-1.5 bg-rose-wash border border-[var(--border)] text-rose-deep'
+        className='eyebrow'
       >
-        <span
-          className='w-1.5 h-1.5 rounded-full bg-rose-mid'
-          aria-hidden='true'
-        />
         {t('hero.badge')}
       </motion.span>
+
       {/* Name */}
       <motion.div {...fadeUp(0.1)}>
         <p
-          className='font-body font-medium tracking-[0.18em] uppercase mb-1 text-rose-mid'
+          className='font-body font-medium tracking-[0.18em] uppercase mb-2 text-rose-mid'
           style={{ fontSize: 'clamp(0.75rem, 1.2vw, 0.85rem)' }}
         >
           {t('hero.tagline')}
         </p>
         <h1
-          className='font-display font-light leading-none tracking-[0.04em]'
-          style={{ fontSize: 'clamp(2.8rem, 5vw, 4.8rem)' }}
+          className='font-display font-light leading-[0.95] tracking-[0.01em] text-ink'
+          style={{ fontSize: 'clamp(3rem, 6vw, 5.2rem)' }}
         >
-          Elaine Teixeira
+          Elaine
+          <br />
+          Teixeira
         </h1>
       </motion.div>
+
       {/* Headline */}
-      <motion.div {...fadeUp(0.2)}>
+      <motion.div {...fadeUp(0.2)} className='border-l-2 border-[var(--rose-light)] pl-5'>
         <h2
-          className='font-display font-normal leading-tight'
-          style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3rem)' }}
+          className='font-display font-normal leading-tight text-ink'
+          style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)' }}
         >
           {t('hero.headline')}
         </h2>
         <p
-          className='font-display italic mt-1 text-rose-deep'
-          style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)' }}
+          className='font-display italic mt-2 text-rose-deep'
+          style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)' }}
         >
           {t('hero.subheadline')}
         </p>
       </motion.div>
+
       {/* Description */}
       <motion.p
         {...fadeUp(0.3)}
-        className='text-ink-soft max-w-lg text-[0.95rem]'
+        className='text-ink-soft text-[0.95rem] leading-relaxed'
       >
         {t('hero.description')}
       </motion.p>
-      {/* Pillars */};
-      <motion.div {...fadeUp(0.4)} className='flex flex-col gap-2'>
+
+      {/* Pillars — thin editorial rows, not boxed cards */}
+      <motion.div {...fadeUp(0.4)} className='flex flex-col'>
         {PILLARS.map(p => {
           const Icon = p.icon
 
           return (
             <div
               key={p.key}
-              className='flex items-center gap-3 px-3.5 py-2.5 rounded-sm bg-white border border-[var(--border)] border-l-[3px] border-l-rose-mid text-[0.85rem] text-ink-soft'
+              className='flex items-center gap-3 py-3 text-[0.85rem] text-ink-soft border-t border-[var(--border-soft)] last:border-b'
             >
               <Icon
                 className='w-4 h-4 text-rose-mid shrink-0'
@@ -139,17 +115,21 @@ function HeroTextColumn () {
           )
         })}
       </motion.div>
+
       {/* Location + langs */}
-      <motion.div {...fadeUp(0.5)} className='flex flex-col gap-1.5'>
-        <span className='flex items-center gap-2 text-[0.85rem] text-ink-soft'>
-          📍 {t('hero.location')}
+      <motion.div {...fadeUp(0.5)} className='flex flex-wrap gap-x-6 gap-y-1.5'>
+        <span className='flex items-center gap-2 text-[0.83rem] text-ink-soft'>
+          <MapPin className='w-[15px] h-[15px] text-rose-mid shrink-0' aria-hidden='true' strokeWidth={1.5} />
+          {t('hero.location')}
         </span>
-        <span className='flex items-center gap-2 text-[0.85rem] text-ink-soft'>
-          🌍 {t('hero.languages')}
+        <span className='flex items-center gap-2 text-[0.83rem] text-ink-soft'>
+          <Languages className='w-[15px] h-[15px] text-rose-mid shrink-0' aria-hidden='true' strokeWidth={1.5} />
+          {t('hero.languages')}
         </span>
       </motion.div>
+
       {/* CTA buttons */}
-      <motion.div {...fadeUp(0.6)} className='flex gap-3 flex-wrap'>
+      <motion.div {...fadeUp(0.6)} className='flex gap-3 flex-wrap pt-1'>
         <Button href='#contact'>{t('hero.cta')}</Button>
         <Button href='#about' variant='outline'>
           {t('hero.cta2')}
@@ -162,44 +142,39 @@ function HeroTextColumn () {
 function HeroImageColumn () {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.96 }}
+      initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: 0.25 }}
-      className='flex justify-center'
+      transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1], delay: 0.2 }}
+      className='relative h-full min-h-[420px] lg:min-h-0'
     >
-      <div className='relative w-full max-w-[440px]'>
-        {/* Decorative border offset */}
-        <div
-          className='absolute top-[-16px] right-[-16px] w-full h-full rounded-lg z-0 border-[1.5px] border-rose-light'
-          aria-hidden='true'
+      {/* Decorative offset frame */}
+      <div
+        className='hidden lg:block absolute z-0 border border-rose-light'
+        style={{ top: 24, right: -24, bottom: -24, left: 24 }}
+        aria-hidden='true'
+      />
+
+      {/* Portrait */}
+      <div className='img-zoom relative z-10 w-full h-full overflow-hidden'>
+        <img
+          src={imgHero}
+          alt='Elaine Teixeira'
+          width={1306}
+          height={1600}
+          className='w-full h-full object-cover'
+          style={{ objectPosition: '50% 18%' }}
+          fetchPriority='high'
         />
 
-        {/* Portrait */}
+        {/* Editorial caption bar */}
         <div
-          className='relative z-10 w-full rounded-lg overflow-hidden shadow-lg'
-          style={{ borderRadius: 20 }}
+          className='absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 px-6 py-6 lg:px-8 lg:py-8'
+          style={{ background: 'linear-gradient(0deg, rgba(20,14,13,0.55) 0%, transparent 65%)' }}
         >
-          <img
-            src={imgHero}
-            alt='Elaine Teixeira'
-            className='w-full h-full object-cover aspect-[3/4]'
-          />
+          <HeroStat labelKey='hero.card1Label' value='20+' subKey='hero.card1Sub' delayMs={900} />
+          <div className='w-px self-stretch bg-white/25' aria-hidden='true' />
+          <HeroStat labelKey='hero.card2Label' value='3' subKey='hero.card2Sub' delayMs={1000} />
         </div>
-
-        <HeroStatCard
-          side='left'
-          labelKey='hero.card1Label'
-          value='20+'
-          subKey='hero.card1Sub'
-          delayMs={900}
-        />
-        <HeroStatCard
-          side='right'
-          labelKey='hero.card2Label'
-          value='3'
-          subKey='hero.card2Sub'
-          delayMs={1000}
-        />
       </div>
     </motion.div>
   )
@@ -211,8 +186,8 @@ export function Hero () {
   return (
     <section
       id='hero'
-      className='relative overflow-hidden min-h-screen flex items-center bg-surface pb-20'
-      style={{ paddingTop: 'calc(var(--header-h) + 3rem)' }}
+      className='relative overflow-hidden min-h-screen flex items-center bg-surface pb-16 lg:pb-0'
+      style={{ paddingTop: 'calc(var(--header-h) + 2.5rem)' }}
     >
       {/* Decorative radial gradients */}
       <div
@@ -240,16 +215,14 @@ export function Hero () {
         aria-hidden='true'
       />
 
-      <div className='max-w-[1200px] mx-auto px-6 w-full'>
-        <div
-          className='grid items-center gap-16'
-          style={{
-            gridTemplateColumns:
-              'repeat(auto-fit, minmax(min(100%, 400px), 1fr))'
-          }}
-        >
-          <HeroTextColumn />
-          <HeroImageColumn />
+      <div className='max-w-[1440px] mx-auto px-6 lg:px-10 w-full'>
+        <div className='grid grid-cols-1 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] items-center gap-14 lg:gap-4'>
+          <div className='order-2 lg:order-1'>
+            <HeroTextColumn />
+          </div>
+          <div className='order-1 lg:order-2 aspect-[3/4] lg:aspect-auto lg:h-[calc(100vh-var(--header-h)-2.5rem)] lg:max-h-[760px]'>
+            <HeroImageColumn />
+          </div>
         </div>
       </div>
     </section>

@@ -1,0 +1,17 @@
+{
+  "cookie": {
+    "label": "Cookie-Hinweis",
+    "title": "Ihre Privatsphäre",
+    "text": "Diese Website setzt keine Cookies. Im Browser wird nur gespeichert, was notwendig ist (Ihre Auswahl und ein Schutz des Formulars). Eine cookielose Reichweitenmessung (Plausible) wird nur aktiviert, wenn Sie zustimmen.",
+    "privacyLink": "Datenschutzerklärung",
+    "necessaryTitle": "Notwendig",
+    "alwaysOn": "immer aktiv",
+    "necessaryDesc": "Speichert Ihre Auswahl in diesem Hinweis und schützt das Formular vor übermäßigen Sendungen. Kein Tracking.",
+    "analyticsTitle": "Statistik",
+    "analyticsDesc": "Plausible Analytics: zählt Besuche aggregiert (Seite, Herkunft, Browser, Land). Keine Cookies. Wird nur mit Ihrer Zustimmung geladen.",
+    "rejectAll": "Ablehnen",
+    "acceptAll": "Akzeptieren",
+    "settings": "Einstellungen",
+    "save": "Auswahl speichern"
+  }
+}

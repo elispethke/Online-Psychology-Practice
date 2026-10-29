@@ -2,119 +2,101 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
 import { NAV_ITEMS } from '@/constants/navigation'
 import { Mail, Linkedin, MapPin } from 'lucide-react'
+import { Link } from '@/components/ui/Link'
+import { openPreferences } from '@/lib/consent'
+import { hrefFor } from '@/lib/route'
+import emblem from '@/assets/brand/logo-emblem-reverse.webp'
+
+const STUDIO_URL = 'https://www.eproxstudio.com/de'
+const LINK = 'text-[0.85rem] text-[var(--on-dark-soft)] transition-colors duration-200 hover:text-[var(--gold)]'
+const HEADING = 'mb-5 text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[var(--gold)]'
 
 export function Footer() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language === 'en' ? 'en' : 'pt'
 
   return (
-    <footer className="bg-ink text-white/70" style={{ paddingTop: 'clamp(4rem, 8vw, 6.5rem)', paddingBottom: '2rem' }}>
-      <div className="max-w-[1200px] mx-auto px-6">
-
-        {/* Closing wordmark — the last authorial moment on the page */}
-        <p
-          className="font-display font-light text-white leading-[0.95] mb-3"
-          style={{ fontSize: 'clamp(2.6rem, 7vw, 5rem)', letterSpacing: '0.005em' }}
-        >
-          Elaine Teixeira
-        </p>
-        <p className="text-2xs font-medium tracking-[0.22em] uppercase mb-16" style={{ color: 'var(--rose-mid)' }}>
-          {t('footer.subtitle')}
-        </p>
-
-        {/* Grid */}
-        <div
-          className="grid gap-10 pb-10 border-b border-white/[0.08]"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}
-        >
-          {/* Description */}
+    <footer className="bg-[var(--forest)] text-[var(--on-dark)]" style={{ paddingTop: 'clamp(4rem, 8vw, 6.5rem)', paddingBottom: '2rem' }}>
+      <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
+        <div className="grid items-center gap-10 border-b border-[var(--border-soft)] pb-14 md:grid-cols-[auto_1fr] md:gap-16" style={{ borderColor: 'color-mix(in srgb, var(--on-dark) 16%, transparent)' }}>
+          {/* Official reversed emblem — unmodified crop of the identity board; the wordmark beside it is live, translated text */}
+          <img
+            src={emblem}
+            alt=""
+            aria-hidden="true"
+            width={350}
+            height={230}
+            loading="lazy"
+            className="h-auto w-[min(100%,16rem)] [mix-blend-mode:lighten] [mask-image:radial-gradient(closest-side,#000_72%,transparent_100%)]"
+          />
           <div>
-            <p className="text-[0.82rem] leading-relaxed text-white/50 max-w-[32ch]">
-              {t('footer.description')}
+            <p className="font-display font-light leading-[0.95]" style={{ fontSize: 'clamp(2.6rem, 6vw, 4.6rem)' }}>
+              Elaine Teixeira
             </p>
+            <p className="mt-5 text-[0.72rem] font-medium uppercase tracking-[0.26em] text-[var(--gold)]">{t('brand.title')} · {t('brand.tagline')}</p>
+            <p className="mt-6 max-w-[34rem] text-[0.9rem] leading-relaxed text-[var(--on-dark-soft)]">{t('footer.description')}</p>
           </div>
+        </div>
 
-          {/* Navigation */}
+        <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr]">
           <div>
-            <p className="text-2xs font-medium tracking-[0.16em] uppercase mb-5 text-white/40">
-              {t('footer.navTitle')}
-            </p>
-            <ul className="flex flex-col gap-2.5 list-none p-0 m-0">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.key}>
-                  <a
-                    href={item.href}
-                    className="text-[0.83rem] text-white/60 transition-colors duration-200 hover:text-[var(--rose-light)]"
-                  >
-                    {t(item.key)}
-                  </a>
-                </li>
+            <p className={HEADING}>{t('footer.navTitle')}</p>
+            <ul className="m-0 flex list-none flex-col gap-3 p-0">
+              {NAV_ITEMS.map(item => (
+                <li key={item.key}><a href={item.href} className={LINK}>{t(item.key)}</a></li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <p className="text-2xs font-medium tracking-[0.16em] uppercase mb-5 text-white/40">
-              {t('footer.contactTitle')}
-            </p>
-            <ul className="flex flex-col gap-3 list-none p-0 m-0 mb-6">
+            <p className={HEADING}>{t('footer.contactTitle')}</p>
+            <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
               <li>
-                <a
-                  href="mailto:elaine.teixeira.psy@gmail.com"
-                  className="inline-flex items-center gap-2 text-[0.83rem] text-white/60 transition-colors hover:text-[var(--rose-light)]"
-                >
-                  <Mail className="w-[14px] h-[14px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
+                <a href="mailto:elaine.teixeira.psy@gmail.com" className={`inline-flex items-center gap-2.5 ${LINK}`}>
+                  <Mail className="size-[15px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
                   elaine.teixeira.psy@gmail.com
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.linkedin.com/in/elaine-teixeira-20a90459/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[0.83rem] text-white/60 transition-colors hover:text-[var(--rose-light)]"
-                >
-                  <Linkedin className="w-[14px] h-[14px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
+                <a href="https://www.linkedin.com/in/elaine-teixeira-20a90459/" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2.5 ${LINK}`}>
+                  <Linkedin className="size-[15px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
                   LinkedIn
                 </a>
               </li>
               <li>
-                <span className="inline-flex items-center gap-2 text-[0.83rem] text-white/40">
-                  <MapPin className="w-[14px] h-[14px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
-                  Berlim, Alemanha
+                <span className="inline-flex items-center gap-2.5 text-[0.85rem] text-[var(--on-dark-soft)]">
+                  <MapPin className="size-[15px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
+                  {t('contact.locationValue')}
                 </span>
               </li>
             </ul>
+          </div>
 
-            <Button
-              href="#contact"
-              variant="outline"
-              className="!border-white/20 !text-white/70 hover:!bg-white/10 hover:!text-white text-[0.72rem]"
-            >
-              {t('footer.cta')}
-            </Button>
+          <div className="flex flex-col items-start gap-4">
+            <p className={HEADING}>{t('footer.subtitle')}</p>
+            <Button href="#contact" variant="light">{t('footer.cta')}</Button>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex flex-wrap justify-between items-center gap-3 pt-6">
-          <p
-            className="text-[0.75rem]"
-            style={{ color: 'rgba(248, 242, 242, 0.59)' }}
-          >
-            {t('footer.copyright')}
-          </p>
-          <p
-            className="text-[0.7rem]"
-            style={{ color: 'rgba(248, 242, 242, 0.59)' }}
-          >
-            {t('footer.legal')}
-          </p>
-          <p
-            className="text-[0.7rem]"
-            style={{ color: 'rgba(248, 242, 242, 0.59)' }}
-          >
-            {t('footer.dev')}
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-6 text-[0.72rem] text-[var(--on-dark-soft)]" style={{ borderTop: '1px solid color-mix(in srgb, var(--on-dark) 16%, transparent)' }}>
+          <p className="m-0">{t('footer.copyright')}</p>
+          <p className="m-0">{t('footer.legal')}</p>
+          <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-5 gap-y-1">
+            <Link href={hrefFor('privacy', lang)} className="hover:text-[var(--gold)]">{t('footer.privacy')}</Link>
+            <Link href={hrefFor('imprint', lang)} className="hover:text-[var(--gold)]">{t('footer.imprint')}</Link>
+            <button type="button" onClick={openPreferences} className="hover:text-[var(--gold)]">{t('footer.cookieSettings')}</button>
+          </nav>
+          <p className="m-0">
+            {t('footer.devPrefix')}{' '}
+            <a
+              href={STUDIO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-[1.02rem] font-medium italic tracking-[0.02em] text-[var(--gold)] underline decoration-[color-mix(in_srgb,var(--gold)_45%,transparent)] decoration-1 underline-offset-[5px] transition-[color,text-decoration-color] duration-300 hover:text-[var(--on-dark)] hover:decoration-[var(--on-dark)] focus-visible:rounded-sm focus-visible:text-[var(--on-dark)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gold)]"
+            >
+              Eprox Studio
+              <span className="sr-only"> ({t('footer.newTab')})</span>
+            </a>
           </p>
         </div>
       </div>

@@ -8,23 +8,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        rose: {
-          deep:   '#9F4A5A',
-          mid:    '#C07A86',
-          light:  '#E8C4CB',
-          wash:   '#FAF2F3',
-        },
+        forest:  'var(--forest)',
+        sage:    'var(--sage)',
+        teal:    'var(--teal)',
+        gold:    'var(--gold)',
+        sand:    'var(--sand)',
+        surface: 'var(--surface)',
+        paper:   'var(--paper)',
         ink: {
-          DEFAULT: '#2A2724',
-          soft:    '#5C5650',
-          faint:   '#9C948C',
+          DEFAULT: 'var(--ink)',
+          soft:    'var(--ink-soft)',
+          faint:   'var(--ink-faint)',
         },
-        surface: '#FDFBF9',
-        linen: '#F4EEE8',
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        body:    ['"DM Sans"', 'system-ui', 'sans-serif'],
+        body:    ['"Montserrat Variable"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         '2xs': ['0.65rem', { lineHeight: '1rem' }],
@@ -37,10 +36,9 @@ const config: Config = {
         xl: '6px',
       },
       boxShadow: {
-        sm:  '0 1px 3px rgba(35,25,22,0.05)',
-        md:  '0 6px 24px rgba(35,25,22,0.07)',
-        lg:  '0 16px 48px rgba(35,25,22,0.10)',
-        rose:'0 4px 16px rgba(159,74,90,0.22)',
+        sm:  '0 1px 3px color-mix(in srgb, var(--forest) 8%, transparent)',
+        md:  '0 6px 24px color-mix(in srgb, var(--forest) 10%, transparent)',
+        lg:  '0 16px 48px color-mix(in srgb, var(--forest) 14%, transparent)',
       },
       transitionTimingFunction: {
         smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',

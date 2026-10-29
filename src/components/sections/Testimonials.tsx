@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
-import { SectionTitle } from '@/components/ui/SectionTitle'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { Reveal } from '@/components/ui/Reveal'
+import { ParallaxImage } from '@/components/ui/ParallaxImage'
 import imgTestimonials from '@/assets/img/elaine5.webp'
 
 interface TestimonialItem {
@@ -11,114 +10,68 @@ interface TestimonialItem {
   initials: string
 }
 
-function Stars() {
+function Attribution({ item }: { item: TestimonialItem }) {
   return (
-    <div className="text-xs tracking-widest mb-3" style={{ color: 'var(--rose-mid)' }} aria-label="5 stars">
-      ★★★★★
-    </div>
+    <p className="m-0 flex flex-wrap items-baseline gap-x-3 text-[0.8rem]">
+      <span className="font-medium uppercase tracking-[0.18em] text-[var(--forest)]">{item.name}</span>
+      <span className="text-ink-faint">{item.role}</span>
+    </p>
   )
 }
 
-function Author({ item }: { item: TestimonialItem }) {
-  return (
-    <div className="flex items-center gap-3">
-      <div
-        className="w-9 h-9 rounded-full flex items-center justify-center text-[0.8rem] font-medium text-white flex-shrink-0"
-        style={{ background: 'linear-gradient(135deg, var(--rose-light), var(--rose-mid))' }}
-        aria-hidden="true"
-      >
-        {item.initials}
-      </div>
-      <div>
-        <p className="text-[0.82rem] font-medium text-ink">{item.name}</p>
-        <p className="text-[0.72rem]" style={{ color: 'var(--ink-faint)' }}>{item.role}</p>
-      </div>
-    </div>
-  )
-}
-
+/** Testimonials — one quote set large, two supporting quotes beside a portrait. No card boxes. */
 export function Testimonials() {
   const { t } = useTranslation()
   const items = t('testimonials.items', { returnObjects: true }) as TestimonialItem[]
-  const { ref } = useScrollReveal()
   const [featured, ...rest] = items
 
   return (
     <section
       id="testimonials"
-      style={{
-        background: 'var(--rose-wash)',
-        padding: 'clamp(4rem, 7vw, 6.5rem) 0',
-      }}
+      aria-labelledby="testimonials-title"
+      className="bg-[var(--paper)]"
+      style={{ padding: 'var(--section-y) 0' }}
     >
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div ref={ref} className="reveal">
-          <SectionTitle label={t('testimonials.label')} title={t('testimonials.title')} align="center" scale="compact" />
-        </div>
+      <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
+        <Reveal><p className="eyebrow mb-6">{t('testimonials.label')}</p></Reveal>
+        <h2 id="testimonials-title" className="sr-only">{t('testimonials.title')}</h2>
 
-        {/* Editorial composition: tall portrait + one featured quote spanning two columns + two supporting quotes */}
-        <div className="testimonials-grid mt-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="img-zoom relative rounded-sm overflow-hidden testimonials-photo"
-          >
-            <img
-              src={imgTestimonials}
-              alt="Elaine Teixeira"
-              width={1066}
-              height={1600}
-              loading="lazy"
-              className="w-full h-full object-cover aspect-[3/4]"
-              style={{ objectPosition: '50% 12%' }}
-            />
-          </motion.div>
-
-          {featured && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative bg-white p-9 lg:p-10 testimonial-quote-mark testimonials-featured flex flex-col justify-center"
-              style={{ border: '1px solid var(--border)' }}
-            >
-              <Stars />
-              <p
-                className="font-display font-normal italic leading-relaxed mb-6 pt-2"
-                style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', color: 'var(--ink)' }}
-              >
+        {featured && (
+          <Reveal delay={0.08}>
+            <figure className="m-0 max-w-[60rem]">
+              <blockquote className="m-0 font-display font-light italic leading-[1.15] text-[var(--forest)]" style={{ fontSize: 'clamp(2rem, 4.8vw, 3.9rem)', textWrap: 'balance' }}>
                 {featured.text}
-              </p>
-              <Author item={featured} />
-            </motion.div>
-          )}
+              </blockquote>
+              <figcaption className="mt-8 flex items-center gap-4">
+                <span aria-hidden="true" className="h-px w-10 bg-[var(--gold)]" />
+                <Attribution item={featured} />
+              </figcaption>
+            </figure>
+          </Reveal>
+        )}
 
-          {rest.map((item, i) => (
-            <motion.div
-              key={item.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.08 * (i + 1) }}
-              className={[
-                'relative bg-white rounded-sm border p-7 testimonial-quote-mark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sm',
-                i === 0 ? 'testimonials-q2' : 'testimonials-q3'
-              ].join(' ')}
-              style={{ border: '1px solid var(--border)' }}
-            >
-              <Stars />
-              <p
-                className="font-display font-normal italic leading-relaxed mb-5 pt-2"
-                style={{ fontSize: '1.02rem', color: 'var(--ink)' }}
-              >
-                {item.text}
-              </p>
-              <Author item={item} />
-            </motion.div>
-          ))}
+        <div className="mt-20 grid items-center gap-14 lg:mt-28 lg:grid-cols-[4fr_7fr] lg:gap-24">
+          <ParallaxImage
+            src={imgTestimonials}
+            alt={t('testimonials.imageAlt')}
+            width={1066}
+            height={1600}
+            position="50% 20%"
+            travel={7}
+            className="aspect-[4/5] w-full max-w-[26rem]"
+          />
+          <div className="flex flex-col gap-12">
+            {rest.map((item, i) => (
+              <Reveal key={item.name} delay={0.06 * i}>
+                <figure className="m-0 border-t border-[var(--gold)] pt-8">
+                  <blockquote className="m-0 font-display text-[clamp(1.4rem,2.3vw,1.9rem)] font-light italic leading-snug text-[var(--forest)]">
+                    {item.text}
+                  </blockquote>
+                  <figcaption className="mt-6"><Attribution item={item} /></figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

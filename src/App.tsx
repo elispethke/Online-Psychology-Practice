@@ -1,4 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { MotionConfig } from 'motion/react'
+import { LegalPage } from '@/components/layout/LegalPage'
+import { useAnalyticsLoader } from '@/lib/analytics'
+import { applySeo } from '@/lib/seo'
+import { useRoute } from '@/lib/route'
 import { ArrowUp } from 'lucide-react'
 import { Home } from './pages/Home'
 import { CookieBanner } from '@/components/ui/CookieBanner'
@@ -27,6 +33,7 @@ function ScrollProgress() {
 }
 
 function BackToTop() {
+  const { t } = useTranslation()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -38,15 +45,14 @@ function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      aria-label="Back to top"
+      aria-label={t('common.backToTop')}
       className={[
         'fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full',
-        'bg-rose-deep text-white flex items-center justify-center',
+        'bg-[var(--forest)] text-[var(--surface)] flex items-center justify-center',
         'shadow-md transition-all duration-300',
         'hover:-translate-y-1 hover:shadow-lg',
         visible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
       ].join(' ')}
-      style={{ backgroundColor: 'var(--rose-deep)' }}
     >
       <ArrowUp size={18} strokeWidth={1.75} />
     </button>
@@ -54,13 +60,27 @@ function BackToTop() {
 }
 
 export default function App() {
+  const { t, i18n } = useTranslation()
+  const route = useRoute()
+  useAnalyticsLoader()
+
+  // The URL is the single source of truth for the language ("/" = pt, "/en" = en, "/de/..." = legal pages in German).
+  useEffect(() => { if (i18n.language !== route.lang) void i18n.changeLanguage(route.lang) }, [route.lang, i18n])
+  useEffect(() => { applySeo(route, t) }, [route, t, i18n.language])
+
   return (
-    <>
-      <ScrollProgress />
-      <Home />
-      <BackToTop />
-      <WhatsAppButton />
+    <MotionConfig reducedMotion="user">
+      {route.page === 'home' ? (
+        <>
+          <ScrollProgress />
+          <Home />
+          <BackToTop />
+          <WhatsAppButton />
+        </>
+      ) : (
+        <LegalPage page={route.page} lang={route.lang} />
+      )}
       <CookieBanner />
-    </>
+    </MotionConfig>
   )
 }

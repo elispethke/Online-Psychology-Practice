@@ -1,130 +1,147 @@
+import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
-import { SectionTitle } from '@/components/ui/SectionTitle'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { Button } from '@/components/ui/Button'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { Reveal } from '@/components/ui/Reveal'
+import { ParallaxImage } from '@/components/ui/ParallaxImage'
+import imgIntercultural from '@/assets/img/elaine2.webp'
+import { EASE, VIEWPORT_ONCE } from '@/lib/motionVariants'
 
+/**
+ * Intercultural — the recognition moment. A sticky quote on the left holds the
+ * theme while the story (what it feels like → who this is for → what helps)
+ * scrolls on the right.
+ */
 export function Intercultural() {
   const { t } = useTranslation()
   const challenges = t('intercultural.challenges', { returnObjects: true }) as string[]
-  const { ref } = useScrollReveal()
+  const listRef = useRef<HTMLDivElement>(null)
+
+  // Scroll-linked rule that draws down the list as it passes through the viewport
+  const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 80%', 'end 60%'] })
+  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1])
 
   return (
     <section
       id="intercultural"
-      className="bg-white"
-      style={{ padding: 'clamp(4rem, 8vw, 7rem) 0' }}
+      aria-labelledby="intercultural-title"
+      className="bg-[var(--surface)]"
+      style={{ padding: 'var(--section-y) 0' }}
     >
-      <div className="max-w-[1200px] mx-auto px-6">
-        {/* ── Intro ──────────────────────────────────────────────────── */}
-        <div ref={ref} className="reveal">
-          <SectionTitle
-            label={t('intercultural.label')}
-            title={t('intercultural.title')}
-          />
-        </div>
-
-        <div
-          className="grid gap-14 lg:gap-20 items-start mt-8"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))' }}
-        >
-          <div>
-            <p className="text-ink text-[1.1rem] font-medium leading-snug">
-              {t('intercultural.intro')}
-            </p>
-
-            <p className="mt-4 text-ink-soft text-[0.95rem] leading-relaxed">
-              {t('intercultural.p1')}
-            </p>
-          </div>
-
-          {/* Questions + answer */}
-          <div className="border-l-2 border-[var(--rose-light)] pl-6">
-            <p className="text-ink font-medium text-[0.95rem] mb-2">
-              {t('intercultural.question1')}
-            </p>
-            <p className="text-ink font-medium text-[0.95rem]">
-              {t('intercultural.question2')}
-            </p>
-            <p
-              className="mt-4 text-[0.9rem] italic leading-relaxed"
-              style={{ color: 'var(--rose-deep)' }}
-            >
-              {t('intercultural.answer')}
-            </p>
-          </div>
-        </div>
-
-        {/* ── Challenges + quote ───────────────────────────────────── */}
-        <div
-          className="grid gap-12 lg:gap-20 mt-20 items-start"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))' }}
-        >
-          {/* Challenges list — editorial numbered rows */}
-          <div>
-            <h3
-              className="font-body font-semibold mb-2 text-[0.8rem] tracking-[0.16em] uppercase"
-              style={{ color: 'var(--rose-mid)' }}
-            >
-              {t('intercultural.challengesTitle')}
-            </h3>
-            <div>
-              {challenges.map((item, i) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.04 }}
-                  className="ed-item"
-                >
-                  <span className="ed-mark" aria-hidden="true" />
-                  <span className="text-[0.92rem] text-ink-soft pt-2">{item}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Quote + closing paragraphs */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col gap-6"
+      <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
+        {/* Masthead */}
+        <Reveal>
+          <p className="eyebrow mb-6">{t('intercultural.label')}</p>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <h2
+            id="intercultural-title"
+            className="max-w-[16ch] font-display font-light leading-[0.98] tracking-[0.005em] text-[var(--forest)]"
+            style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}
           >
-            <blockquote
-              className="font-display font-light italic leading-relaxed pl-6 text-2xl border-l-2"
-              style={{ color: 'var(--ink)', borderColor: 'var(--rose-mid)' }}
+            {t('intercultural.title')}
+          </h2>
+        </Reveal>
+        <Reveal delay={0.16} className="mt-8 max-w-[38rem]">
+          <p className="font-display text-[clamp(1.4rem,2.6vw,2rem)] font-light italic leading-snug text-[var(--sage)]">
+            {t('intercultural.intro')}
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid gap-14 lg:mt-24 lg:grid-cols-[5fr_7fr] lg:gap-24">
+          {/* Sticky theme */}
+          <aside className="lg:sticky lg:self-start" style={{ top: 'calc(var(--header-h) + 2.5rem)' }}>
+            <ParallaxImage
+              src={imgIntercultural}
+              alt={t('intercultural.imageAlt')}
+              width={1066}
+              height={1600}
+              position="50% 22%"
+              travel={7}
+              className="aspect-[4/5] w-full"
+            />
+            <motion.figure
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={VIEWPORT_ONCE}
+              transition={{ duration: 1, ease: EASE }}
+              className="relative -mt-16 ml-6 bg-[var(--forest)] px-7 py-9 text-[var(--surface)] sm:-mt-20 sm:ml-12 sm:px-10 sm:py-11"
             >
-              {t('intercultural.quote')}
-              <footer
-                className="font-body text-[0.75rem] font-normal not-italic mt-2 tracking-[0.1em] uppercase"
-                style={{ color: 'var(--rose-mid)' }}
-              >
-                — {t('intercultural.quoteAuthor')}
-              </footer>
-            </blockquote>
+              <span aria-hidden="true" className="absolute left-7 top-3 font-display text-[4.5rem] leading-none text-[var(--gold)] sm:left-10">
+                “
+              </span>
+              <blockquote className="relative pt-9 font-display text-[clamp(1.4rem,2.3vw,1.9rem)] font-light italic leading-[1.2]">
+                {t('intercultural.quote').replace(/^"|"$/g, '')}
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-4 text-[0.7rem] font-medium uppercase tracking-[0.22em] text-[var(--gold)]">
+                <span aria-hidden="true" className="h-px w-8 bg-[var(--gold)]" />
+                {t('intercultural.quoteAuthor')}
+              </figcaption>
+            </motion.figure>
+          </aside>
 
-            <p className="text-ink-soft text-[0.95rem] leading-relaxed">
-              {t('intercultural.p2')}
-            </p>
+          {/* Story */}
+          <div className="flex flex-col gap-14 lg:gap-20">
+            <Reveal>
+              <p className="max-w-[34rem] text-[1rem] leading-[1.85] text-ink-soft">{t('intercultural.p1')}</p>
+            </Reveal>
 
-            <p className="text-ink-soft text-[0.95rem] leading-relaxed">
-              {t('intercultural.p3')}
-            </p>
-
-            <p
-              className="text-[0.9rem] italic"
-              style={{ color: 'var(--rose-deep)' }}
-            >
-              {t('intercultural.ctaNote')}
-            </p>
-
-            <div>
-              <Button href="#contact">{t('intercultural.cta')}</Button>
+            <div className="flex flex-col gap-10">
+              {(['question1', 'question2'] as const).map(key => (
+                <Reveal key={key} delay={0.05}>
+                  <p className="max-w-[30ch] font-display text-[clamp(1.7rem,3.2vw,2.6rem)] font-light leading-[1.18] text-[var(--forest)]">
+                    {t(`intercultural.${key}`)}
+                  </p>
+                </Reveal>
+              ))}
+              <Reveal>
+                <p className="max-w-[34rem] border-l-2 border-[var(--gold)] pl-6 text-[1rem] leading-[1.85] text-ink-soft">
+                  {t('intercultural.answer')}
+                </p>
+              </Reveal>
             </div>
-          </motion.div>
+
+            <div ref={listRef} className="relative">
+              <Reveal>
+                <h3 className="mb-8 font-display text-[1.5rem] font-normal text-[var(--forest)]">
+                  {t('intercultural.challengesTitle')}
+                </h3>
+              </Reveal>
+              <div className="relative pl-8">
+                <span aria-hidden="true" className="absolute bottom-0 left-0 top-0 w-px bg-[var(--border)]" />
+                <motion.span
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-full w-px origin-top bg-[var(--gold)]"
+                  style={{ scaleY: lineScale }}
+                />
+                <ul className="m-0 grid list-none gap-x-10 p-0 sm:grid-cols-2">
+                  {challenges.map((item, i) => (
+                    <motion.li
+                      key={item}
+                      initial={{ opacity: 0, x: -12 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={VIEWPORT_ONCE}
+                      transition={{ duration: 0.7, ease: EASE, delay: (i % 2) * 0.08 }}
+                      className="border-t border-[var(--border-soft)] py-4 text-[0.93rem] leading-snug text-[var(--forest)]"
+                    >
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <Reveal>
+              <p className="max-w-[34rem] text-[1rem] leading-[1.85] text-ink-soft">{t('intercultural.p2')}</p>
+            </Reveal>
+            <Reveal>
+              <p className="max-w-[34rem] text-[1rem] leading-[1.85] text-ink-soft">{t('intercultural.p3')}</p>
+              <div className="mt-8 flex flex-col items-start gap-4">
+                <Button href="#contact">{t('intercultural.cta')}</Button>
+                <p className="text-[0.82rem] italic text-ink-faint">{t('intercultural.ctaNote')}</p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

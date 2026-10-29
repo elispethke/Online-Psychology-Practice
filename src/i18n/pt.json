@@ -1,10 +1,13 @@
 {
   "header": {
-    "subtitle": "Psicóloga Intercultural"
+    "subtitle": "Psicóloga Intercultural",
+    "logoAlt": "Elaine Teixeira — Psicologia entre Culturas",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu",
+    "langLabel": "Idioma"
   },
   "nav": {
-    "home": "Home",
-    "intercultural": "Vivendo Entre Culturas",
+    "intercultural": "Entre Culturas",
     "counselling": "Terapia",
     "about": "Sobre Mim",
     "consulting": "Consultorias",
@@ -12,7 +15,8 @@
     "testimonials": "Testemunhos",
     "prices": "Valores",
     "faq": "FAQ",
-    "contact": "Contato"
+    "contact": "Contato",
+    "africa": "Missão na África"
   },
   "hero": {
     "badge": "Berlim · Atendimento Online",
@@ -30,7 +34,10 @@
     "card1Label": "Experiência",
     "card1Sub": "anos de prática",
     "card2Label": "Idiomas",
-    "card2Sub": "PT · EN · ES"
+    "card2Sub": "PT · EN",
+    "ctaBook": "Marque uma consulta",
+    "imageAlt": "Retrato de Elaine Teixeira em preto e branco",
+    "scroll": "Role para continuar"
   },
   "intercultural": {
     "label": "Vivendo Entre Culturas",
@@ -52,12 +59,13 @@
       "Conflitos de identidade e pertencimento",
       "Agravamento da situação de saúde mental (já pré-existente)"
     ],
-    "quote": "\"There is no health without mental health.\"",
+    "quote": "\"Não há saúde sem saúde mental.\"",
     "quoteAuthor": "Vikram Patel, psiquiatra",
     "p2": "A saúde mental é parte fundamental do bem-estar global. Cuidar da dimensão emocional é essencial para lidar com os desafios da vida, especialmente em contextos de mudança, adaptação e vulnerabilidade.",
     "p3": "Se você sente que este pode ser um momento importante para buscar apoio, a terapia pode oferecer um espaço de escuta, compreensão e fortalecimento.",
     "cta": "Agendar uma conversa",
-    "ctaNote": "Agendar uma primeira conversa pode ser o início desse processo."
+    "ctaNote": "Agendar uma primeira conversa pode ser o início desse processo.",
+    "imageAlt": "Elaine Teixeira sentada à mesa, sorrindo, diante de um quadro na parede"
   },
   "counselling": {
     "label": "Terapia",
@@ -80,8 +88,16 @@
     "group": {
       "title": "Aconselhamento em grupo",
       "p1": "Os encontros em grupo oferecem um espaço estruturado de partilha, reflexão e elaboração coletiva.",
-      "p2": "A partir de uma abordagem intercultural, o trabalho em grupo integra elementos terapêuticos com a força da experiência compartilhada. A troca entre pessoas que vivem desafios semelhantes favorece identificação, pertencimento e novas formas de compreensão. Ao mesmo tempo, o grupo é conduzido de forma cuidadosa, profissional e empática, garantindo um ambiente seguro, ético e acolhedor, onde cada participante pode se expressar no seu ritmo, sempre e quando quiser. A construção do saber vem dessa troca, e a escuta coletiva se torna uma ferramenta de transformação e motivação para muitas situações que são para o indivíduo paralisantes.",
-      "p3": "Essa combinação entre escuta clínica e apoio entre pares permite não apenas compreender melhor as próprias vivências, mas também ampliar recursos internos e fortalecer a capacidade de lidar com os desafios do cotidiano."
+      "p3": "Essa combinação entre escuta clínica e apoio entre pares permite não apenas compreender melhor as próprias vivências, mas também ampliar recursos internos e fortalecer a capacidade de lidar com os desafios do cotidiano.",
+      "label": "Encontros em grupo",
+      "p2a": "A partir de uma abordagem intercultural, o trabalho em grupo integra elementos terapêuticos com a força da experiência compartilhada. A troca entre pessoas que vivem desafios semelhantes favorece identificação, pertencimento e novas formas de compreensão.",
+      "p2b": "Ao mesmo tempo, o grupo é conduzido de forma cuidadosa, profissional e empática, garantindo um ambiente seguro, ético e acolhedor, onde cada participante pode se expressar no seu ritmo, sempre e quando quiser.",
+      "p2c": "A construção do saber vem dessa troca, e a escuta coletiva se torna uma ferramenta de transformação e motivação para muitas situações que são para o indivíduo paralisantes.",
+      "photosAlt": [
+        "Encontro de grupo: três participantes rindo juntas durante a conversa",
+        "Encontro de grupo: participantes compartilhando um momento descontraído",
+        "Encontro de grupo: roda de conversa conduzida por Elaine Teixeira"
+      ]
     },
     "approach": {
       "title": "Abordagem da psicologia intercultural",
@@ -114,7 +130,8 @@
         "Assistência a pessoas com dependência química",
         "Maternidade no exterior"
       ]
-    }
+    },
+    "imageAlt": "Elaine Teixeira em atendimento online"
   },
   "about": {
     "label": "Sobre Mim",
@@ -148,7 +165,16 @@
         "title": "Psicóloga Clínica — Brasil",
         "desc": "Quase 9 anos como voluntária no GIV – Grupo de Incentivo à Vida, oferecendo psicoterapia e aconselhamento preventivo para a comunidade LGBTQI+, mulheres, crianças e adolescentes vivendo com HIV-Aids, além de atendimento clínico em consultório privado em São Paulo."
       }
-    }
+    },
+    "figures": {
+      "years": "anos de prática",
+      "languages": "idiomas de atendimento",
+      "yearsValue": "20+",
+      "languagesValue": "2",
+      "langList": "PT · EN",
+      "detailTitle": "Percurso em detalhe"
+    },
+    "portraitAlt": "Retrato em preto e branco de Elaine Teixeira"
   },
   "consulting": {
     "label": "Consultorias",
@@ -201,7 +227,8 @@
       ],
       "formatTitle": "Formato",
       "format": "Workshops, treinamentos e ciclos formativos podem ser realizados online ou presencialmente, em português ou inglês, para equipes pequenas ou grandes grupos.",
-      "cta": "Solicitar proposta"
+      "cta": "Solicitar proposta",
+      "imageAlt": "Elaine Teixeira em ambiente de trabalho"
     }
   },
   "cv": {
@@ -212,17 +239,72 @@
     "colContext": "Local · Contexto",
     "currentBadge": "Atual",
     "rows": [
-      { "period": "Atual", "role": "Psicóloga intercultural", "org": "Embaixada do Brasil", "context": "Berlim / Online" },
-      { "period": "Atual", "role": "Psicóloga", "org": "Malengo", "context": "Online / Alemanha" },
-      { "period": "2023 – 2025", "role": "Psicóloga", "org": "Cruz Vermelha Alemã", "context": "Berlim" },
-      { "period": "2022 – 2023", "role": "Psicóloga", "org": "ZIK – Betreutes Wohnen", "context": "Berlim" },
-      { "period": "2017 – 2022", "role": "Psicóloga voluntária", "org": "Apoio a migrantes e mulheres em vulnerabilidade", "context": "Berlim / Online" },
-      { "period": "2013 – 2014", "role": "Gerente de saúde preventiva", "org": "Médicos Sem Fronteiras (MSF)", "context": "Moçambique" },
-      { "period": "2012 – 2013", "role": "Consultora Psicossocial", "org": "Ministério da Saúde (HIV)", "context": "Moçambique" },
-      { "period": "2011 – 2012", "role": "Consultora Psicossocial", "org": "ARK (Absolute Return for Kids)", "context": "Moçambique" },
-      { "period": "2011", "role": "Lobbying HIV-Aids & Psicologia em emergência", "org": "Médicos Sem Fronteiras (MSF)", "context": "Brasil / Moçambique" },
-      { "period": "2007 – 2010", "role": "Coordenadora Psicossocial", "org": "Médicos Sem Fronteiras (MSF)", "context": "Moçambique / Eswatini" },
-      { "period": "1998 – 2007", "role": "Psicóloga clínica", "org": "Prática privada e projetos HIV", "context": "Brasil" }
+      {
+        "period": "Atual",
+        "role": "Psicóloga intercultural",
+        "org": "Embaixada do Brasil",
+        "context": "Berlim / Online"
+      },
+      {
+        "period": "Atual",
+        "role": "Psicóloga",
+        "org": "Malengo",
+        "context": "Online / Alemanha"
+      },
+      {
+        "period": "2023 – 2025",
+        "role": "Psicóloga",
+        "org": "Cruz Vermelha Alemã",
+        "context": "Berlim"
+      },
+      {
+        "period": "2022 – 2023",
+        "role": "Psicóloga",
+        "org": "ZIK – Betreutes Wohnen",
+        "context": "Berlim"
+      },
+      {
+        "period": "2017 – 2022",
+        "role": "Psicóloga voluntária",
+        "org": "Apoio a migrantes e mulheres em vulnerabilidade",
+        "context": "Berlim / Online"
+      },
+      {
+        "period": "2013 – 2014",
+        "role": "Gerente de saúde preventiva",
+        "org": "Médicos Sem Fronteiras (MSF)",
+        "context": "Moçambique"
+      },
+      {
+        "period": "2012 – 2013",
+        "role": "Consultora Psicossocial",
+        "org": "Ministério da Saúde (HIV)",
+        "context": "Moçambique"
+      },
+      {
+        "period": "2011 – 2012",
+        "role": "Consultora Psicossocial",
+        "org": "ARK (Absolute Return for Kids)",
+        "context": "Moçambique"
+      },
+      {
+        "period": "2011",
+        "role": "Lobbying HIV-Aids & Psicologia em emergência",
+        "org": "Médicos Sem Fronteiras (MSF)",
+        "context": "Brasil / Moçambique"
+      },
+      {
+        "period": "2007 – 2010",
+        "role": "Coordenadora Psicossocial",
+        "org": "Médicos Sem Fronteiras (MSF)",
+        "context": "Moçambique / Eswatini"
+      },
+      {
+        "period": "1998 – 2007",
+        "role": "Psicóloga clínica",
+        "org": "Prática privada e projetos HIV",
+        "context": "Brasil"
+      }
     ]
   },
   "testimonials": {
@@ -247,7 +329,8 @@
         "role": "Migrante brasileira, Berlim",
         "initials": "AF"
       }
-    ]
+    ],
+    "imageAlt": "Retrato de Elaine Teixeira sentada"
   },
   "prices": {
     "label": "Valores",
@@ -299,7 +382,9 @@
       }
     ],
     "cta": "Agendar",
-    "ctaInstitutional": "Solicitar proposta"
+    "ctaInstitutional": "Solicitar proposta",
+    "mailBooking": "Agendamento — {{category}}",
+    "mailProposal": "Solicitação de proposta"
   },
   "contact": {
     "label": "Contato",
@@ -325,15 +410,33 @@
       "sendingBtn": "Enviando...",
       "successMsg": "Obrigada, {{name}}! Sua mensagem foi enviada. Responderei em breve.",
       "errorMsg": "Por favor, preencha todos os campos obrigatórios.",
-      "rateLimitMsg": "Você já enviou uma mensagem recentemente. Por favor, aguarde 1 hora antes de enviar novamente."
-    }
+      "rateLimitMsg": "Você já enviou uma mensagem recentemente. Por favor, aguarde 1 hora antes de enviar novamente.",
+      "nameLabel": "Nome",
+      "emailLabel": "E-mail",
+      "messageLabel": "Mensagem",
+      "consentLabel": "Li a política de privacidade e concordo com o tratamento dos dados do formulário, inclusive o envio pelo serviço EmailJS (servidores nos EUA).",
+      "consentError": "Para enviar, confirme a caixa de privacidade.",
+      "healthNote": "Por favor, não inclua dados de saúde no formulário. Para uma primeira conversa basta uma mensagem curta.",
+      "privacyLink": "Política de privacidade"
+    },
+    "imageAlt": "Elaine Teixeira em frente a uma ponte de pedra, sorrindo",
+    "langPt": "Português",
+    "langEn": "Inglês"
   },
   "cookie": {
-    "label": "Aviso de cookies",
-    "text": "Este site utiliza cookies funcionais essenciais para o seu funcionamento. Ao continuar navegando, você concorda com o uso de cookies necessários. Para mais informações, entre em contato:",
-    "learnMore": "elaine.teixeira.psy@gmail.com",
-    "accept": "Aceitar",
-    "reject": "Recusar"
+    "title": "Sua privacidade",
+    "text": "Este site não define cookies. Só guardamos no seu navegador o que é necessário (sua escolha e uma proteção do formulário). Uma medição de audiência sem cookies (Plausible) só é ativada se você permitir.",
+    "privacyLink": "Política de privacidade",
+    "necessaryTitle": "Necessário",
+    "alwaysOn": "sempre ativo",
+    "necessaryDesc": "Guarda a sua escolha neste aviso e protege o formulário contra envios em excesso. Sem rastreamento.",
+    "analyticsTitle": "Estatística",
+    "analyticsDesc": "Plausible Analytics: conta visitas de forma agregada (página, origem, navegador, país). Sem cookies. Só carregado com a sua permissão.",
+    "rejectAll": "Recusar",
+    "acceptAll": "Aceitar",
+    "settings": "Configurar",
+    "save": "Salvar escolha",
+    "label": "Aviso de cookies"
   },
   "whatsapp": {
     "label": "Contato via WhatsApp"
@@ -377,6 +480,37 @@
     "cta": "Agendar sessão",
     "copyright": "© 2025 Elaine Teixeira — Psicóloga Intercultural. Todos os direitos reservados.",
     "legal": "Atendimento sujeito às normas do CFP e EAPA",
-    "dev": "Site desenvolvido por Elis Pethke"
+    "devPrefix": "Site desenvolvido por",
+    "newTab": "abre em nova aba",
+    "privacy": "Política de privacidade",
+    "imprint": "Impressum",
+    "cookieSettings": "Preferências de cookies"
+  },
+  "brand": {
+    "title": "Psicologia entre Culturas",
+    "tagline": "Raízes · Identidade · Pertencimento",
+    "line1": "Psicologia",
+    "line2": "entre Culturas"
+  },
+  "meta": {
+    "title": "Elaine Teixeira · Psicologia entre Culturas | Berlim & Online",
+    "description": "Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes, expatriados e brasileiros no exterior. Mais de 20 anos de experiência.",
+    "ogAlt": "Elaine Teixeira — Psicologia entre Culturas, Berlim"
+  },
+  "africa": {
+    "label": "Missão na África",
+    "title": "Moçambique e Eswatini",
+    "subtitle": "Registros do trabalho em saúde mental e apoio psicossocial em contextos humanitários, entre 2007 e 2014.",
+    "soon": "Fotografias em breve",
+    "placeholder": "Foto da missão",
+    "prev": "Fotos anteriores",
+    "next": "Próximas fotos",
+    "pause": "Pausar movimento",
+    "play": "Retomar movimento",
+    "hint": "Arraste ou use as setas para explorar",
+    "galleryLabel": "Galeria de fotografias da missão na África"
+  },
+  "common": {
+    "backToTop": "Voltar ao topo"
   }
 }

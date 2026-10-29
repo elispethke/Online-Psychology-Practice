@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react'
 
-type ButtonVariant = 'primary' | 'outline' | 'ghost'
+type ButtonVariant = 'primary' | 'outline' | 'light' | 'ghost'
 
 interface ButtonProps {
   variant?: ButtonVariant
@@ -15,20 +15,25 @@ interface ButtonProps {
 }
 
 const BASE =
-  'inline-flex items-center gap-2.5 font-body text-[0.72rem] font-medium tracking-[0.14em] uppercase cursor-pointer rounded-sm transition-all duration-300 no-underline'
+  'inline-flex items-center gap-2.5 font-body text-[0.72rem] font-medium tracking-[0.16em] uppercase cursor-pointer rounded-sm transition-all duration-300 no-underline'
 
 const VARIANTS: Record<ButtonVariant, string> = {
+  /** Solid forest — default call to action on light surfaces */
   primary:
-    'bg-[var(--rose-deep)] text-white px-7 py-3 hover:bg-[#8a3a49]',
+    'bg-[var(--forest)] text-[var(--surface)] px-7 py-3.5 border border-[var(--forest)] hover:bg-[var(--sage)] hover:border-[var(--sage)]',
+  /** Hairline — secondary action on light surfaces */
   outline:
-    'bg-transparent text-[var(--ink)] px-7 py-3 border border-[var(--ink)]/25 hover:border-[var(--rose-deep)] hover:text-[var(--rose-deep)]',
+    'bg-transparent text-[var(--forest)] px-7 py-3.5 border border-[var(--forest)] hover:bg-[var(--forest)] hover:text-[var(--surface)]',
+  /** Hairline for dark / photographic surfaces */
+  light:
+    'bg-[color-mix(in_srgb,var(--forest)_28%,transparent)] backdrop-blur-sm text-[var(--surface)] px-7 py-3.5 border border-[var(--surface)] hover:bg-[var(--surface)] hover:text-[var(--forest)]',
   ghost:
-    'bg-transparent text-[var(--rose-deep)] px-0 py-1 hover:text-[#8a3a49]',
+    'bg-transparent text-[var(--forest)] px-0 py-1 hover:text-[var(--sage)]',
 }
 
 function Arrow() {
   return (
-    <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+    <span aria-hidden="true" className="inline-block transition-transform duration-300 group-hover:translate-x-1">
       →
     </span>
   )
@@ -66,13 +71,7 @@ export function Button({
   }
 
   return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={classes}
-      aria-label={ariaLabel}
-    >
+    <button type={type} onClick={onClick} disabled={disabled} className={classes} aria-label={ariaLabel}>
       {children}
       {variant !== 'ghost' && <Arrow />}
     </button>

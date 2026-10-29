@@ -1,36 +1,40 @@
-import type { Variants } from 'framer-motion'
+import type { Variants } from 'motion/react'
 
-/** Fade up with optional delay — used in Hero for staggered entrance */
+/** House easing: quick start, long soft landing. Used by every reveal. */
+export const EASE = [0.22, 1, 0.36, 1] as const
+
+/** Reveal once, slightly before the element is fully inside the viewport. */
+export const VIEWPORT_ONCE = { once: true, margin: '0px 0px -12% 0px' } as const
+
+/** Fade up with optional delay */
 export const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] as const, delay },
+  transition: { duration: 0.8, ease: EASE, delay },
 })
 
 /** Container that staggers its children */
 export const staggerContainer: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 }
 
-/** Card that fades up — used inside staggerContainer */
+/** Child of staggerContainer */
 export const cardVariant: Variants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
 }
 
-/** Slide in from left */
 export const slideFromLeft = {
-  initial: { opacity: 0, x: -20 },
+  initial: { opacity: 0, x: -24 },
   whileInView: { opacity: 1, x: 0 },
-  viewport: { once: true as const },
-  transition: { duration: 0.6 },
+  viewport: VIEWPORT_ONCE,
+  transition: { duration: 0.8, ease: EASE },
 }
 
-/** Slide in from right */
 export const slideFromRight = {
-  initial: { opacity: 0, x: 20 },
+  initial: { opacity: 0, x: 24 },
   whileInView: { opacity: 1, x: 0 },
-  viewport: { once: true as const },
-  transition: { duration: 0.6, delay: 0.15 },
+  viewport: VIEWPORT_ONCE,
+  transition: { duration: 0.8, ease: EASE, delay: 0.12 },
 }

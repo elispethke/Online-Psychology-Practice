@@ -3,9 +3,10 @@ import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
 import { Intercultural } from '@/components/sections/Intercultural'
 import { Counselling } from '@/components/sections/Counselling'
-import { About } from '@/components/sections/About'
+import { GroupWork } from '@/components/sections/GroupWork'
+import { Journey } from '@/components/sections/Journey'
+import { AfricaGallery } from '@/components/sections/AfricaGallery'
 import { Consulting } from '@/components/sections/Consulting'
-import { MiniCV } from '@/components/sections/MiniCV'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { Prices } from '@/components/sections/Prices'
 import { FAQ } from '@/components/sections/FAQ'
@@ -19,9 +20,10 @@ export function Home () {
         <Hero />
         <Intercultural />
         <Counselling />
-        <About />
+        <GroupWork />
+        <Journey />
+        <AfricaGallery />
         <Consulting />
-        <MiniCV />
         <Testimonials />
         <Prices />
         <FAQ />

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import emailjs from 'emailjs-com'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
+import { Link } from '@/components/ui/Link'
+import { hrefFor } from '@/lib/route'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import imgContact from '@/assets/img/elaine6.webp'
 import { MapPin, Globe2, Mail, Linkedin, type LucideIcon } from 'lucide-react'
@@ -14,19 +16,21 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
 
 const RATE_LIMIT_MS = 60 * 60 * 1000 // 1 hour
 
-function isRateLimited(email: string): boolean {
+/** Abuse protection only: remembers WHEN the form was last sent from this browser — no personal data is stored. */
+function isRateLimited(): boolean {
   try {
     const raw = localStorage.getItem('contact_last_submit')
     if (!raw) return false
-    const { email: lastEmail, timestamp } = JSON.parse(raw) as { email: string; timestamp: number }
-    return lastEmail === email.toLowerCase() && Date.now() - timestamp < RATE_LIMIT_MS
+    const parsed = JSON.parse(raw) as { timestamp?: number } | number
+    const ts = typeof parsed === 'number' ? parsed : parsed.timestamp
+    return typeof ts === 'number' && Date.now() - ts < RATE_LIMIT_MS
   } catch {
     return false
   }
 }
 
-function markSubmitted(email: string) {
-  localStorage.setItem('contact_last_submit', JSON.stringify({ email: email.toLowerCase(), timestamp: Date.now() }))
+function markSubmitted() {
+  try { localStorage.setItem('contact_last_submit', JSON.stringify({ timestamp: Date.now() })) } catch { /* storage unavailable */ }
 }
 
 
@@ -38,37 +42,41 @@ interface ContactInfoItem {
 }
 
 export function Contact() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const { ref } = useScrollReveal()
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const [consent, setConsent] = useState(false)
+  const [trap, setTrap] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'rate_limited'>('idle')
 
   const infoItems: ContactInfoItem[] = [
     { icon: MapPin, label: t('contact.locationLabel'), value: t('contact.locationValue') },
     { icon: Globe2, label: t('contact.sessionsLabel'), value: t('contact.sessionsValue') },
-    { icon: Mail, label: 'Email', value: 'elaine.teixeira.psy@gmail.com', href: 'mailto:elaine.teixeira.psy@gmail.com' },
+    { icon: Mail, label: t('contact.form.emailLabel'), value: 'elaine.teixeira.psy@gmail.com', href: 'mailto:elaine.teixeira.psy@gmail.com' },
     { icon: Linkedin, label: 'LinkedIn', value: t('contact.linkedinValue'), href: 'https://linkedin.com/in/elaine-teixeira-psy' },
   ]
 
   const LANGUAGE_TAGS = [
-    { lang: 'Português' },
-    { lang: 'English' },
-    { lang: 'Español' },
+    { lang: t('contact.langPt') },
+    { lang: t('contact.langEn') },
   ]
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!name.trim() || !email.trim() || !message.trim()) {
+    // Honeypot: real visitors never see or fill this field
+    if (trap) { setStatus('success'); return }
+
+    if (!name.trim() || !email.trim() || !message.trim() || !consent) {
       setStatus('error')
       return
     }
 
-    if (isRateLimited(email)) {
+    if (isRateLimited()) {
       setStatus('rate_limited')
       return
     }
@@ -82,21 +90,21 @@ export function Contact() {
         { name, email, subject, message },
         EMAILJS_PUBLIC_KEY,
       )
-      markSubmitted(email)
+      markSubmitted()
       setStatus('success')
       setName('')
       setEmail('')
       setSubject('')
       setMessage('')
-    } catch (err) {
-      console.error('EmailJS error:', err)
+      setConsent(false)
+    } catch {
       setStatus('error')
     }
   }
 
   const inputClass = [
     'w-full px-0 py-3 text-[0.95rem] text-ink bg-transparent outline-none transition-all duration-200',
-    'border-0 border-b border-[var(--border)] focus:border-[var(--rose-deep)] rounded-none',
+    'border-0 border-b border-[var(--border)] focus:border-[var(--forest)] rounded-none',
     'placeholder:text-ink-faint',
   ].join(' ')
 
@@ -104,7 +112,7 @@ export function Contact() {
     <section
       id="contact"
       style={{
-        background: 'var(--rose-wash)',
+        background: 'var(--paper)',
         padding: 'clamp(5rem, 9vw, 8rem) 0',
       }}
     >
@@ -131,7 +139,7 @@ export function Contact() {
           >
             <img
               src={imgContact}
-              alt="Elaine Teixeira"
+              alt={t('contact.imageAlt')}
               width={1066}
               height={1600}
               loading="lazy"
@@ -155,10 +163,10 @@ export function Contact() {
               >
                 <div
                   className="w-9 h-9 rounded-sm flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'white' }}
+                  style={{ background: 'var(--paper)' }}
                   aria-hidden="true"
                 >
-                  <item.icon className="w-4 h-4 text-rose-mid" strokeWidth={1.5} />
+                  <item.icon className="w-4 h-4 text-gold" strokeWidth={1.5} />
                 </div>
                 <div>
                   <p
@@ -172,8 +180,8 @@ export function Contact() {
                       href={item.href}
                       target={item.href.startsWith('http') ? '_blank' : undefined}
                       rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-[0.9rem] transition-colors hover:text-[#8a3a49]"
-                      style={{ color: 'var(--rose-deep)' }}
+                      className="text-[0.9rem] transition-colors hover:text-[var(--sage)]"
+                      style={{ color: 'var(--forest)' }}
                     >
                       {item.value}
                     </a>
@@ -188,7 +196,7 @@ export function Contact() {
             <div className="mt-6">
               <p
                 className="text-2xs font-medium tracking-[0.12em] uppercase mb-3"
-                style={{ color: 'var(--rose-mid)' }}
+                style={{ color: 'var(--gold)' }}
               >
                 {t('contact.langsLabel')}
               </p>
@@ -198,8 +206,8 @@ export function Contact() {
                     key={lt.lang}
                     className="inline-flex items-center gap-1.5 text-[0.7rem] font-medium tracking-[0.08em] px-2.5 py-1 rounded-full border"
                     style={{
-                      background: 'white',
-                      color: 'var(--rose-deep)',
+                      background: 'var(--paper)',
+                      color: 'var(--forest)',
                       borderColor: 'var(--border)',
                     }}
                   >
@@ -223,7 +231,7 @@ export function Contact() {
             {status === 'success' && (
               <div
                 className="p-4 rounded-sm text-[0.85rem] font-medium border"
-                style={{ background: '#f0fdf4', color: '#166534', borderColor: '#bbf7d0' }}
+                style={{ background: 'var(--paper)', color: 'var(--forest)', borderColor: 'var(--sage)' }}
                 role="alert"
               >
                 {t('contact.form.successMsg', { name })}
@@ -232,16 +240,16 @@ export function Contact() {
             {status === 'error' && (
               <div
                 className="p-4 rounded-sm text-[0.85rem] font-medium border"
-                style={{ background: '#fff5f5', color: '#c0392b', borderColor: '#fecaca' }}
+                style={{ background: 'var(--paper)', color: 'var(--forest)', borderColor: 'var(--forest)' }}
                 role="alert"
               >
-                {t('contact.form.errorMsg')}
+                {!consent ? t('contact.form.consentError') : t('contact.form.errorMsg')}
               </div>
             )}
             {status === 'rate_limited' && (
               <div
                 className="p-4 rounded-sm text-[0.85rem] font-medium border"
-                style={{ background: '#fffbeb', color: '#92400e', borderColor: '#fde68a' }}
+                style={{ background: 'var(--paper)', color: 'var(--forest)', borderColor: 'var(--gold)' }}
                 role="alert"
               >
                 {t('contact.form.rateLimitMsg')}
@@ -252,28 +260,32 @@ export function Contact() {
             <div className="grid grid-cols-2 gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}>
               <div className="flex flex-col gap-1.5">
                 <label className="text-[0.73rem] font-medium tracking-[0.1em] uppercase text-ink-soft">
-                  {t('contact.form.namePlaceholder').includes('nome') || t('contact.form.namePlaceholder').includes('Name') ? 'Name' : t('contact.form.namePlaceholder')}
+                  {t('contact.form.nameLabel')}
                 </label>
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  maxLength={100}
+                  autoComplete="name"
                   placeholder={t('contact.form.namePlaceholder')}
                   className={inputClass}
-                  aria-label="Name"
+                  aria-label={t('contact.form.nameLabel')}
                 />
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-[0.73rem] font-medium tracking-[0.1em] uppercase text-ink-soft">
-                  Email
+                  {t('contact.form.emailLabel')}
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  maxLength={254}
+                  autoComplete="email"
                   placeholder={t('contact.form.emailPlaceholder')}
                   className={inputClass}
-                  aria-label="Email"
+                  aria-label={t('contact.form.emailLabel')}
                 />
               </div>
             </div>
@@ -300,17 +312,35 @@ export function Contact() {
             {/* Message */}
             <div className="flex flex-col gap-1.5">
               <label className="text-[0.73rem] font-medium tracking-[0.1em] uppercase text-ink-soft">
-                {t('contact.form.messagePlaceholder').includes('sch') || t('contact.form.messagePlaceholder').includes('men') ? 'Message' : 'Message'}
+                {t('contact.form.messageLabel')}
               </label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                maxLength={4000}
                 placeholder={t('contact.form.messagePlaceholder')}
                 rows={5}
                 className={[inputClass, 'resize-y min-h-[120px]'].join(' ')}
-                aria-label="Message"
+                aria-label={t('contact.form.messageLabel')}
               />
             </div>
+
+            <p className="m-0 text-[0.78rem] leading-relaxed text-ink-faint">{t('contact.form.healthNote')}</p>
+
+            {/* Honeypot (hidden from people and assistive tech) */}
+            <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+              <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={trap} onChange={(e) => setTrap(e.target.value)} /></label>
+            </div>
+
+            <label className="flex cursor-pointer items-start gap-3 text-[0.8rem] leading-relaxed text-ink-soft">
+              <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} aria-invalid={status === 'error' && !consent} className="mt-1 size-4 shrink-0 accent-[var(--forest)]" />
+              <span>
+                {t('contact.form.consentLabel')}{' '}
+                <Link href={hrefFor('privacy', i18n.language === 'en' ? 'en' : 'pt')} className="underline underline-offset-4 hover:text-[var(--forest)]">
+                  {t('contact.form.privacyLink')}
+                </Link>
+              </span>
+            </label>
 
             <Button
               type="submit"

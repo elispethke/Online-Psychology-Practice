@@ -1,192 +1,158 @@
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
-import { SectionTitle } from '@/components/ui/SectionTitle'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { motion } from 'motion/react'
+import { Reveal } from '@/components/ui/Reveal'
+import { ParallaxImage } from '@/components/ui/ParallaxImage'
+import { EASE, VIEWPORT_ONCE } from '@/lib/motionVariants'
 import imgCounselling from '@/assets/img/elaine7.webp'
 
+/**
+ * Counselling — individual therapy and the intercultural approach. Group work has its
+ * own section (GroupWork) right after this one.
+ */
 export function Counselling() {
   const { t } = useTranslation()
   const techniques = t('counselling.techniques.items', { returnObjects: true }) as string[]
   const challenges = t('counselling.challenges.items', { returnObjects: true }) as string[]
-  const { ref: titleRef } = useScrollReveal()
 
   return (
-    <section
-      id="counselling"
-      style={{ background: 'var(--rose-wash)', padding: 'clamp(5rem, 10vw, 8.5rem) 0' }}
-    >
-      <div className="max-w-[1200px] mx-auto px-6">
-
-        {/* ── Intro + portrait ─────────────────────────────────────── */}
+    <section id="counselling" aria-labelledby="counselling-title">
+      {/* 1 — What it is: sticky photograph, text scrolling past it */}
+      <div className="bg-[var(--paper)]" style={{ padding: 'var(--section-y) 0' }}>
         <div
-          className="grid gap-14 lg:gap-20 items-start"
-          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))' }}
+          className="mx-auto grid items-start gap-14 px-[var(--gutter)] lg:grid-cols-[5fr_6fr] lg:gap-24"
+          style={{ maxWidth: 'var(--content-w)' }}
         >
-          <div>
-            <div ref={titleRef} className="reveal">
-              <SectionTitle
-                label={t('counselling.label')}
-                title={t('counselling.title')}
-                subtitle={t('counselling.description')}
-                scale="large"
-              />
-            </div>
-
-            <div className="mt-8 max-w-lg flex flex-col gap-4">
-              {(['intro', 'p1', 'p2', 'p3'] as const).map((key, i) => (
-                <motion.p
-                  key={key}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.55, delay: i * 0.08 }}
-                  className="text-ink-soft text-[0.95rem] leading-relaxed"
-                >
-                  {t(`counselling.${key}`)}
-                </motion.p>
-              ))}
-            </div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-            className="img-zoom relative lg:sticky"
-            style={{ top: 'calc(var(--header-h) + 2rem)' }}
-          >
-            <img
+          <div className="lg:sticky" style={{ top: 'calc(var(--header-h) + 2.5rem)' }}>
+            <ParallaxImage
               src={imgCounselling}
-              alt="Elaine Teixeira em atendimento online"
+              alt={t('counselling.imageAlt')}
               width={1600}
               height={1066}
-              loading="lazy"
-              className="w-full h-auto object-cover aspect-[4/3]"
-              style={{ objectPosition: '44% 35%' }}
+              position="44% 40%"
+              travel={7}
+              className="aspect-[4/5] w-full"
             />
-          </motion.div>
-        </div>
+          </div>
 
-        {/* ── Modalities ─────────────────────────────────────────── */}
-        <motion.h3
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="eyebrow mt-20 mb-8"
-        >
-          {t('counselling.modalitiesTitle')}
-        </motion.h3>
-
-        <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-10 lg:gap-14 items-start">
-          {/* Individual — primary, flowing editorial column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col gap-4"
-          >
-            <h4 className="font-display font-medium" style={{ fontSize: '1.3rem', color: 'var(--ink)' }}>
-              {t('counselling.individual.title')}
-            </h4>
-            {(['p1', 'p2', 'p3', 'p4', 'p5'] as const).map((key) => (
-              <p
-                key={key}
-                className={['text-ink-soft text-[0.88rem] leading-relaxed', key === 'p1' ? 'dropcap' : ''].join(' ')}
+          <div className="flex flex-col gap-8 lg:pt-6">
+            <Reveal><p className="eyebrow">{t('counselling.label')}</p></Reveal>
+            <Reveal delay={0.08}>
+              <h2
+                id="counselling-title"
+                className="font-display font-light leading-[1.02] text-[var(--forest)]"
+                style={{ fontSize: 'clamp(2.5rem, 5.4vw, 4.4rem)', textWrap: 'balance' }}
               >
-                {t(`counselling.individual.${key}`)}
+                {t('counselling.title')}
+              </h2>
+            </Reveal>
+            <Reveal delay={0.14}>
+              <p className="font-display text-[clamp(1.3rem,2.2vw,1.7rem)] font-light italic leading-snug text-[var(--sage)]">
+                {t('counselling.intro')}
               </p>
-            ))}
-            <p
-              className="text-[0.88rem] font-medium italic mt-2"
-              style={{ color: 'var(--rose-deep)' }}
-            >
-              {t('counselling.individual.closing')}
-            </p>
-          </motion.div>
-
-          {/* Group — secondary sidebar note, intentionally boxed and compact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.12 }}
-            className="flex flex-col gap-3.5 bg-white p-7 lg:sticky"
-            style={{ border: '1px solid var(--border)', top: 'calc(var(--header-h) + 2rem)' }}
-          >
-            <h4 className="font-display font-medium" style={{ fontSize: '1.1rem', color: 'var(--ink)' }}>
-              {t('counselling.group.title')}
-            </h4>
-            {(['p1', 'p2', 'p3'] as const).map((key) => (
-              <p key={key} className="text-ink-soft text-[0.85rem] leading-relaxed">
-                {t(`counselling.group.${key}`)}
-              </p>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* ── Approach ───────────────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 pt-12 border-t border-[var(--border-soft)] max-w-3xl flex flex-col gap-4"
-        >
-          <h4 className="font-display font-medium mb-1" style={{ fontSize: '1.3rem', color: 'var(--ink)' }}>
-            {t('counselling.approach.title')}
-          </h4>
-          {(['p1', 'p2', 'p3', 'p4', 'p5'] as const).map((key) => (
-            <p key={key} className="text-ink-soft text-[0.88rem] leading-relaxed">
-              {t(`counselling.approach.${key}`)}
-            </p>
-          ))}
-
-          {/* Techniques — a compact footnote to the approach, not a lonely box */}
-          <div className="mt-4 pt-5 border-t border-[var(--border-soft)]">
-            <p className="text-2xs font-medium tracking-[0.14em] uppercase mb-3" style={{ color: 'var(--rose-mid)' }}>
-              {t('counselling.techniques.title')}
-            </p>
-            <div className="flex flex-col gap-2">
-              {techniques.map((item) => (
-                <div key={item} className="flex items-start gap-3 text-[0.85rem] text-ink-soft">
-                  <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: 'var(--rose-deep)' }} aria-hidden="true" />
-                  <span className="leading-snug">{item}</span>
-                </div>
-              ))}
+            </Reveal>
+            <div className="flex max-w-[34rem] flex-col gap-5 text-[0.98rem] leading-[1.85] text-ink-soft">
+              <Reveal><p>{t('counselling.p1')}</p></Reveal>
+              <Reveal><p>{t('counselling.p2')}</p></Reveal>
+              <Reveal><p>{t('counselling.p3')}</p></Reveal>
             </div>
           </div>
-        </motion.div>
+        </div>
+      </div>
 
-        {/* ── Challenges — full width, matching its own weight (12 items) ── */}
-        <div className="mt-16 pt-12 border-t border-[var(--border-soft)]">
-          <h4 className="font-display font-medium mb-6" style={{ fontSize: '1.05rem', color: 'var(--ink)' }}>
-            {t('counselling.challenges.title')}
-          </h4>
-          <div
-            className="grid gap-x-8 border-b border-[var(--border-soft)]"
-            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))' }}
-          >
-            {challenges.map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-2 py-3 text-[0.85rem] text-ink-soft border-t border-[var(--border-soft)]"
+      {/* 2 — Individual counselling */}
+      <div className="bg-[var(--surface)]" style={{ padding: 'var(--section-y) 0' }}>
+        <div
+          className="mx-auto grid gap-12 px-[var(--gutter)] lg:grid-cols-[4fr_7fr] lg:gap-24"
+          style={{ maxWidth: 'var(--content-w)' }}
+        >
+          <div className="lg:sticky lg:self-start" style={{ top: 'calc(var(--header-h) + 2.5rem)' }}>
+            <Reveal><p className="eyebrow mb-5">{t('counselling.modalitiesTitle')}</p></Reveal>
+            <Reveal delay={0.08}>
+              <h3
+                className="font-display font-light leading-[1.05] text-[var(--forest)]"
+                style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)', textWrap: 'balance' }}
               >
-                <span
-                  className="text-[0.65rem] flex-shrink-0 mt-1"
-                  style={{ color: 'var(--rose-deep)' }}
-                  aria-hidden="true"
-                >
-                  ✦
-                </span>
-                {item}
-              </div>
+                {t('counselling.individual.title')}
+              </h3>
+            </Reveal>
+          </div>
+
+          <div className="flex max-w-[40rem] flex-col gap-6 text-[0.98rem] leading-[1.85] text-ink-soft">
+            {(['p1', 'p2', 'p3', 'p4', 'p5'] as const).map(key => (
+              <Reveal key={key}>
+                <p className={key === 'p1' ? 'dropcap' : ''}>{t(`counselling.individual.${key}`)}</p>
+              </Reveal>
             ))}
+            <Reveal>
+              <p className="mt-4 font-display text-[1.7rem] font-light italic leading-snug text-[var(--forest)]">
+                {t('counselling.individual.closing')}
+              </p>
+            </Reveal>
           </div>
         </div>
+      </div>
 
+      {/* 3 — Approach, on the dark brand surface for rhythm */}
+      <div className="bg-[var(--forest)] text-[var(--on-dark)]" style={{ padding: 'var(--section-y) 0' }}>
+        <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
+          <Reveal>
+            <h3
+              className="max-w-[18ch] font-display font-light leading-[1.05]"
+              style={{ fontSize: 'clamp(2.2rem, 4.6vw, 3.8rem)', textWrap: 'balance' }}
+            >
+              {t('counselling.approach.title')}
+            </h3>
+          </Reveal>
+
+          <div className="mt-14 grid gap-14 lg:grid-cols-[7fr_4fr] lg:gap-24">
+            <div className="flex max-w-[40rem] flex-col gap-6 text-[0.98rem] leading-[1.85] text-[var(--on-dark-soft)]">
+              {(['p1', 'p2', 'p3', 'p4', 'p5'] as const).map(key => (
+                <Reveal key={key}><p>{t(`counselling.approach.${key}`)}</p></Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={0.1}>
+              <div className="border-t border-[var(--gold)] pt-6">
+                <p className="mb-5 text-[0.7rem] font-medium uppercase tracking-[0.24em] text-[var(--gold)]">
+                  {t('counselling.techniques.title')}
+                </p>
+                <ul className="m-0 flex list-none flex-col gap-4 p-0">
+                  {techniques.map(item => (
+                    <li key={item} className="font-display text-[1.25rem] font-light leading-snug">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+
+      {/* 4 — What we work on */}
+      <div className="bg-[var(--surface)]" style={{ padding: 'var(--section-y) 0' }}>
+        <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
+          <Reveal>
+            <h3
+              className="mb-12 max-w-[20ch] font-display font-light leading-[1.05] text-[var(--forest)]"
+              style={{ fontSize: 'clamp(2rem, 3.8vw, 3.2rem)', textWrap: 'balance' }}
+            >
+              {t('counselling.challenges.title')}
+            </h3>
+          </Reveal>
+          <ul className="m-0 grid list-none gap-x-12 p-0 sm:grid-cols-2 lg:grid-cols-3">
+            {challenges.map((item, i) => (
+              <motion.li
+                key={item}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={VIEWPORT_ONCE}
+                transition={{ duration: 0.7, ease: EASE, delay: (i % 3) * 0.07 }}
+                className="border-t border-[var(--border-soft)] py-5 text-[0.95rem] leading-snug text-[var(--forest)]"
+              >
+                {item}
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   )

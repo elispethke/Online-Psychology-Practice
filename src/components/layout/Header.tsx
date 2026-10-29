@@ -1,154 +1,151 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { LANGUAGES, type LanguageCode } from '@/i18n/i18n'
-import logo from '../../assets/img/logo.webp'
 import { NAV_ITEMS } from '@/constants/navigation'
+import { useActiveSection } from '@/hooks/useActiveSection'
+import { hrefFor, navigate } from '@/lib/route'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 
-export function Header () {
+const SECTION_IDS = NAV_ITEMS.map(item => item.href.slice(1))
+
+function LanguageSwitch({ onChange, className = '' }: { onChange: (code: LanguageCode) => void; className?: string }) {
   const { t, i18n } = useTranslation()
+
+  return (
+    <div role="group" aria-label={t('header.langLabel')} className={['flex items-center', className].join(' ')}>
+      {LANGUAGES.map((lang, i) => {
+        const current = i18n.language === lang.code
+        return (
+          <span key={lang.code} className="flex items-center">
+            {i > 0 && <span aria-hidden="true" className="mx-1.5 h-3 w-px bg-[var(--border-soft)]" />}
+            <button
+              type="button"
+              onClick={() => onChange(lang.code)}
+              aria-label={lang.name}
+              aria-pressed={current}
+              lang={lang.code}
+              className={[
+                'px-1 py-1 text-[0.72rem] font-medium tracking-[0.16em] transition-colors duration-300',
+                current ? 'text-[var(--forest)] underline decoration-[var(--gold)] decoration-2 underline-offset-[7px]' : 'text-ink-faint hover:text-[var(--forest)]',
+              ].join(' ')}
+            >
+              {lang.label}
+            </button>
+          </span>
+        )
+      })}
+    </div>
+  )
+}
+
+export function Header() {
+  const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const active = useActiveSection(SECTION_IDS)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!mobileOpen) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMobileOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [mobileOpen])
+
+  // Language lives in the URL ("/" = pt, "/en" = en); App syncs i18n from the route.
   const changeLang = (code: LanguageCode) => {
-    i18n.changeLanguage(code)
+    navigate(hrefFor('home', code) + window.location.hash)
     setMobileOpen(false)
   }
 
-  const closeMobile = () => setMobileOpen(false)
-
   return (
-    <>
-      <header
-        className={[
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled
-            ? 'bg-[var(--surface)]/92 backdrop-blur-md border-b border-[var(--border-soft)]'
-            : 'bg-transparent border-b border-transparent'
-        ].join(' ')}
-        style={{ height: 'var(--header-h)' }}
+    <header
+      className={[
+        'sticky top-0 z-50 bg-[var(--surface)] border-b transition-[border-color,box-shadow] duration-300',
+        scrolled ? 'border-[var(--border)] shadow-sm' : 'border-transparent',
+      ].join(' ')}
+    >
+      <div
+        className="mx-auto flex w-full items-center justify-between px-[var(--gutter)] transition-[height] duration-300"
+        style={{ maxWidth: 'var(--content-w)', height: scrolled ? '72px' : 'var(--header-h)' }}
       >
-        <div className='w-full max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between h-full'>
-          {/* Logo + Title */}
-          <a
-            href='#hero'
-            className='flex items-center gap-5 no-underline group'
-          >
-            <img
-              src={logo}
-              alt='Logo site Elaine Teixeira'
-              className='h-16 w-auto object-contain'
-            />
+        {/* Official logo — name, emblem and ornament are the original artwork; the subtitle lines follow the active language */}
+        <a href="#hero" className="flex shrink-0 items-center" aria-label={t('header.logoAlt')}>
+          <BrandLogo
+            subtitleTop={t('brand.line1')}
+            subtitleBottom={t('brand.line2')}
+            className={scrolled ? '[--u:0.2708px]' : '[--u:0.3229px] sm:[--u:0.3542px]'}
+          />
+        </a>
 
-            <div className='flex flex-col gap-1.5'>
-              <span className='font-display text-[1.35rem] font-medium tracking-[0.03em] text-ink leading-none transition-colors group-hover:text-[var(--rose-deep)]'>
-                Elaine Teixeira
-              </span>
-
-              <span className='text-2xs font-medium tracking-[0.16em] uppercase text-[var(--rose-mid)]'>
-                {t('header.subtitle')}
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Nav */}
-          <nav
-            className='hidden lg:flex items-center gap-7'
-            aria-label={t('footer.navTitle')}
-          >
-            {NAV_ITEMS.map(item => (
+        <nav className="hidden items-center gap-7 2xl:gap-10 xl:flex" aria-label={t('footer.navTitle')}>
+          {NAV_ITEMS.map(item => {
+            const isActive = active === item.href.slice(1)
+            return (
               <a
                 key={item.key}
                 href={item.href}
-                className='nav-link text-[0.78rem] font-normal tracking-[0.04em] text-ink-soft hover:text-[var(--rose-deep)]'
+                aria-current={isActive ? 'true' : undefined}
+                className={[
+                  'nav-link whitespace-nowrap text-[0.68rem] font-medium uppercase tracking-[0.14em] hover:text-[var(--forest)]',
+                  isActive ? 'active text-[var(--forest)]' : 'text-ink-soft',
+                ].join(' ')}
               >
                 {t(item.key)}
               </a>
-            ))}
-          </nav>
+            )
+          })}
+        </nav>
 
-          {/* Lang switcher + hamburger */}
-          <div className='flex items-center gap-4'>
-            <div
-              className='hidden md:flex items-center gap-1 rounded-sm px-1.5 py-1 border bg-rose-wash border-[var(--border)]'
-            >
-              {LANGUAGES.map(lang => (
-                <button
-                  key={lang.code}
-                  onClick={() => changeLang(lang.code)}
-                  aria-label={lang.name}
-                  className={[
-                    'flex items-center gap-1 text-[0.72rem] font-medium px-2 py-1 rounded-full transition-all duration-200',
-                    i18n.language === lang.code
-                      ? 'bg-[var(--rose-deep)] text-white'
-                      : 'text-ink-soft hover:text-[var(--rose-deep)]'
-                  ].join(' ')}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
-
-            <button
-              className='lg:hidden p-2 text-ink'
-              onClick={() => setMobileOpen(v => !v)}
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
+        <div className="flex items-center gap-3">
+          <LanguageSwitch onChange={changeLang} className="hidden xl:flex" />
+          <button
+            type="button"
+            className="p-2 text-[var(--forest)] xl:hidden"
+            onClick={() => setMobileOpen(v => !v)}
+            aria-label={mobileOpen ? t('header.menuClose') : t('header.menuOpen')}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+          </button>
         </div>
-      </header>
+      </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div
-          className='fixed z-40 left-0 right-0 bg-white/97 backdrop-blur-xl shadow-md border-t border-[var(--border)]'
-          style={{ top: 'var(--header-h)' }}
-          role='dialog'
-          aria-modal='true'
-          aria-label='Navigation menu'
-        >
-          <nav className='max-w-[1600px] mx-auto px-6 py-4 flex flex-col'>
-            {NAV_ITEMS.map(item => (
-              <a
-                key={item.key}
-                href={item.href}
-                onClick={closeMobile}
-                className='py-3.5 text-[0.95rem] text-ink border-b border-[var(--border)] hover:text-[var(--rose-deep)] transition-colors'
-              >
-                {t(item.key)}
-              </a>
-            ))}
-
-            {/* Mobile lang switcher */}
-            <div className='flex gap-2 pt-4'>
-              {LANGUAGES.map(lang => (
-                <button
-                  key={lang.code}
-                  onClick={() => changeLang(lang.code)}
-                  aria-label={lang.name}
-                  className={[
-                    'flex items-center gap-1 text-xs font-medium px-3 py-1.5 rounded-full border transition-all',
-                    i18n.language === lang.code
-                      ? 'bg-[var(--rose-deep)] text-white border-[var(--rose-deep)]'
-                      : 'text-ink-soft border-[var(--border)] hover:border-[var(--rose-mid)]'
-                  ].join(' ')}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-[var(--border)] bg-[var(--surface)] xl:hidden"
+          >
+            <nav className="mx-auto flex flex-col px-[var(--gutter)] pb-6 pt-2" aria-label={t('footer.navTitle')}>
+              {NAV_ITEMS.map(item => (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="border-b border-[var(--border-soft)] py-4 font-display text-[1.45rem] font-light text-[var(--forest)]"
                 >
-                  {lang.label}
-                </button>
+                  {t(item.key)}
+                </a>
               ))}
-            </div>
-          </nav>
-        </div>
-      )}
-    </>
+              <LanguageSwitch onChange={changeLang} className="pt-5" />
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   )
 }

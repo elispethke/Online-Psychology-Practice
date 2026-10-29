@@ -31,8 +31,8 @@ export function Card({
         'relative rounded-sm border transition-all duration-300',
         'hover:-translate-y-0.5 hover:shadow-sm',
         featured
-          ? 'border-[var(--rose-mid)] bg-gradient-to-b from-white to-[var(--rose-wash)]'
-          : 'border-[var(--border)] bg-white',
+          ? 'border-[var(--gold)] bg-gradient-to-b from-[var(--surface)] to-[var(--paper)]'
+          : 'border-[var(--border)] bg-[var(--surface)]',
         featured && badge ? 'price-ribbon overflow-hidden' : '',
         className,
       ]
@@ -60,7 +60,7 @@ export function ServiceCard({ icon, title, description, className = '' }: Servic
       <div
         className="w-11 h-11 rounded-sm flex items-center justify-center text-xl mb-4"
         style={{
-          background: 'var(--rose-wash)',
+          background: 'var(--paper)',
           border: '1px solid var(--border)',
         }}
         aria-hidden="true"

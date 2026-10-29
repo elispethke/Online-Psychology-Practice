@@ -1,17 +1,16 @@
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useMemo } from 'react'
+import type { TFunction } from 'i18next'
 
 const BOOKING_EMAIL = 'elaine.teixeira.psy@gmail.com'
 
-function getBookingHref(category: string, hasUnit: boolean): string {
-  if (!hasUnit) {
-    return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent('Solicitação de Proposta / Proposal Request')}`
-  }
-  return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(`Agendamento / Booking — ${category}`)}`
+function getBookingHref(t: TFunction, category: string, hasUnit: boolean): string {
+  const subject = hasUnit ? t('prices.mailBooking', { category }) : t('prices.mailProposal')
+  return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}`
 }
 
 interface PricePlan {
@@ -37,12 +36,13 @@ export function Prices () {
   return (
     <section
       id='prices'
-      className='bg-white'
+      className='bg-[var(--surface)]'
       style={{ padding: 'clamp(4rem, 8vw, 7rem) 0' }}
     >
       <div className='max-w-[1200px] mx-auto px-6'>
         <div ref={ref} className='reveal'>
           <SectionTitle
+            scale="large"
             label={t('prices.label')}
             title={t('prices.title')}
             subtitle={t('prices.subtitle')}
@@ -59,13 +59,13 @@ export function Prices () {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.06 }}
               className='grid grid-cols-1 lg:grid-cols-[1.1fr_1.3fr_auto] gap-6 lg:gap-12 items-start lg:items-center py-10 border-b border-[var(--border-soft)]'
-              style={plan.featured ? { background: 'var(--rose-wash)', marginInline: '-1.5rem', paddingInline: '1.5rem' } : undefined}
+              style={plan.featured ? { background: 'var(--paper)', marginInline: '-1.5rem', paddingInline: '1.5rem' } : undefined}
             >
               {/* Identity */}
               <div>
                 <p
                   className='text-2xs font-medium tracking-[0.18em] uppercase mb-2'
-                  style={{ color: 'var(--rose-mid)' }}
+                  style={{ color: 'var(--gold)' }}
                 >
                   {plan.category}
                 </p>
@@ -73,7 +73,7 @@ export function Prices () {
                   {plan.title}
                 </h3>
                 {plan.badge && (
-                  <p className='text-[0.72rem] font-medium italic mt-1' style={{ color: 'var(--rose-deep)' }}>
+                  <p className='text-[0.72rem] font-medium italic mt-1' style={{ color: 'var(--forest)' }}>
                     {plan.badge}
                   </p>
                 )}
@@ -91,7 +91,7 @@ export function Prices () {
                   >
                     <span
                       className='font-medium mt-px flex-shrink-0'
-                      style={{ color: 'var(--rose-deep)' }}
+                      style={{ color: 'var(--forest)' }}
                       aria-hidden='true'
                     >
                       ✓
@@ -108,7 +108,7 @@ export function Prices () {
                     <>
                       <span
                         className='font-display font-light leading-none'
-                        style={{ fontSize: '2.75rem', color: 'var(--rose-deep)' }}
+                        style={{ fontSize: '2.75rem', color: 'var(--forest)' }}
                       >
                         {plan.amount}
                       </span>
@@ -119,14 +119,14 @@ export function Prices () {
                   ) : (
                     <span
                       className='font-display font-light leading-tight block'
-                      style={{ fontSize: '1.7rem', color: 'var(--rose-deep)' }}
+                      style={{ fontSize: '1.7rem', color: 'var(--forest)' }}
                     >
                       {plan.amount}
                     </span>
                   )}
                 </div>
                 <Button
-                  href={getBookingHref(plan.category, !!plan.unit)}
+                  href={getBookingHref(t, plan.category, !!plan.unit)}
                   variant={plan.featured ? 'primary' : 'outline'}
                 >
                   {plan.unit ? t('prices.cta') : t('prices.ctaInstitutional')}

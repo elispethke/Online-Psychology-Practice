@@ -6,18 +6,31 @@
    GOOGLE FONTS FALLBACK + CSS VARIABLES
 ========================================================= */
 :root {
-  --rose-deep:  #9F4A5A;
-  --rose-mid:   #C07A86;
-  --rose-light: #E8C4CB;
-  --rose-wash:  #FAF2F3;
-  --ink:        #2A2724;
-  --ink-soft:   #5C5650;
-  --ink-faint:  #9C948C;
-  --surface:    #FDFBF9;
-  --linen:      #F4EEE8;
-  --border:     rgba(159, 74, 90, 0.14);
-  --border-soft: rgba(42, 39, 36, 0.09);
-  --header-h:   84px;
+  /* Official palette — sampled from the "identidade-visual" board.
+     Only these five brand colours (+ the board's own paper tone) exist. */
+  --forest:  #28392F;   /* deep green  — primary, text, dark surfaces */
+  --sage:    #727B5E;   /* sage green  */
+  --teal:    #667B72;   /* grey-teal   */
+  --gold:    #BA9560;   /* gold        — accents, rules */
+  --sand:    #DDD0BF;   /* sand/cream  — borders, soft fills */
+  --surface: #F2EDE7;   /* board paper tone (matched to the logo crop so its edges disappear) */
+
+  /* Derived from the palette (never new hues) */
+  --paper:      color-mix(in srgb, var(--sand) 34%, var(--surface));
+  --ink:        var(--forest);
+  --ink-soft:   color-mix(in srgb, var(--forest) 80%, var(--surface));
+  --ink-faint:  color-mix(in srgb, var(--forest) 58%, var(--surface));
+  --border:     color-mix(in srgb, var(--sand) 90%, var(--forest) 10%);
+  --border-soft:color-mix(in srgb, var(--forest) 12%, transparent);
+  --on-dark:      var(--surface);
+  --on-dark-soft: color-mix(in srgb, var(--surface) 72%, var(--forest));
+
+  /* Layout & type scale */
+  --header-h:   88px;
+  --gutter:     clamp(1.25rem, 4vw, 3rem);
+  --content-w:  1240px;
+  --section-y:  clamp(5rem, 11vw, 9.5rem);
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -39,11 +52,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
   font-size: 16px;
 }
 
 body {
-  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: clip;
+  font-family: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
   color: var(--ink);
   background: var(--surface);
   line-height: 1.7;
@@ -63,32 +78,14 @@ body {
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--rose-deep);
+  color: var(--forest);
 }
 
-/* Editorial numbered list — replaces generic bordered "card" lists */
-.ed-item {
-  display: grid;
-  grid-template-columns: 2.4rem 1fr;
-  gap: 1rem;
-  padding: 1.1rem 0;
-  border-top: 1px solid var(--border-soft);
-}
-.ed-item:last-child {
-  border-bottom: 1px solid var(--border-soft);
-}
-.ed-num {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 300;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: var(--rose-light);
-}
 /* Editorial drop cap — used sparingly, only on the single densest opening paragraph */
 .dropcap:first-letter {
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -98,23 +95,7 @@ body {
   float: left;
   padding-right: 0.09em;
   padding-top: 0.04em;
-  color: var(--rose-deep);
-}
-
-/* Non-ordinal marker for ed-item lists whose order carries no real meaning */
-.ed-mark {
-  display: block;
-  width: 1.3rem;
-  height: 1px;
-  margin-top: 0.75rem;
-  background: var(--rose-light);
-}
-
-/* Thin editorial divider */
-.hr-thin {
-  height: 1px;
-  background: var(--border-soft);
-  border: none;
+  color: var(--forest);
 }
 
 /* Subtle image scale-on-hover, respects reduced motion via global rule above */
@@ -155,7 +136,7 @@ body {
   top: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--rose-deep), var(--rose-mid));
+  background: linear-gradient(90deg, var(--forest), var(--gold));
   z-index: 9999;
   width: 0%;
   transition: width 0.1s linear;
@@ -165,23 +146,23 @@ body {
    CUSTOM SCROLLBAR
 ========================================================= */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--rose-wash); }
-::-webkit-scrollbar-thumb { background: var(--rose-mid); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--rose-deep); }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--forest); }
 
 /* =========================================================
    SELECTION COLOR
 ========================================================= */
 ::selection {
-  background: var(--rose-light);
-  color: var(--rose-deep);
+  background: var(--sand);
+  color: var(--forest);
 }
 
 /* =========================================================
    FOCUS VISIBLE (acessibilidade teclado)
 ========================================================= */
 :focus-visible {
-  outline: 2px solid var(--rose-mid);
+  outline: 2px solid var(--gold);
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -200,33 +181,12 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--rose-deep);
+  background: var(--forest);
   transition: width var(--transition);
 }
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
-}
-
-/* =========================================================
-   TIMELINE
-========================================================= */
-.timeline-item {
-  padding: 1.5rem 0 1.5rem 2rem;
-  position: relative;
-  border-left: 1.5px solid var(--border);
-}
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -5px;
-  top: 1.75rem;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--rose-mid);
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 0 1.5px var(--rose-mid);
 }
 
 /* =========================================================
@@ -247,7 +207,7 @@ body {
   text-transform: uppercase;
   text-align: left;
   color: var(--ink-faint);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
 }
 .cv-table thead th:first-child,
 .cv-table td:first-child {
@@ -262,51 +222,11 @@ body {
   transition: background var(--transition);
 }
 .cv-table tbody tr:last-child { border-bottom: none; }
-.cv-table tbody tr:hover { background: var(--rose-wash); }
+.cv-table tbody tr:hover { background: var(--paper); }
 .cv-table td {
   padding: 1.15rem 1.25rem;
   font-size: 0.88rem;
   vertical-align: top;
-}
-
-/* =========================================================
-   TESTIMONIALS — EDITORIAL GRID
-   Deliberate composition (photo + 1 featured quote spanning
-   two columns + 2 supporting quotes) so the item count never
-   leaves an orphaned card alone in its own row.
-========================================================= */
-.testimonials-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 640px) {
-  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1024px) {
-  .testimonials-grid {
-    grid-template-columns: 0.85fr 1fr 1fr;
-    grid-template-areas: "photo featured featured" "photo q2 q3";
-  }
-  .testimonials-photo { grid-area: photo; }
-  .testimonials-featured { grid-area: featured; }
-  .testimonials-q2 { grid-area: q2; }
-  .testimonials-q3 { grid-area: q3; }
-}
-
-/* =========================================================
-   TESTIMONIAL QUOTE DECORATION
-========================================================= */
-.testimonial-quote-mark::before {
-  content: '"';
-  position: absolute;
-  top: -0.5rem;
-  left: 1.75rem;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 5rem;
-  color: var(--rose-light);
-  line-height: 1;
-  pointer-events: none;
 }
 
 /* =========================================================
@@ -317,8 +237,8 @@ body {
   position: absolute;
   top: 1rem;
   right: -1.5rem;
-  background: var(--rose-deep);
-  color: #ffffff;
+  background: var(--forest);
+  color: var(--surface);
   font-size: 0.6rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -326,4 +246,38 @@ body {
   padding: 0.25rem 2rem;
   transform: rotate(45deg);
   white-space: nowrap;
+}
+
+/* =========================================================
+   MISSION GALLERY
+========================================================= */
+.gallery-rail {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-rail::-webkit-scrollbar { display: none; }
+.gallery-rail:focus-visible { outline-offset: -4px; }
+
+.gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--gold);
+  border-radius: 9999px;
+  color: var(--on-dark);
+  background: transparent;
+  transition: background var(--transition), color var(--transition);
+}
+.gallery-btn:hover { background: var(--gold); color: var(--forest); }
+
+/* Official-logo artwork pieces: the board's paper tone is darker-than-or-equal to the page,
+   so `darken` hides the crop edges without touching the artwork itself. */
+.logo-piece {
+  position: absolute;
+  max-width: none;
+  mix-blend-mode: darken;
+  user-select: none;
 }

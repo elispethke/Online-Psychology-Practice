@@ -1,10 +1,13 @@
 {
   "header": {
-    "subtitle": "Intercultural Psychologist"
+    "subtitle": "Intercultural Psychologist",
+    "logoAlt": "Elaine Teixeira — Psychology Across Cultures",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "langLabel": "Language"
   },
   "nav": {
-    "home": "Home",
-    "intercultural": "Living Between Cultures",
+    "intercultural": "Between Cultures",
     "counselling": "Therapy",
     "about": "About Me",
     "consulting": "Consulting",
@@ -12,7 +15,8 @@
     "testimonials": "Testimonials",
     "prices": "Fees",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "africa": "Mission in Africa"
   },
   "hero": {
     "badge": "Berlin · Online Sessions",
@@ -30,7 +34,10 @@
     "card1Label": "Experience",
     "card1Sub": "years of practice",
     "card2Label": "Languages",
-    "card2Sub": "PT · EN · ES"
+    "card2Sub": "PT · EN",
+    "ctaBook": "Book a consultation",
+    "imageAlt": "Black and white portrait of Elaine Teixeira",
+    "scroll": "Scroll to continue"
   },
   "intercultural": {
     "label": "Living Between Cultures",
@@ -57,7 +64,8 @@
     "p2": "Mental health is a fundamental part of overall wellbeing. Caring for the emotional dimension is essential for facing life's challenges, especially in contexts of change, adaptation and vulnerability.",
     "p3": "If you feel this might be an important moment to seek support, therapy can offer a space for listening, understanding and strengthening.",
     "cta": "Schedule a conversation",
-    "ctaNote": "Booking a first conversation can be the beginning of this process."
+    "ctaNote": "Booking a first conversation can be the beginning of this process.",
+    "imageAlt": "Elaine Teixeira seated at a desk, smiling, in front of a framed picture"
   },
   "counselling": {
     "label": "Therapy",
@@ -80,8 +88,16 @@
     "group": {
       "title": "Group counselling",
       "p1": "Group sessions offer a structured space for sharing, reflection and collective processing.",
-      "p2": "Through an intercultural approach, group work integrates therapeutic elements with the strength of shared experience. The exchange between people facing similar challenges fosters identification, belonging and new forms of understanding. At the same time, the group is facilitated in a careful, professional and empathic way, ensuring a safe, ethical and welcoming environment where each participant can express themselves at their own pace, whenever they wish. Knowledge is built through this exchange, and collective listening becomes a tool for transformation and motivation in situations that can feel paralysing for the individual.",
-      "p3": "This combination of clinical listening and peer support allows participants not only to better understand their own experiences, but also to expand their internal resources and strengthen their ability to deal with everyday challenges."
+      "p3": "This combination of clinical listening and peer support allows participants not only to better understand their own experiences, but also to expand their internal resources and strengthen their ability to deal with everyday challenges.",
+      "label": "Group sessions",
+      "p2a": "Through an intercultural approach, group work integrates therapeutic elements with the strength of shared experience. The exchange between people facing similar challenges fosters identification, belonging and new forms of understanding.",
+      "p2b": "At the same time, the group is facilitated in a careful, professional and empathic way, ensuring a safe, ethical and welcoming environment where each participant can express themselves at their own pace, whenever they wish.",
+      "p2c": "Knowledge is built through this exchange, and collective listening becomes a tool for transformation and motivation in situations that can feel paralysing for the individual.",
+      "photosAlt": [
+        "Group session: three participants laughing together during the conversation",
+        "Group session: participants sharing a relaxed moment",
+        "Group session: a conversation circle facilitated by Elaine Teixeira"
+      ]
     },
     "approach": {
       "title": "The intercultural psychology approach",
@@ -114,7 +130,8 @@
         "Support for people with substance dependency",
         "Motherhood abroad"
       ]
-    }
+    },
+    "imageAlt": "Elaine Teixeira during an online session"
   },
   "about": {
     "label": "About Me",
@@ -148,7 +165,16 @@
         "title": "Clinical Psychologist — Brazil",
         "desc": "Nearly 9 years as a volunteer at GIV – Grupo de Incentivo à Vida, providing psychotherapy and preventive counselling for the LGBTQI+ community, women, children and adolescents living with HIV-Aids, alongside private clinical practice in São Paulo."
       }
-    }
+    },
+    "figures": {
+      "years": "years of practice",
+      "languages": "languages of care",
+      "yearsValue": "20+",
+      "languagesValue": "2",
+      "langList": "PT · EN",
+      "detailTitle": "Career in detail"
+    },
+    "portraitAlt": "Black and white portrait of Elaine Teixeira"
   },
   "consulting": {
     "label": "Consulting",
@@ -201,7 +227,8 @@
       ],
       "formatTitle": "Format",
       "format": "Workshops, training sessions and learning programmes can be delivered online or in person, in Portuguese or English, for small teams or large groups.",
-      "cta": "Request a proposal"
+      "cta": "Request a proposal",
+      "imageAlt": "Elaine Teixeira in a working environment"
     }
   },
   "cv": {
@@ -212,17 +239,72 @@
     "colContext": "Location · Context",
     "currentBadge": "Current",
     "rows": [
-      { "period": "Current", "role": "Intercultural Psychologist", "org": "Brazilian Embassy", "context": "Berlin / Online" },
-      { "period": "Current", "role": "Psychologist", "org": "Malengo", "context": "Online / Germany" },
-      { "period": "2023 – 2025", "role": "Psychologist", "org": "German Red Cross", "context": "Berlin" },
-      { "period": "2022 – 2023", "role": "Psychologist", "org": "ZIK – Betreutes Wohnen", "context": "Berlin" },
-      { "period": "2017 – 2022", "role": "Volunteer Psychologist", "org": "Support for migrants and women in vulnerability", "context": "Berlin / Online" },
-      { "period": "2013 – 2014", "role": "Preventive Health Manager", "org": "Médecins Sans Frontières (MSF)", "context": "Mozambique" },
-      { "period": "2012 – 2013", "role": "Psychosocial Consultant", "org": "Ministry of Health (HIV)", "context": "Mozambique" },
-      { "period": "2011 – 2012", "role": "Psychosocial Consultant", "org": "ARK (Absolute Return for Kids)", "context": "Mozambique" },
-      { "period": "2011", "role": "HIV-Aids Lobbying & Emergency Psychology", "org": "Médecins Sans Frontières (MSF)", "context": "Brazil / Mozambique" },
-      { "period": "2007 – 2010", "role": "Psychosocial Coordinator", "org": "Médecins Sans Frontières (MSF)", "context": "Mozambique / Eswatini" },
-      { "period": "1998 – 2007", "role": "Clinical Psychologist", "org": "Private practice and HIV projects", "context": "Brazil" }
+      {
+        "period": "Current",
+        "role": "Intercultural Psychologist",
+        "org": "Brazilian Embassy",
+        "context": "Berlin / Online"
+      },
+      {
+        "period": "Current",
+        "role": "Psychologist",
+        "org": "Malengo",
+        "context": "Online / Germany"
+      },
+      {
+        "period": "2023 – 2025",
+        "role": "Psychologist",
+        "org": "German Red Cross",
+        "context": "Berlin"
+      },
+      {
+        "period": "2022 – 2023",
+        "role": "Psychologist",
+        "org": "ZIK – Betreutes Wohnen",
+        "context": "Berlin"
+      },
+      {
+        "period": "2017 – 2022",
+        "role": "Volunteer Psychologist",
+        "org": "Support for migrants and women in vulnerability",
+        "context": "Berlin / Online"
+      },
+      {
+        "period": "2013 – 2014",
+        "role": "Preventive Health Manager",
+        "org": "Médecins Sans Frontières (MSF)",
+        "context": "Mozambique"
+      },
+      {
+        "period": "2012 – 2013",
+        "role": "Psychosocial Consultant",
+        "org": "Ministry of Health (HIV)",
+        "context": "Mozambique"
+      },
+      {
+        "period": "2011 – 2012",
+        "role": "Psychosocial Consultant",
+        "org": "ARK (Absolute Return for Kids)",
+        "context": "Mozambique"
+      },
+      {
+        "period": "2011",
+        "role": "HIV-Aids Lobbying & Emergency Psychology",
+        "org": "Médecins Sans Frontières (MSF)",
+        "context": "Brazil / Mozambique"
+      },
+      {
+        "period": "2007 – 2010",
+        "role": "Psychosocial Coordinator",
+        "org": "Médecins Sans Frontières (MSF)",
+        "context": "Mozambique / Eswatini"
+      },
+      {
+        "period": "1998 – 2007",
+        "role": "Clinical Psychologist",
+        "org": "Private practice and HIV projects",
+        "context": "Brazil"
+      }
     ]
   },
   "testimonials": {
@@ -247,7 +329,8 @@
         "role": "Brazilian migrant, Berlin",
         "initials": "AF"
       }
-    ]
+    ],
+    "imageAlt": "Portrait of Elaine Teixeira seated"
   },
   "prices": {
     "label": "Fees",
@@ -299,7 +382,9 @@
       }
     ],
     "cta": "Book now",
-    "ctaInstitutional": "Request a proposal"
+    "ctaInstitutional": "Request a proposal",
+    "mailBooking": "Booking — {{category}}",
+    "mailProposal": "Proposal request"
   },
   "contact": {
     "label": "Contact",
@@ -325,15 +410,33 @@
       "sendingBtn": "Sending...",
       "successMsg": "Thank you, {{name}}! Your message has been sent. I'll be in touch soon.",
       "errorMsg": "Please fill in all required fields.",
-      "rateLimitMsg": "You have already sent a message recently. Please wait 1 hour before sending again."
-    }
+      "rateLimitMsg": "You have already sent a message recently. Please wait 1 hour before sending again.",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "consentLabel": "I have read the privacy policy and agree to the processing of the form data, including transmission through the EmailJS service (servers in the USA).",
+      "consentError": "To send, please tick the privacy checkbox.",
+      "healthNote": "Please do not include health data in the form. A short message is enough for a first conversation.",
+      "privacyLink": "Privacy policy"
+    },
+    "imageAlt": "Elaine Teixeira smiling in front of a stone bridge",
+    "langPt": "Portuguese",
+    "langEn": "English"
   },
   "cookie": {
-    "label": "Cookie notice",
-    "text": "This site uses essential functional cookies required for it to work. By continuing to browse, you agree to the use of necessary cookies. For more information, contact us:",
-    "learnMore": "elaine.teixeira.psy@gmail.com",
-    "accept": "Accept",
-    "reject": "Decline"
+    "title": "Your privacy",
+    "text": "This site does not set cookies. We only store in your browser what is necessary (your choice and a form safeguard). Cookie-free audience measurement (Plausible) is only switched on if you allow it.",
+    "privacyLink": "Privacy policy",
+    "necessaryTitle": "Necessary",
+    "alwaysOn": "always on",
+    "necessaryDesc": "Stores your choice in this notice and protects the form against excessive submissions. No tracking.",
+    "analyticsTitle": "Statistics",
+    "analyticsDesc": "Plausible Analytics: counts visits in aggregate (page, source, browser, country). No cookies. Only loaded with your permission.",
+    "rejectAll": "Decline",
+    "acceptAll": "Accept",
+    "settings": "Settings",
+    "save": "Save choice",
+    "label": "Cookie notice"
   },
   "whatsapp": {
     "label": "Contact via WhatsApp"
@@ -377,6 +480,37 @@
     "cta": "Book a session",
     "copyright": "© 2025 Elaine Teixeira — Intercultural Psychologist. All rights reserved.",
     "legal": "Practice subject to CRP and EAPA professional standards",
-    "dev": "Website developed by Elis Pethke"
+    "devPrefix": "Website developed by",
+    "newTab": "opens in a new tab",
+    "privacy": "Privacy policy",
+    "imprint": "Impressum",
+    "cookieSettings": "Cookie settings"
+  },
+  "brand": {
+    "title": "Psychology Across Cultures",
+    "tagline": "Roots · Identity · Belonging",
+    "line1": "Psychology",
+    "line2": "Across Cultures"
+  },
+  "meta": {
+    "title": "Elaine Teixeira · Psychology Across Cultures | Berlin & Online",
+    "description": "Brazilian psychologist in Berlin. Online sessions in Portuguese and English for migrants, expatriates and Brazilians abroad. Over 20 years of experience.",
+    "ogAlt": "Elaine Teixeira — Psychology Across Cultures, Berlin"
+  },
+  "africa": {
+    "label": "Mission in Africa",
+    "title": "Mozambique and Eswatini",
+    "subtitle": "Moments from mental health and psychosocial support work in humanitarian settings, between 2007 and 2014.",
+    "soon": "Photographs coming soon",
+    "placeholder": "Mission photo",
+    "prev": "Previous photos",
+    "next": "Next photos",
+    "pause": "Pause motion",
+    "play": "Resume motion",
+    "hint": "Drag or use the arrows to explore",
+    "galleryLabel": "Photo gallery of the mission in Africa"
+  },
+  "common": {
+    "backToTop": "Back to top"
   }
 }

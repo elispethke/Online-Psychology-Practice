@@ -2,6 +2,8 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import pt from "./pt.json";
 import en from "./en.json";
+import de from "./de.json";
+import { parseRoute } from "@/lib/route";
 
 export const LANGUAGES = [
   { code: "pt", label: "PT", name: "Português" },
@@ -14,9 +16,11 @@ i18n.use(initReactI18next).init({
   resources: {
     pt: { translation: pt },
     en: { translation: en },
+    de: { translation: de },
   },
 
-  lng: "pt",
+  // Language comes from the URL: "/" = Português (default for every new visitor), "/en" = English.
+  lng: parseRoute(window.location.pathname).lang,
   fallbackLng: "pt",
 
   interpolation: {

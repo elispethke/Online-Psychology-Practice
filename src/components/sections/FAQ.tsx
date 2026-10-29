@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 
@@ -24,7 +24,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="bg-white"
+      className="bg-[var(--surface)]"
       style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 0' }}
     >
       <div className="max-w-[880px] mx-auto px-6">
@@ -47,18 +47,11 @@ export function FAQ() {
                   onClick={() => toggle(i)}
                   aria-expanded={isOpen}
                   className="w-full grid gap-4 items-baseline py-6 text-left group"
-                  style={{ gridTemplateColumns: '2.75rem 1fr auto' }}
+                  style={{ gridTemplateColumns: '1fr auto' }}
                 >
                   <span
-                    className="font-display font-light leading-none"
-                    style={{ fontSize: '1.6rem', color: isOpen ? 'var(--rose-deep)' : 'var(--rose-light)' }}
-                    aria-hidden="true"
-                  >
-                    0{i + 1}
-                  </span>
-                  <span
                     className="text-[1rem] font-medium leading-snug transition-colors"
-                    style={{ color: isOpen ? 'var(--rose-deep)' : 'var(--ink)' }}
+                    style={{ color: isOpen ? 'var(--forest)' : 'var(--ink)' }}
                   >
                     {item.question}
                   </span>
@@ -66,7 +59,7 @@ export function FAQ() {
                     className="flex-shrink-0 font-display font-light leading-none transition-transform duration-300"
                     style={{
                       fontSize: '1.4rem',
-                      color: 'var(--rose-mid)',
+                      color: 'var(--gold)',
                       transform: isOpen ? 'rotate(45deg)' : 'none',
                     }}
                     aria-hidden="true"
@@ -87,7 +80,7 @@ export function FAQ() {
                     >
                       <p
                         className="text-[0.92rem] text-ink-soft leading-relaxed pb-7"
-                        style={{ paddingLeft: '2.75rem', maxWidth: '58ch' }}
+                        style={{ maxWidth: '58ch' }}
                       >
                         {item.answer}
                       </p>

@@ -5,20 +5,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Elaine Teixeira · Psicóloga Intercultural | Berlim &amp; Online</title>
+<title>Elaine Teixeira · Psicologia entre Culturas | Berlim &amp; Online</title>
 
 <meta name="description" content="Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes, expatriados e brasileiros no exterior. Mais de 20 anos de experiência." />
 
-<meta name="keywords" content="psicóloga brasileira Berlim, psicóloga intercultural, terapia online português, psychologist Berlin English, MHPSS, saúde mental migrantes, intercultural psychology Berlin" />
-
 <meta name="author" content="Elaine Teixeira" />
 
-<link rel="canonical" href="https://elaineteixeira.com" />
+<link rel="canonical" href="https://elaineteixeira.com/" data-seo />
+<link rel="alternate" hreflang="pt" href="https://elaineteixeira.com/" data-seo />
+<link rel="alternate" hreflang="en" href="https://elaineteixeira.com/en" data-seo />
+<link rel="alternate" hreflang="x-default" href="https://elaineteixeira.com/" data-seo />
 
-<meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="googlebot" content="index, follow, max-image-preview:large" />
 
-<meta name="theme-color" content="#9F4A5A" />
+<meta name="theme-color" content="#28392F" />
 
 <meta name="geo.region" content="DE-BE">
 <meta name="geo.placename" content="Berlin">
@@ -27,12 +28,14 @@
 
 <!-- Open Graph -->
 
-<meta property="og:title" content="Elaine Teixeira · Psicóloga Intercultural | Berlim &amp; Online" />
-<meta property="og:description" content="Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes e expatriados. Mais de 20 anos de experiência." />
+<meta property="og:title" content="Elaine Teixeira · Psicologia entre Culturas | Berlim &amp; Online" />
+<meta property="og:description" content="Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes, expatriados e brasileiros no exterior. Mais de 20 anos de experiência." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://elaineteixeira.com" />
+<meta property="og:url" content="https://elaineteixeira.com/" />
 <meta property="og:image" content="https://elaineteixeira.com/og-image.jpg" />
-<meta property="og:image:alt" content="Elaine Teixeira — Psicóloga Intercultural em Berlim" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Elaine Teixeira — Psicologia entre Culturas, Berlim" />
 <meta property="og:locale" content="pt_BR" />
 <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:site_name" content="Elaine Teixeira" />
@@ -40,77 +43,64 @@
 <!-- Twitter Card -->
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Elaine Teixeira · Psicóloga Intercultural" />
-<meta name="twitter:description" content="Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes e expatriados." />
+<meta name="twitter:title" content="Elaine Teixeira · Psicologia entre Culturas" />
+<meta name="twitter:description" content="Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes, expatriados e brasileiros no exterior. Mais de 20 anos de experiência." />
 <meta name="twitter:image" content="https://elaineteixeira.com/og-image.jpg" />
+<meta name="twitter:image:alt" content="Elaine Teixeira — Psicologia entre Culturas, Berlim" />
 
-<!-- Favicons -->
-
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<!-- Favicons: the official emblem. Files live in src/assets/icons so the build gives them content-hashed
+     URLs (a changed icon always gets a new URL, which is what forces browsers to drop a cached one). -->
+<link rel="icon" type="image/png" sizes="32x32" href="/src/assets/icons/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/src/assets/icons/favicon-96.png" />
+<link rel="icon" href="/src/assets/icons/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" sizes="180x180" href="/src/assets/icons/apple-touch-icon.png" />
 
 <link rel="manifest" href="/site.webmanifest" />
 
-<!-- Fonts -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-
-<!-- Structured Data: Psychologist -->
-
-<script type="application/ld+json">
+<!-- Structured data (JSON-LD). Only verified facts: name, role, languages, city, official URL/image, LinkedIn.
+     No ratings, reviews, prices, street address or certifications. @type "Psychologist" does not exist in schema.org. -->
+<script type="application/ld+json" id="jsonld">
 {
-"@context": "https://schema.org",
-"@type": "Psychologist",
-"name": "Elaine Teixeira",
-"jobTitle": "Psicóloga Intercultural / Intercultural Psychologist",
-"description": "Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes, expatriados e brasileiros no exterior. Mais de 20 anos de experiência.",
-"url": "https://elaineteixeira.com",
-"image": "https://elaineteixeira.com/og-image.jpg",
-"email": "elaine.teixeira.psy@gmail.com",
-"sameAs": ["https://www.linkedin.com/in/elaine-teixeira-20a90459/"],
-"address": {
-"@type": "PostalAddress",
-"addressLocality": "Berlin",
-"addressCountry": "DE"
-},
-"availableLanguage": ["Portuguese", "English", "Spanish"],
-"areaServed": ["Europe", "International Online"],
-"knowsAbout": [
-"Psicologia Intercultural",
-"Intercultural Psychology",
-"MHPSS",
-"Saúde Mental em Migração",
-"Migration Mental Health",
-"Apoio Psicossocial",
-"Psychosocial Counselling"
-]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://elaineteixeira.com/#website",
+      "url": "https://elaineteixeira.com/",
+      "name": "Elaine Teixeira · Psicologia entre Culturas",
+      "inLanguage": ["pt", "en"],
+      "publisher": { "@id": "https://elaineteixeira.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://elaineteixeira.com/#person",
+      "name": "Elaine Teixeira",
+      "jobTitle": "Psicóloga Intercultural / Intercultural Psychologist",
+      "description": "Psicóloga brasileira em Berlim. Atendimento online em português e inglês para migrantes, expatriados e brasileiros no exterior. Mais de 20 anos de experiência.",
+      "url": "https://elaineteixeira.com/",
+      "image": "https://elaineteixeira.com/og-image.jpg",
+      "email": "elaine.teixeira.psy@gmail.com",
+      "sameAs": ["https://www.linkedin.com/in/elaine-teixeira-20a90459/"],
+      "knowsLanguage": ["pt", "en"],
+      "knowsAbout": ["Intercultural psychology", "Psicologia intercultural", "Migration and mental health", "Mental Health and Psychosocial Support (MHPSS)"],
+      "workLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE" } }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://elaineteixeira.com/#service",
+      "name": "Elaine Teixeira · Psicologia entre Culturas",
+      "url": "https://elaineteixeira.com/",
+      "image": "https://elaineteixeira.com/og-image.jpg",
+      "provider": { "@id": "https://elaineteixeira.com/#person" },
+      "serviceType": ["Aconselhamento psicológico intercultural", "Aconselhamento em grupo", "Consultoria em saúde mental e apoio psicossocial (MHPSS)", "Workshops de saúde mental em ambientes corporativos"],
+      "areaServed": ["Online", "Berlin"],
+      "availableLanguage": ["pt", "en"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE" }
+    }
+  ]
 }
 </script>
-
-<!-- Structured Data: Website -->
-
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "WebSite",
-"name": "Elaine Teixeira",
-"url": "https://elaineteixeira.com",
-"potentialAction": {
-"@type": "SearchAction",
-"target": "https://elaineteixeira.com/?s={search_term_string}",
-"query-input": "required name=search_term_string"
-}
-}
-</script>
-
-<!-- Analytics: Plausible (cookie-free, GDPR compliant) -->
-<script defer data-domain="elaineteixeira.com" src="https://plausible.io/js/script.js"></script>
 
 </head>
 

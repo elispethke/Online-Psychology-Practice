@@ -77,12 +77,12 @@
     "modalitiesTitle": "Modalidades de Atendimento",
     "individual": {
       "title": "Aconselhamento psicológico individual",
-      "p1": "Viver entre culturas pode ser uma experiência rica, mas também profundamente desafiadora. Muitas vezes, o que se perde não é apenas o espaço físico que ocupávamos no nosso país, mas a nossa história, nossas conexões sociais, profissionais, laços afetivos e familiares, e especificidades de quem migra do hemisfério sul para o norte, então perdemos a tropicalidade, o sol, entre outras perdas da nossa cultura.",
+      "p1": "Muitas vezes, o que se perde não é apenas o espaço físico que ocupávamos no nosso país, mas a nossa história, nossas conexões sociais, profissionais, laços afetivos e familiares, e especificidades de quem migra do hemisfério sul para o norte, então perdemos a tropicalidade, o sol, entre outras perdas da nossa cultura.",
       "p2": "E nesse limbo da adaptação intercultural, perdemos referências internas: a sensação de pertencimento, de identidade e de continuidade. A adaptação a um novo país pode trazer solidão, ansiedade, sobrecarga emocional e um sentimento difícil de explicar de não pertencimento, \"nem de lá, nem de cá\". Já aconteceu contigo de ir para seu país de origem e sentir saudade do país receptor? (ou vice-versa).",
       "p3": "O acompanhamento psicológico individual oferece um espaço seguro e acolhedor para você poder falar sobre tudo isso, no seu tempo, na sua língua, a partir da sua história.",
       "p4": "A partir de uma abordagem intercultural, o processo terapêutico permite compreender e integrar experiências de migração, elaborando perdas, transições e conflitos internos que fazem parte desse percurso, permitindo a você desenvolver estratégias pessoais e recursos para apoiar sua integração no país receptor, e seu bem-estar psicossocial, que é super importante para prevenir o agravamento das suas questões emocionais desafiadoras.",
       "p5": "Mais do que diagnosticar patologias mentais ou sintomas, é investigar os gatilhos que estão causando esses problemas emocionais, desenvolver resiliência e mecanismos de enfrentamento e proteção, a fim de recuperar o equilíbrio e a saúde emocional. Nessa perspectiva o objetivo é desenvolver indivíduos autônomos e funcionais na sua história migratória, fortalecer recursos internos e reconstruir um sentido de si, mesmo em contextos de mudança e incerteza.",
-      "closing": "Você não precisa atravessar esse processo sozinho(a)."
+      "closing": "Você não precisa atravessar esse processo sozinha."
     },
     "group": {
       "title": "Aconselhamento em grupo",
@@ -180,7 +180,7 @@
       "title": "Saúde Mental e Apoio Psicossocial (MHPSS)",
       "description": "Ofereço consultoria para organizações, instituições e projetos que atuam em contextos multiculturais, humanitários e de alta complexidade, com foco no desenvolvimento e fortalecimento de estratégias em saúde mental e apoio psicossocial (MHPSS).",
       "p1": "Minha atuação combina experiência clínica, coordenação de programas e desenvolvimento de políticas e diretrizes em diferentes contextos internacionais.",
-      "p2": "Ao longo da minha trajetória com Médecins Sans Frontières e outras organizações, atuei em projetos de HIV/AIDS, tuberculose e saúde comunitária em países da África, incluindo Moçambique e Eswatini, desenvolvendo e coordenando programas de saúde mental e apoio psicossocial em contextos de elevada vulnerabilidade. Essa experiência inclui a elaboração de protocolos, formação de equipes, supervisão técnica e implementação de modelos inovadores de cuidado centrados na comunidade.",
+      "p2": "Ao longo da minha trajetória com MSF e outras organizações, atuei em projetos de HIV/AIDS, tuberculose e saúde comunitária em países da África, incluindo Moçambique e Eswatini, desenvolvendo e coordenando programas de saúde mental e apoio psicossocial em contextos de elevada vulnerabilidade. Essa experiência inclui a elaboração de protocolos, formação de equipes, supervisão técnica e implementação de modelos inovadores de cuidado centrados na comunidade.",
       "p3": "Em colaboração com o Ministério da Saúde de Moçambique, desenvolvi diretrizes nacionais de apoio psicossocial no contexto do HIV/AIDS, posteriormente integradas ao programa de tratamento no país.",
       "areasTitle": "Áreas de atuação",
       "areas": [
@@ -269,7 +269,7 @@
       {
         "period": "2013 – 2014",
         "role": "Gerente de saúde preventiva",
-        "org": "Médicos Sem Fronteiras (MSF)",
+        "org": "MSF",
         "context": "Moçambique"
       },
       {
@@ -287,13 +287,13 @@
       {
         "period": "2011",
         "role": "Lobbying HIV-Aids & Psicologia em emergência",
-        "org": "Médicos Sem Fronteiras (MSF)",
+        "org": "MSF",
         "context": "Brasil / Moçambique"
       },
       {
         "period": "2007 – 2010",
         "role": "Coordenadora Psicossocial",
-        "org": "Médicos Sem Fronteiras (MSF)",
+        "org": "MSF",
         "context": "Moçambique / Eswatini"
       },
       {

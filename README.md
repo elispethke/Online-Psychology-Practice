@@ -4,127 +4,68 @@
   <img src="docs/preview.png" alt="Website preview" width="900">
 </p>
 
-Website institucional profissional com React + Vite + TypeScript + Tailwind CSS.
+Site institucional (PT/EN, com páginas legais também em DE). React + Vite + TypeScript + Tailwind, 100% estático.
 
 ## Stack
 
-| Tecnologia     | Uso                              |
-|---------------|----------------------------------|
-| React 18      | UI library                       |
-| Vite 5        | Build tool & dev server          |
-| TypeScript    | Type safety                      |
-| Tailwind CSS  | Utility-first styling            |
-| react-i18next | Internacionalização (PT, EN, DE) |
-| Framer Motion | Animações elegantes              |
-| lucide-react  | Ícones                           |
+| Tecnologia              | Uso                                                      |
+|-------------------------|----------------------------------------------------------|
+| React 18 + TypeScript   | UI (strict)                                              |
+| Vite 5                  | Build e dev server                                       |
+| Tailwind CSS            | Estilo, sobre design tokens em CSS variables             |
+| react-i18next           | Traduções (idioma vem da URL)                            |
+| motion                  | Animações (respeitam `prefers-reduced-motion`)           |
+| @emailjs/browser        | Envio do formulário sem backend                          |
+| Vitest + Testing Library| Testes                                                   |
+| ESLint + Prettier       | Qualidade e formatação                                   |
 
-## Estrutura
+## Scripts
+
+```bash
+npm run dev         # desenvolvimento
+npm test            # testes (Vitest)
+npm run lint        # ESLint (0 warnings)
+npm run typecheck   # tsc --noEmit
+npm run build       # tsc + vite build + HTML por rota (SEO)
+```
+
+O CI (`.github/workflows/ci.yml`) roda lint, typecheck, testes e build a cada push/PR.
+
+## Estrutura e responsabilidades
 
 ```
 src/
-├── assets/               # Imagens (substituir therapist-placeholder.jpg)
 ├── components/
-│   ├── layout/           # Header, Footer
-│   ├── ui/               # Button, SectionTitle, Card  (reutilizáveis)
-│   └── sections/         # Hero, About, Counselling, Consulting,
-│                         # MiniCV, Testimonials, Prices, Contact
-├── hooks/
-│   └── useScrollReveal.ts
-├── i18n/
-│   ├── i18n.ts           # Configuração i18next
-│   ├── pt.json           # Português
-│   ├── en.json           # English
-│   └── de.json           # Deutsch
-├── pages/
-│   └── Home.tsx          # Página principal
-├── styles/
-│   └── globals.css       # Design tokens + base styles
-├── App.tsx
-└── main.tsx
+│   ├── layout/      # Header, Footer, LegalPage, NotFound (estrutura da página)
+│   ├── sections/    # uma seção da home por arquivo (Hero, Contact, Prices...)
+│   └── ui/          # peças reutilizáveis sem regra de negócio (Button, Reveal, ErrorBoundary...)
+├── config/          # constantes do site e dados legais (e-mail, WhatsApp, LinkedIn: um lugar só)
+├── data/            # dados estáticos (galeria)
+├── hooks/           # useLang, useScrolledPast, useActiveSection
+├── i18n/            # catálogos pt/en/de + init
+├── legal/           # textos de privacidade e impressum
+├── lib/             # lógica SEM UI: paths (rotas puras), route (navegação), consent,
+│                    # analytics, contactForm (validação + envio + erros), seo, logger
+├── pages/           # Home
+├── styles/          # globals.css (tokens, base)
+└── test/            # setup do Vitest
+scripts/postbuild-seo.mjs   # gera HTML estático por rota + sitemap/robots
 ```
 
-## Como rodar
+Regra de dependência: `components` → `hooks`/`lib`/`config`; `lib` nunca importa de `components`.
 
-### Pré-requisitos
-- Node.js 18+
-- npm ou pnpm
+## Variáveis de ambiente
 
-### Instalação
+Copie `.env.example` para `.env` e preencha as chaves do EmailJS (`VITE_EMAILJS_*`).
+Sem elas o formulário mostra uma mensagem de "indisponível" com o e-mail direto (não quebra).
 
-```bash
-# 1. Instalar dependências
-npm install
+## Responsividade
 
-# 2. Iniciar servidor de desenvolvimento
-npm run dev
+Testado de 320 px (celular) a 3840 px (telão). Abaixo de 1920 px o `rem` é 16 px; acima disso a
+fonte-raiz acompanha a viewport e todo o layout (em `rem`) escala junto. Alvos de toque ≥ 44 px em telas
+de toque; botões flutuantes respeitam a área segura do iPhone.
 
-# 3. Abrir no navegador
-# http://localhost:5173
-```
+## Texto e idiomas
 
-### Build para produção
-
-```bash
-npm run build
-npm run preview
-```
-
-## Trocar foto da terapeuta
-
-Substitua o arquivo:
-```
-src/assets/therapist-placeholder.jpg
-```
-
-No componente `TherapistPortrait.tsx`, troque o SVG por:
-
-```tsx
-import photo from '@/assets/therapist-photo.jpg'
-
-export function TherapistPortrait() {
-  return (
-    <img
-      src={photo}
-      alt="Elaine Teixeira — Psicóloga Intercultural"
-      className="w-full h-full object-cover"
-      style={{ aspectRatio: '3/4' }}
-    />
-  )
-}
-```
-
-## Personalização
-
-### Cores
-Edite as variáveis em `src/styles/globals.css`:
-```css
-:root {
-  --rose-deep:  #9F4A5A;
-  --rose-mid:   #C07A86;
-  --rose-light: #E8C4CB;
-  --rose-wash:  #FAF2F3;
-}
-```
-
-### Textos
-Edite os arquivos JSON em `src/i18n/`:
-- `pt.json` — Português
-- `en.json` — English
-- `de.json` — Deutsch
-
-### Adicionar novo idioma
-1. Crie `src/i18n/xx.json`
-2. Importe e registre em `src/i18n/i18n.ts`
-3. Adicione ao array `LANGUAGES`
-
-## Formulário de contato
-
-Por padrão, o formulário exibe uma confirmação visual.
-Para integrar com email, adicione um serviço como:
-- **Resend** + API Route
-- **Formspree** (substitua o `handleSubmit`)
-- **EmailJS**
-
----
-
-© 2024 Elaine Teixeira
+Edite `src/i18n/pt.json` e `en.json`. Para um novo idioma: crie o JSON, registre em `src/i18n/i18n.ts` e
+na tabela `PATHS` de `src/lib/paths.ts` (o script de SEO usa a mesma tabela).

@@ -16,18 +16,24 @@ const abs = p => (p === '/' ? `${SITE}/` : `${SITE}${p}`)
 const html = readFileSync('dist/index.html', 'utf8')
 const meta = { pt: JSON.parse(readFileSync('src/i18n/pt.json', 'utf8')).meta, en: JSON.parse(readFileSync('src/i18n/en.json', 'utf8')).meta }
 
-// legal copy (TypeScript) -> bundle with esbuild so titles/leads come from the one source of truth
-const out = join(tmpdir(), 'legal-content.mjs')
-await build({ entryPoints: ['src/legal/content.ts'], bundle: true, format: 'esm', outfile: out, logLevel: 'silent' })
-const { DOCS } = await import(pathToFileURL(out).href)
+// Conteúdo legal e tabela de rotas são TypeScript: o esbuild empacota os dois num módulo temporário.
+// Assim o script usa as MESMAS fontes do app (src/legal/content.ts e src/lib/paths.ts) — antes a
+// tabela de rotas era copiada aqui e podia divergir sem erro nenhum.
+const out = join(tmpdir(), 'seo-sources.mjs')
+await build({
+  stdin: {
+    contents: "export { DOCS } from './src/legal/content.ts'; export { PATHS, OG_LOCALE } from './src/lib/paths.ts'",
+    resolveDir: process.cwd(),
+    loader: 'ts',
+  },
+  bundle: true,
+  format: 'esm',
+  outfile: out,
+  logLevel: 'silent',
+})
+const { DOCS, PATHS, OG_LOCALE: LOCALE } = await import(pathToFileURL(out).href)
 rmSync(out, { force: true })
 
-const PATHS = {
-  home: { pt: '/', en: '/en' },
-  privacy: { pt: '/privacidade', en: '/en/privacy', de: '/de/datenschutz' },
-  imprint: { pt: '/impressum', en: '/en/impressum', de: '/de/impressum' },
-}
-const LOCALE = { pt: 'pt_BR', en: 'en_US', de: 'de_DE' }
 const esc = s => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 
 function routeMeta(page, lang) {

@@ -26,9 +26,12 @@
   --on-dark-soft: color-mix(in srgb, var(--surface) 72%, var(--forest));
 
   /* Layout & type scale */
-  --header-h:   88px;
+  /* Every layout token is in rem on purpose: the root font-size below scales on large screens,
+     so the whole layout (container, header, type, spacing) grows together instead of
+     floating as a small column in the middle of a 4K display. */
+  --header-h:   5.5rem;
   --gutter:     clamp(1.25rem, 4vw, 3rem);
-  --content-w:  1240px;
+  --content-w:  77.5rem;
   --section-y:  clamp(5rem, 11vw, 9.5rem);
   --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,6 +57,20 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h);
   font-size: 16px;
+  /* Safety net against horizontal scroll from off-screen entrance transforms (x: ±24). `clip`, not
+     `hidden`: `hidden` would make <html> a scroll container and break position: sticky. */
+  overflow-x: clip;
+}
+
+/* Large displays / TVs: 16px up to 1920px wide, then the root size follows the viewport
+   (≈32px at 3840px). Because tokens and Tailwind spacing are rem-based, the design scales as a unit. */
+@media (min-width: 1920px) {
+  html { font-size: 0.8334vw; }
+}
+
+/* Touch devices: WCAG 2.5.8 / Apple HIG ask for ≥44px targets. Opt-in class, applied to small controls. */
+@media (pointer: coarse) {
+  .touch-target { min-width: 2.75rem; min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; }
 }
 
 body {
@@ -110,25 +127,6 @@ body {
 }
 
 /* =========================================================
-   SCROLL REVEAL
-========================================================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
-.reveal-delay-6 { transition-delay: 0.6s; }
-
-/* =========================================================
    SCROLL PROGRESS BAR
 ========================================================= */
 #scroll-progress {
@@ -138,8 +136,9 @@ body {
   height: 2px;
   background: linear-gradient(90deg, var(--forest), var(--gold));
   z-index: 9999;
-  width: 0%;
-  transition: width 0.1s linear;
+  width: 100%;
+  /* a largura visível vem do scaleX (MotionValue) aplicado em App.tsx */
+  transform-origin: 0 50%;
 }
 
 /* =========================================================
@@ -227,25 +226,6 @@ body {
   padding: 1.15rem 1.25rem;
   font-size: 0.88rem;
   vertical-align: top;
-}
-
-/* =========================================================
-   PRICE CARD RIBBON
-========================================================= */
-.price-ribbon::before {
-  content: attr(data-badge);
-  position: absolute;
-  top: 1rem;
-  right: -1.5rem;
-  background: var(--forest);
-  color: var(--surface);
-  font-size: 0.6rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.25rem 2rem;
-  transform: rotate(45deg);
-  white-space: nowrap;
 }
 
 /* =========================================================

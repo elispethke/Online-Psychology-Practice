@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/Button'
 import { NAV_ITEMS } from '@/constants/navigation'
 import { Mail, Linkedin, MapPin } from 'lucide-react'
 import { Link } from '@/components/ui/Link'
+import { CONTACT_EMAIL, LINKEDIN_URL } from '@/config/site'
+import { useLang } from '@/hooks/useLang'
 import { openPreferences } from '@/lib/consent'
 import { hrefFor } from '@/lib/route'
 import emblem from '@/assets/brand/logo-emblem-reverse.webp'
@@ -12,8 +14,8 @@ const LINK = 'text-[0.85rem] text-[var(--on-dark-soft)] transition-colors durati
 const HEADING = 'mb-5 text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[var(--gold)]'
 
 export function Footer() {
-  const { t, i18n } = useTranslation()
-  const lang = i18n.language === 'en' ? 'en' : 'pt'
+  const { t } = useTranslation()
+  const lang = useLang()
 
   return (
     <footer className="bg-[var(--forest)] text-[var(--on-dark)]" style={{ paddingTop: 'clamp(4rem, 8vw, 6.5rem)', paddingBottom: '2rem' }}>
@@ -52,13 +54,13 @@ export function Footer() {
             <p className={HEADING}>{t('footer.contactTitle')}</p>
             <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
               <li>
-                <a href="mailto:elaine.teixeira.psy@gmail.com" className={`inline-flex items-center gap-2.5 ${LINK}`}>
+                <a href={`mailto:${CONTACT_EMAIL}`} className={`inline-flex items-center gap-2.5 ${LINK}`}>
                   <Mail className="size-[15px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
-                  elaine.teixeira.psy@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/elaine-teixeira-20a90459/" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2.5 ${LINK}`}>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2.5 ${LINK}`}>
                   <Linkedin className="size-[15px] shrink-0" strokeWidth={1.5} aria-hidden="true" />
                   LinkedIn
                 </a>

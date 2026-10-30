@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { LANGUAGES, type LanguageCode } from '@/i18n/i18n'
 import { NAV_ITEMS } from '@/constants/navigation'
 import { useActiveSection } from '@/hooks/useActiveSection'
+import { useScrolledPast } from '@/hooks/useScrolledPast'
 import { hrefFor, navigate } from '@/lib/route'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 
@@ -27,7 +28,7 @@ function LanguageSwitch({ onChange, className = '' }: { onChange: (code: Languag
               aria-pressed={current}
               lang={lang.code}
               className={[
-                'px-1 py-1 text-[0.72rem] font-medium tracking-[0.16em] transition-colors duration-300',
+                'touch-target px-1 py-1 text-[0.72rem] font-medium tracking-[0.16em] transition-colors duration-300',
                 current ? 'text-[var(--forest)] underline decoration-[var(--gold)] decoration-2 underline-offset-[7px]' : 'text-ink-faint hover:text-[var(--forest)]',
               ].join(' ')}
             >
@@ -42,16 +43,9 @@ function LanguageSwitch({ onChange, className = '' }: { onChange: (code: Languag
 
 export function Header() {
   const { t } = useTranslation()
-  const [scrolled, setScrolled] = useState(false)
+  const scrolled = useScrolledPast(24)
   const [mobileOpen, setMobileOpen] = useState(false)
   const active = useActiveSection(SECTION_IDS)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     if (!mobileOpen) return
@@ -75,14 +69,14 @@ export function Header() {
     >
       <div
         className="mx-auto flex w-full items-center justify-between px-[var(--gutter)] transition-[height] duration-300"
-        style={{ maxWidth: 'var(--content-w)', height: scrolled ? '72px' : 'var(--header-h)' }}
+        style={{ maxWidth: 'var(--content-w)', height: scrolled ? '4.5rem' : 'var(--header-h)' }}
       >
         {/* Official logo — name, emblem and ornament are the original artwork; the subtitle lines follow the active language */}
         <a href="#hero" className="flex shrink-0 items-center" aria-label={t('header.logoAlt')}>
           <BrandLogo
             subtitleTop={t('brand.line1')}
             subtitleBottom={t('brand.line2')}
-            className={scrolled ? '[--u:0.2708px]' : '[--u:0.3229px] sm:[--u:0.3542px]'}
+            className={scrolled ? '[--u:0.01693rem]' : '[--u:0.02018rem] sm:[--u:0.02214rem]'}
           />
         </a>
 
@@ -109,7 +103,7 @@ export function Header() {
           <LanguageSwitch onChange={changeLang} className="hidden xl:flex" />
           <button
             type="button"
-            className="p-2 text-[var(--forest)] xl:hidden"
+            className="touch-target p-2 text-[var(--forest)] xl:hidden"
             onClick={() => setMobileOpen(v => !v)}
             aria-label={mobileOpen ? t('header.menuClose') : t('header.menuOpen')}
             aria-expanded={mobileOpen}

@@ -417,7 +417,16 @@
       "consentLabel": "I have read the privacy policy and agree to the processing of the form data, including transmission through the EmailJS service (servers in the USA).",
       "consentError": "To send, please tick the privacy checkbox.",
       "healthNote": "Please do not include health data in the form. A short message is enough for a first conversation.",
-      "privacyLink": "Privacy policy"
+      "privacyLink": "Privacy policy",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email.",
+        "emailInvalid": "That email address doesn't look valid.",
+        "messageRequired": "Please write a message.",
+        "networkMsg": "No internet connection, or the service did not respond. Check your connection and try again.",
+        "serviceMsg": "We couldn't send your message right now. Please try again in a few minutes or write directly to the email address below.",
+        "configMsg": "The form is temporarily unavailable. Please write directly to the contact email."
+      }
     },
     "imageAlt": "Elaine Teixeira smiling in front of a stone bridge",
     "langPt": "Portuguese",
@@ -512,5 +521,10 @@
   },
   "common": {
     "backToTop": "Back to top"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The address you entered does not exist or has been moved.",
+    "back": "Back to home"
   }
 }

@@ -13,7 +13,9 @@ interface CvRow { period: string; role: string; org: string; context: string }
 /** About + professional experience, merged: who she is, the path in order, then the detailed CV. */
 export function Journey() {
   const { t } = useTranslation()
-  const rows = t('cv.rows', { returnObjects: true }) as CvRow[]
+  // returnObjects devolve a própria chave (string) se a tradução faltar: sem esta guarda, `rows.map` quebraria a página inteira.
+  const rowsRaw = t('cv.rows', { returnObjects: true })
+  const rows = Array.isArray(rowsRaw) ? (rowsRaw as CvRow[]) : []
   const timelineRef = useRef<HTMLDivElement>(null)
 
   // The gold rule fills as the visitor reads down the timeline

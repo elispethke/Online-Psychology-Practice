@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from '@/components/ui/Link'
+import { useLang } from '@/hooks/useLang'
 import { closePreferences, setConsent, useConsent, usePreferencesOpen } from '@/lib/consent'
 import { hrefFor } from '@/lib/route'
 
@@ -11,7 +12,8 @@ import { hrefFor } from '@/lib/route'
  * "Accept" and "Decline" are identical in size, weight and position (DSK "OH Digitale Dienste", Rn. 134–136).
  */
 export function CookieBanner() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
+  const lang = useLang()
   const consent = useConsent()
   const reopened = usePreferencesOpen()
   const [detail, setDetail] = useState(false)
@@ -33,7 +35,7 @@ export function CookieBanner() {
   if (!open) return null
 
   const btn = 'min-h-11 flex-1 rounded-sm border border-[var(--surface)] px-5 py-3 text-[0.72rem] font-medium uppercase tracking-[0.14em] transition-colors sm:flex-none'
-  const privacyHref = hrefFor('privacy', i18n.language === 'en' ? 'en' : 'pt')
+  const privacyHref = hrefFor('privacy', lang)
 
   return (
     <div
@@ -45,7 +47,7 @@ export function CookieBanner() {
       className="fixed inset-x-0 bottom-0 z-[60] px-4 py-5 outline-none md:px-8"
       style={{ background: 'var(--forest)', color: 'var(--on-dark)', boxShadow: '0 -8px 32px color-mix(in srgb, var(--forest) 30%, transparent)' }}
     >
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto" style={{ maxWidth: 'var(--content-w)' }}>
         <h2 id={titleId} className="font-display text-[1.35rem] font-normal">{t('cookie.title')}</h2>
         <p className="mt-2 max-w-3xl text-[0.82rem] leading-relaxed text-[var(--on-dark-soft)]">
           {t('cookie.text')}{' '}

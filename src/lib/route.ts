@@ -1,31 +1,19 @@
 import { useEffect, useState } from 'react'
+import { parseRoute, type Route } from '@/lib/paths'
 
-export type Lang = 'pt' | 'en' | 'de'
-export type Page = 'home' | 'privacy' | 'imprint'
-export interface Route { lang: Lang; page: Page }
+export * from '@/lib/paths'
 
-/** Language is part of the URL: `/` = Português (default), `/en` = English, `/de/...` = legal pages in German only. */
-export const PATHS: Record<Page, Partial<Record<Lang, string>>> = {
-  home: { pt: '/', en: '/en' },
-  privacy: { pt: '/privacidade', en: '/en/privacy', de: '/de/datenschutz' },
-  imprint: { pt: '/impressum', en: '/en/impressum', de: '/de/impressum' },
-}
-
-export function parseRoute(pathname: string): Route {
-  const path = pathname.replace(/\/+$/, '') || '/'
-  for (const page of Object.keys(PATHS) as Page[]) {
-    for (const lang of Object.keys(PATHS[page]) as Lang[]) {
-      if (PATHS[page][lang] === path) return { lang, page }
-    }
-  }
-  return { lang: 'pt', page: 'home' }
-}
-
-export const hrefFor = (page: Page, lang: Lang) => PATHS[page][lang] ?? PATHS[page].pt ?? '/'
-
+/**
+ * Decisão: um roteador próprio de ~30 linhas em vez de react-router.
+ * O site tem 3 páginas × 3 idiomas, sem parâmetros, sem layouts aninhados e sem carregamento de dados;
+ * uma dependência de roteador (~15 kB gzip) não traria nada. O custo é que passamos a ser donos dos
+ * casos de borda (ex.: a 404 em `parseRoute`). Se um dia houver rotas com parâmetros/loaders, troque
+ * por react-router — é uma migração pequena porque tudo passa por `navigate`, `useRoute` e `Link`.
+ */
 export function navigate(to: string) {
   if (to === window.location.pathname + window.location.hash) return
   window.history.pushState({}, '', to)
+  // pushState não dispara "popstate" sozinho; emitimos o evento para o useRoute reagir.
   window.dispatchEvent(new PopStateEvent('popstate'))
 }
 

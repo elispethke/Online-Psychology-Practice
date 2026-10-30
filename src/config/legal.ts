@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from '@/config/site'
+
 /**
  * Legal identification data for the Impressum / privacy policy.
  *
@@ -7,7 +9,7 @@
  */
 export const LEGAL = {
   name: 'Elaine Teixeira',
-  email: 'elaine.teixeira.psy@gmail.com',
+  email: CONTACT_EMAIL,
   /** Ladungsfähige Anschrift (street, postcode, city) — required by § 5 DDG. */
   address: null as string | null,
   /** Professional title as used on the site (from the existing CV copy). */

@@ -1,18 +1,12 @@
-import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { WHATSAPP_NUMBER } from '@/config/site'
+import { useScrolledPast } from '@/hooks/useScrolledPast'
 
-const WHATSAPP_NUMBER = '4915232713148'
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`
 
 export function WhatsAppButton() {
   const { t } = useTranslation()
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 300)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const visible = useScrolledPast(300)
 
   return (
     <a
@@ -22,7 +16,7 @@ export function WhatsAppButton() {
       aria-label={t('whatsapp.label')}
       title={t('whatsapp.label')}
       className={[
-        'fixed bottom-8 left-8 z-50 w-12 h-12 rounded-full flex items-center justify-center',
+        'fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-[max(1rem,env(safe-area-inset-left))] sm:bottom-8 sm:left-8 z-50 w-12 h-12 rounded-full flex items-center justify-center',
         'shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl',
         visible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
       ].join(' ')}

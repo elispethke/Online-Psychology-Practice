@@ -43,25 +43,6 @@ const config: Config = {
       transitionTimingFunction: {
         smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
-      keyframes: {
-        fadeUp: {
-          '0%':   { opacity: '0', transform: 'translateY(28px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        scaleIn: {
-          '0%':   { opacity: '0', transform: 'scale(0.96)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        slideRight: {
-          '0%':   { opacity: '0', transform: 'translateX(-20px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-      },
-      animation: {
-        'fade-up':    'fadeUp 0.7s ease both',
-        'scale-in':   'scaleIn 0.7s ease both',
-        'slide-right':'slideRight 0.6s ease both',
-      },
     },
   },
   plugins: [],

@@ -18,6 +18,9 @@ export function useActiveSection(ids: string[]) {
     )
     els.forEach(el => observer.observe(el))
     return () => observer.disconnect()
+    // Decisão: IntersectionObserver em vez de ouvir o scroll — não força leitura de layout a cada frame e o
+    // navegador faz a detecção fora da thread principal. O array vira uma string-chave (join) porque quem
+    // chama pode passar um array novo a cada render, o que re-criaria o observer sem necessidade.
   }, [ids.join('|')]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return active

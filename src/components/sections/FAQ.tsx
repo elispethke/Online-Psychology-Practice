@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'motion/react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { Reveal } from '@/components/ui/Reveal'
 
 interface FAQItem {
   question: string
@@ -10,14 +10,13 @@ interface FAQItem {
 }
 
 export function FAQ() {
-  const { t, i18n } = useTranslation()
-  const { ref } = useScrollReveal()
+  const { t } = useTranslation()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const items = useMemo(() => {
     const result = t('faq.items', { returnObjects: true })
     return Array.isArray(result) ? (result as FAQItem[]) : []
-  }, [t, i18n.language])
+  }, [t]) // `t` muda de identidade quando o idioma muda, então já cobre a troca de língua
 
   const toggle = (i: number) => setOpenIndex(prev => (prev === i ? null : i))
 
@@ -27,15 +26,15 @@ export function FAQ() {
       className="bg-[var(--surface)]"
       style={{ padding: 'clamp(3.5rem, 7vw, 6rem) 0' }}
     >
-      <div className="max-w-[880px] mx-auto px-6">
-        <div ref={ref} className="reveal">
+      <div className="max-w-[55rem] mx-auto px-[var(--gutter)]">
+        <Reveal>
           <SectionTitle
             label={t('faq.label')}
             title={t('faq.title')}
             subtitle={t('faq.subtitle')}
             scale="compact"
           />
-        </div>
+        </Reveal>
 
         {/* Editorial index — numbered rows, no boxed accordion */}
         <div className="mt-12 border-t border-[var(--border-soft)]">
@@ -46,6 +45,8 @@ export function FAQ() {
                 <button
                   onClick={() => toggle(i)}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${i}`}
+                  id={`faq-btn-${i}`}
                   className="w-full grid gap-4 items-baseline py-6 text-left group"
                   style={{ gridTemplateColumns: '1fr auto' }}
                 >
@@ -72,6 +73,9 @@ export function FAQ() {
                   {isOpen && (
                     <motion.div
                       key="content"
+                      id={`faq-panel-${i}`}
+                      role="region"
+                      aria-labelledby={`faq-btn-${i}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

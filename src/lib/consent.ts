@@ -10,6 +10,11 @@ const VERSION = 1
 
 export interface Consent { v: number; analytics: boolean; ts: number }
 
+// Decisão: um "store" externo minúsculo + useSyncExternalStore, em vez de Context ou Redux.
+// O consentimento precisa ser lido e alterado também FORA de componentes (o carregador do analytics, o link
+// "preferências de cookies" do rodapé). useSyncExternalStore é a primitiva do React 18 feita exatamente
+// para isso: não exige Provider, não sofre "tearing" no render concorrente e mantém uma única fonte da verdade.
+// Trade-off: não é tão "óbvio" para quem espera Context; por isso o store é pequeno e tem testes.
 const listeners = new Set<() => void>()
 let preferencesOpen = false
 const emit = () => listeners.forEach(l => l())

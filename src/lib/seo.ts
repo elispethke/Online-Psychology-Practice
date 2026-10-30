@@ -1,15 +1,17 @@
 import type { TFunction } from 'i18next'
 import { SITE_URL } from '@/config/site'
 import { DOCS } from '@/legal/content'
-import { PATHS, type Lang, type Route } from '@/lib/route'
+import { OG_LOCALE, PATHS, type Route } from '@/lib/paths'
 
-const OG_LOCALE: Record<Lang, string> = { pt: 'pt_BR', en: 'en_US', de: 'de_DE' }
 const abs = (path: string) => (path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`)
 
-/** Title / description / robots for a route. The home page is the only indexable page. */
+/** Title / description / robots de uma rota. A home é a única página indexável. */
 export function metaFor(route: Route, t: TFunction) {
   if (route.page === 'home') {
     return { title: t('meta.title'), description: t('meta.description'), robots: 'index, follow, max-image-preview:large', ogAlt: t('meta.ogAlt') }
+  }
+  if (route.page === 'notfound') {
+    return { title: `${t('notFound.title')} · Elaine Teixeira`, description: t('notFound.text'), robots: 'noindex, follow', ogAlt: t('meta.ogAlt') }
   }
   const doc = DOCS[route.page][route.lang]
   return {
@@ -20,10 +22,17 @@ export function metaFor(route: Route, t: TFunction) {
   }
 }
 
-/** Keeps canonical, hreflang, robots and social tags in step with the current route (client-side navigation). */
+/**
+ * Decisão: o SEO é feito DUAS vezes de propósito.
+ *  1) `scripts/postbuild-seo.mjs` grava um HTML estático por rota, para crawlers e scrapers de redes
+ *     sociais que NÃO executam JavaScript verem <title>, hreflang e JSON-LD corretos — um "prerender"
+ *     barato, sem precisar migrar para Next.js/SSR.
+ *  2) Esta função mantém o <head> coerente na navegação client-side (trocar de idioma sem recarregar).
+ * Ambos agora compartilham a tabela de rotas (`lib/paths.ts`); o que ainda é duplicado é a regra de
+ * montagem das metas — próximo passo de limpeza, se o projeto crescer.
+ */
 export function applySeo(route: Route, t: TFunction) {
   const m = metaFor(route, t)
-  const url = abs(PATHS[route.page][route.lang] ?? '/')
   document.documentElement.lang = route.lang
   document.title = m.title
 
@@ -33,7 +42,6 @@ export function applySeo(route: Route, t: TFunction) {
   setMeta('meta[name="googlebot"]', m.robots)
   setMeta('meta[property="og:title"]', m.title)
   setMeta('meta[property="og:description"]', m.description)
-  setMeta('meta[property="og:url"]', url)
   setMeta('meta[property="og:locale"]', OG_LOCALE[route.lang])
   setMeta('meta[property="og:locale:alternate"]', route.lang === 'en' ? 'pt_BR' : 'en_US')
   setMeta('meta[property="og:image:alt"]', m.ogAlt)
@@ -41,7 +49,13 @@ export function applySeo(route: Route, t: TFunction) {
   setMeta('meta[name="twitter:description"]', m.description)
   setMeta('meta[name="twitter:image:alt"]', m.ogAlt)
 
+  // Os <link> com data-seo são sempre reconstruídos do zero: mais simples que atualizar um a um.
   document.querySelectorAll('link[data-seo]').forEach(el => el.remove())
+  // 404 não tem canonical nem alternates: não existe uma URL "correta" para apontar.
+  if (route.page === 'notfound') return
+
+  const url = abs(PATHS[route.page][route.lang] ?? '/')
+  setMeta('meta[property="og:url"]', url)
   const add = (rel: string, href: string, hreflang?: string) => {
     const l = document.createElement('link')
     l.rel = rel; l.href = href; l.dataset.seo = ''

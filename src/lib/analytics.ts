@@ -9,6 +9,10 @@ const SCRIPT_ID = 'plausible-analytics'
  * leaves the browser for this tool. Withdrawing consent removes the script; the visitor is
  * told in the preferences dialog that already-loaded code stops with the next page load.
  */
+// Decisão: carregamento condicionado ao consentimento (opt-in), e não "carrega tudo e depois esconde o banner".
+// Na Alemanha isso é obrigação legal (§ 25 TDDDG), mas também é o melhor padrão de engenharia: nenhuma
+// requisição a terceiros, e nenhum custo de rede, até a pessoa concordar. O Plausible não usa cookies, mas
+// a requisição (e o IP) ainda chega a um terceiro — por isso continua precisando de consentimento.
 export function useAnalyticsLoader() {
   const consent = useConsent()
   const allowed = !!consent?.analytics

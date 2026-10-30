@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { animate, motion, useReducedMotion } from 'motion/react'
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 import { Reveal } from '@/components/ui/Reveal'
+import { useLang } from '@/hooks/useLang'
 import { EASE } from '@/lib/motionVariants'
 import { MISSION_PHOTOS, type MissionPhoto } from '@/data/africaMission'
 
@@ -72,8 +73,8 @@ function Tile({ photo, index, lang }: { photo: MissionPhoto; index: number; lang
 }
 
 export function AfricaGallery() {
-  const { t, i18n } = useTranslation()
-  const lang = i18n.language === 'en' ? 'en' : 'pt'
+  const { t } = useTranslation()
+  const lang = useLang()
   const reduced = useReducedMotion()
 
   const sectionRef = useRef<HTMLElement>(null)
@@ -97,6 +98,12 @@ export function AfricaGallery() {
     return () => io.disconnect()
   }, [])
 
+  // Decisão: um loop de requestAnimationFrame que escreve `scrollLeft`, em vez de um "marquee" em CSS.
+  // O trilho precisa continuar sendo um scroll container DE VERDADE (deslizar no toque, teclado, trackpad,
+  // arrastar com o mouse) e, ao mesmo tempo, andar sozinho. O estado que o loop lê fica em um ref (sem
+  // re-render a cada frame). O loop pausa: fora da tela, em hover/foco/arraste, para quem pede movimento
+  // reduzido e por um botão explícito de pausa (WCAG 2.2.2 — conteúdo em movimento precisa ser pausável).
+  // Loop infinito sem "pulo" = três cópias da lista, com a posição sempre mantida na cópia do meio.
   // Seamless auto-drift: [A][A][A] — position is kept inside the middle copy.
   useEffect(() => {
     const rail = railRef.current

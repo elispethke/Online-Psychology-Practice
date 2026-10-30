@@ -417,7 +417,16 @@
       "consentLabel": "Li a política de privacidade e concordo com o tratamento dos dados do formulário, inclusive o envio pelo serviço EmailJS (servidores nos EUA).",
       "consentError": "Para enviar, confirme a caixa de privacidade.",
       "healthNote": "Por favor, não inclua dados de saúde no formulário. Para uma primeira conversa basta uma mensagem curta.",
-      "privacyLink": "Política de privacidade"
+      "privacyLink": "Política de privacidade",
+      "errors": {
+        "nameRequired": "Informe seu nome.",
+        "emailRequired": "Informe seu e-mail.",
+        "emailInvalid": "Esse e-mail não parece válido.",
+        "messageRequired": "Escreva uma mensagem.",
+        "networkMsg": "Sem conexão com a internet ou o serviço não respondeu. Verifique sua conexão e tente de novo.",
+        "serviceMsg": "Não foi possível enviar agora. Tente novamente em alguns minutos ou escreva diretamente para o e-mail abaixo.",
+        "configMsg": "O formulário está temporariamente indisponível. Por favor, escreva diretamente para o e-mail de contato."
+      }
     },
     "imageAlt": "Elaine Teixeira em frente a uma ponte de pedra, sorrindo",
     "langPt": "Português",
@@ -512,5 +521,10 @@
   },
   "common": {
     "backToTop": "Voltar ao topo"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "text": "O endereço que você acessou não existe ou foi movido.",
+    "back": "Voltar ao início"
   }
 }

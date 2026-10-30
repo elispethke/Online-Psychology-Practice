@@ -2,15 +2,14 @@ import { useTranslation } from 'react-i18next'
 import { motion } from 'motion/react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Button } from '@/components/ui/Button'
-import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { Reveal } from '@/components/ui/Reveal'
+import { CONTACT_EMAIL } from '@/config/site'
 import { useMemo } from 'react'
 import type { TFunction } from 'i18next'
 
-const BOOKING_EMAIL = 'elaine.teixeira.psy@gmail.com'
-
 function getBookingHref(t: TFunction, category: string, hasUnit: boolean): string {
   const subject = hasUnit ? t('prices.mailBooking', { category }) : t('prices.mailProposal')
-  return `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}`
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`
 }
 
 interface PricePlan {
@@ -26,12 +25,11 @@ interface PricePlan {
 
 export function Prices () {
   const { t, i18n } = useTranslation()
-  const { ref } = useScrollReveal()
 
   const plans = useMemo(() => {
     const result = t('prices.plans', { returnObjects: true })
     return Array.isArray(result) ? (result as PricePlan[]) : []
-  }, [t, i18n.language])
+  }, [t])
 
   return (
     <section
@@ -39,15 +37,15 @@ export function Prices () {
       className='bg-[var(--surface)]'
       style={{ padding: 'clamp(4rem, 8vw, 7rem) 0' }}
     >
-      <div className='max-w-[1200px] mx-auto px-6'>
-        <div ref={ref} className='reveal'>
+      <div className='mx-auto px-[var(--gutter)]' style={{ maxWidth: 'var(--content-w)' }}>
+        <Reveal>
           <SectionTitle
             scale="large"
             label={t('prices.label')}
             title={t('prices.title')}
             subtitle={t('prices.subtitle')}
           />
-        </div>
+        </Reveal>
 
         {/* Editorial rate sheet — each plan is a full-width row, not a boxed card */}
         <div key={i18n.language} className='mt-12 border-t border-[var(--border-soft)]'>
@@ -59,7 +57,7 @@ export function Prices () {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.06 }}
               className='grid grid-cols-1 lg:grid-cols-[1.1fr_1.3fr_auto] gap-6 lg:gap-12 items-start lg:items-center py-10 border-b border-[var(--border-soft)]'
-              style={plan.featured ? { background: 'var(--paper)', marginInline: '-1.5rem', paddingInline: '1.5rem' } : undefined}
+              style={plan.featured ? { background: 'var(--paper)', marginInline: 'calc(var(--gutter) * -1)', paddingInline: 'var(--gutter)' } : undefined}
             >
               {/* Identity */}
               <div>

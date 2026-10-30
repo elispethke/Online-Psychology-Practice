@@ -27,7 +27,7 @@ export function Hero() {
       id="hero"
       aria-labelledby="hero-title"
       className="relative isolate overflow-hidden bg-[var(--forest)]"
-      style={{ height: 'clamp(560px, calc(100svh - var(--header-h)), 900px)' }}
+      style={{ height: 'clamp(560px, calc(100svh - var(--header-h)), 56rem)' }}
     >
       <motion.img
         src={imgHero}
@@ -35,7 +35,7 @@ export function Hero() {
         width={1306}
         height={1600}
         {...({ fetchpriority: 'high' } as object)}
-        className="absolute left-0 w-full object-cover object-[46%_30%] sm:object-[50%_44%]"
+        className="absolute left-0 w-full object-cover object-[46%_30%] sm:object-[50%_44%] 2xl:object-[50%_32%]"
         style={{ top: '-3%', height: '106%', y: imgY }}
       />
 

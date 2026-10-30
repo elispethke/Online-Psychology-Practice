@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { Reveal } from '@/components/ui/Reveal'
 import { ParallaxImage } from '@/components/ui/ParallaxImage'
 import { EASE, VIEWPORT_ONCE } from '@/lib/motionVariants'
-import imgCounselling from '@/assets/img/elaine7.webp'
+import imgCounselling from '@/assets/img/elaine8.webp'
 
 /**
  * Terapia — atendimento individual e abordagem intercultural. O trabalho em grupo tem

@@ -6,10 +6,11 @@ import { closePreferences, setConsent, useConsent, usePreferencesOpen } from '@/
 import { hrefFor } from '@/lib/route'
 
 /**
- * Consent UI. Findings of the audit: the site itself sets no cookies; the only optional processing is
- * Plausible audience measurement (loaded only after opt-in, see lib/analytics.ts). So there are exactly two
- * categories — Necessary (always on, not selectable) and Statistics (off until the visitor chooses).
- * "Accept" and "Decline" are identical in size, weight and position (DSK "OH Digitale Dienste", Rn. 134–136).
+ * Interface de consentimento. Conclusões da auditoria: o próprio site não grava cookies; o único
+ * tratamento opcional é a medição de audiência do Plausible (carregada só após o opt-in, ver lib/analytics.ts).
+ * Logo, há exatamente duas categorias — Necessários (sempre ativa, não selecionável) e Estatísticas
+ * (desligada até a pessoa escolher). "Aceitar" e "Recusar" têm tamanho, peso e posição idênticos
+ * (DSK "OH Digitale Dienste", Rn. 134–136).
  */
 export function CookieBanner() {
   const { t } = useTranslation()

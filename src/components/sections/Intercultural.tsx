@@ -8,16 +8,16 @@ import imgIntercultural from '@/assets/img/elaine2.webp'
 import { EASE, VIEWPORT_ONCE } from '@/lib/motionVariants'
 
 /**
- * Intercultural — the recognition moment. A sticky quote on the left holds the
- * theme while the story (what it feels like → who this is for → what helps)
- * scrolls on the right.
+ * Intercultural — o momento de reconhecimento. Uma citação sticky à esquerda sustenta o
+ * tema enquanto a história (como é sentir isso → para quem é → o que ajuda)
+ * rola à direita.
  */
 export function Intercultural() {
   const { t } = useTranslation()
   const challenges = t('intercultural.challenges', { returnObjects: true }) as string[]
   const listRef = useRef<HTMLDivElement>(null)
 
-  // Scroll-linked rule that draws down the list as it passes through the viewport
+  // Linha ligada ao scroll que desce pela lista conforme ela atravessa a tela
   const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 80%', 'end 60%'] })
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1])
 

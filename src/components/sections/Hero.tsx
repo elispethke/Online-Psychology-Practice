@@ -6,16 +6,16 @@ import { EASE } from '@/lib/motionVariants'
 import imgHero from '@/assets/img/elaine-hero.webp'
 
 /**
- * Hero — composition follows "hero-referencia": a full-width photograph under the
- * header, the title and one supporting line at the bottom-left, and a hairline CTA
- * at the bottom-right. The header is a separate component above this section.
+ * Hero — a composição segue a "hero-referencia": foto de largura total sob o
+ * header, o título e uma linha de apoio embaixo à esquerda, e um CTA de linha fina
+ * embaixo à direita. O header é um componente separado, acima desta seção.
  */
 export function Hero() {
   const { t } = useTranslation()
   const ref = useRef<HTMLElement>(null)
 
-  // Scroll-linked: the photograph drifts slower than the page (parallax) while the
-  // caption lifts and fades as the visitor leaves the hero.
+  // Ligado ao scroll: a foto desliza mais devagar que a página (parallax) enquanto a
+  // legenda sobe e some conforme a pessoa sai do hero.
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '5%'])
   const textY = useTransform(scrollYProgress, [0, 1], [0, -70])
@@ -53,7 +53,7 @@ export function Hero() {
         aria-hidden="true"
         className="absolute inset-0 hidden sm:block"
         style={{
-          // bottom veil for the caption band + a side veil that only reaches as far as the text column
+          // véu inferior para a faixa da legenda + um véu lateral que só alcança a coluna de texto
           background: [
             'linear-gradient(0deg, var(--forest) 0%, color-mix(in srgb, var(--forest) 92%, transparent) 20%, color-mix(in srgb, var(--forest) 50%, transparent) 38%, transparent 55%)',
             'linear-gradient(90deg, color-mix(in srgb, var(--forest) 88%, transparent) 0%, color-mix(in srgb, var(--forest) 72%, transparent) 26%, color-mix(in srgb, var(--forest) 30%, transparent) 46%, transparent 60%)',

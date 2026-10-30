@@ -3,22 +3,22 @@ import name from '@/assets/brand/logo-name.webp'
 import ornament from '@/assets/brand/logo-ornament.webp'
 
 interface BrandLogoProps {
-  /** First subtitle line, under the name (gold) — follows the active language */
+  /** Primeira linha do subtítulo, sob o nome (dourada) — segue o idioma ativo */
   subtitleTop: string
-  /** Second subtitle line (green) — follows the active language */
+  /** Segunda linha do subtítulo (verde) — segue o idioma ativo */
   subtitleBottom: string
   className?: string
 }
 
 /**
- * The official horizontal logo, assembled from the unmodified pixels of the identity
- * board: emblem + divider, "Elaine Teixeira" and the closing ornament are the original
- * artwork. The two subtitle lines are the only live text so they can follow the site
- * language — the board ships a single (English) version of the logo.
+ * O logo horizontal oficial, montado a partir dos pixels originais da prancha de
+ * identidade: emblema + divisória, "Elaine Teixeira" e o ornamento final são a arte
+ * original. As duas linhas de subtítulo são o único texto vivo, para poderem seguir o
+ * idioma do site — a prancha traz uma única versão (em inglês) do logo.
  *
- * Everything is laid out in the logo's own 510 × 192 coordinate space and scaled by
- * the `--u` custom property (CSS px per logo unit), so the proportions never drift.
- * Set `--u` on the element or an ancestor, e.g. `[--u:0.3229px]` for a 62px-tall logo.
+ * Tudo é posicionado no espaço de coordenadas próprio do logo (510 × 192) e escalado pela
+ * propriedade CSS `--u` (px CSS por unidade do logo), então as proporções nunca se distorcem.
+ * Defina `--u` no elemento ou num ancestral, ex.: `[--u:0.3229px]` para um logo de 62px de altura.
  */
 export function BrandLogo({ subtitleTop, subtitleBottom, className = '' }: BrandLogoProps) {
   const u = (n: number) => `calc(var(--u) * ${n})`

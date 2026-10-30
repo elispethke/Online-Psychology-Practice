@@ -7,13 +7,13 @@ import { useLang } from '@/hooks/useLang'
 import { EASE } from '@/lib/motionVariants'
 import { MISSION_PHOTOS, type MissionPhoto } from '@/data/africaMission'
 
-/** Continuous drift in px/second — slow enough to read the pictures. */
+/** Deriva contínua em px/segundo — lenta o bastante para ver as fotos. */
 const SPEED = 30
-/** How long the drift stays paused after the visitor last touched the gallery. */
+/** Por quanto tempo a deriva fica pausada depois que a pessoa mexeu na galeria pela última vez. */
 const RESUME_DELAY_MS = 2800
-/** The rail renders the set three times so scrolling is seamless in both directions. */
+/** O trilho renderiza o conjunto três vezes para a rolagem ser contínua nos dois sentidos. */
 const COPIES = 3
-/** Vertical offsets (rem) cycled over the tiles — breaks the straight line of a carousel. */
+/** Deslocamentos verticais (rem) alternados entre os blocos — quebram a linha reta de um carrossel. */
 const OFFSETS = [0, 3.5, 1.25, 5]
 const TILE_H = 'clamp(250px, 50svh, 500px)'
 
@@ -82,14 +82,14 @@ export function AfricaGallery() {
   const firstSetRef = useRef<HTMLUListElement>(null)
   const [userPaused, setUserPaused] = useState(false)
 
-  // Mutable interaction state read by the animation loop (no re-render per frame)
+  // Estado mutável de interação lido pelo loop de animação (sem re-render a cada frame)
   const state = useRef({ hover: false, focus: false, drag: false, animating: false, visible: false, holdUntil: 0 })
   const userPausedRef = useRef(userPaused)
   userPausedRef.current = userPaused
 
   const hold = () => { state.current.holdUntil = performance.now() + RESUME_DELAY_MS }
 
-  // Only run the drift while the section is on screen
+  // Só roda a deriva enquanto a seção está na tela
   useEffect(() => {
     const el = sectionRef.current
     if (!el) return
@@ -128,13 +128,13 @@ export function AfricaGallery() {
         const paused =
           reduced || userPausedRef.current || s.hover || s.focus || s.drag || s.animating || !s.visible || now < s.holdUntil
 
-        // The visitor (or an animation) moved the rail: follow it instead of fighting it
+        // A pessoa (ou uma animação) moveu o trilho: seguir o movimento em vez de brigar com ele
         if (Math.abs(rail.scrollLeft - applied) > 1.5) pos = rail.scrollLeft
         if (!paused) pos += SPEED * dt
         else pos = rail.scrollLeft
 
-        // Re-centre on the middle copy — but never while a button animation or a drag is
-        // writing scrollLeft itself, or the two would fight and the rail would flicker.
+        // Recentraliza na cópia do meio — mas nunca enquanto uma animação de botão ou um arraste
+        // estiver escrevendo o scrollLeft, senão os dois brigam e o trilho pisca.
         if (!s.animating && !s.drag) {
           if (pos >= 2 * w) pos -= w
           else if (pos < w) pos += w
@@ -171,7 +171,7 @@ export function AfricaGallery() {
     if (e.key === 'ArrowLeft') { e.preventDefault(); scrollByPage(-1) }
   }
 
-  // Mouse drag-to-scroll (touch and trackpads already scroll natively)
+  // Arrastar com o mouse para rolar (toque e trackpad já rolam nativamente)
   const drag = useRef({ x: 0, left: 0 })
   const onPointerDown = (e: PointerEvent<HTMLDivElement>) => {
     if (e.pointerType !== 'mouse' || !railRef.current) return

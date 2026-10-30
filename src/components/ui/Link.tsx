@@ -1,7 +1,7 @@
 import { type AnchorHTMLAttributes, type MouseEvent } from 'react'
 import { navigate } from '@/lib/route'
 
-/** Internal link: client-side navigation for plain left-clicks, normal behaviour otherwise (new tab, copy link, crawlers). */
+/** Link interno: navegação no cliente para cliques simples com o botão esquerdo; comportamento normal nos demais casos (nova aba, copiar link, crawlers). */
 export function Link({ href, onClick, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
   const handle = (e: MouseEvent<HTMLAnchorElement>) => {
     onClick?.(e)

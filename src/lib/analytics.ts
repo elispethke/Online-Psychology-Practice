@@ -5,9 +5,9 @@ import { PLAUSIBLE_DOMAIN } from '@/config/site'
 const SCRIPT_ID = 'plausible-analytics'
 
 /**
- * Plausible is only requested after the visitor opted in to "Statistics". Before that no request
- * leaves the browser for this tool. Withdrawing consent removes the script; the visitor is
- * told in the preferences dialog that already-loaded code stops with the next page load.
+ * O Plausible só é requisitado depois que a pessoa aceita "Estatísticas". Antes disso nenhuma requisição
+ * sai do navegador para essa ferramenta. Retirar o consentimento remove o script; a pessoa é
+ * avisada no diálogo de preferências de que o código já carregado só para no próximo carregamento da página.
  */
 // Decisão: carregamento condicionado ao consentimento (opt-in), e não "carrega tudo e depois esconde o banner".
 // Na Alemanha isso é obrigação legal (§ 25 TDDDG), mas também é o melhor padrão de engenharia: nenhuma

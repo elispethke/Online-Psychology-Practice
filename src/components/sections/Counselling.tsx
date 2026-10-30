@@ -6,8 +6,8 @@ import { EASE, VIEWPORT_ONCE } from '@/lib/motionVariants'
 import imgCounselling from '@/assets/img/elaine7.webp'
 
 /**
- * Counselling — individual therapy and the intercultural approach. Group work has its
- * own section (GroupWork) right after this one.
+ * Terapia — atendimento individual e abordagem intercultural. O trabalho em grupo tem
+ * seção própria (GroupWork), logo depois desta.
  */
 export function Counselling() {
   const { t } = useTranslation()
@@ -16,7 +16,7 @@ export function Counselling() {
 
   return (
     <section id="counselling" aria-labelledby="counselling-title">
-      {/* 1 — What it is: sticky photograph, text scrolling past it */}
+      {/* 1 — O que é: foto fixa (sticky), texto rolando ao lado */}
       <div className="bg-[var(--paper)]" style={{ padding: 'var(--section-y) 0' }}>
         <div
           className="mx-auto grid items-start gap-14 px-[var(--gutter)] lg:grid-cols-[5fr_6fr] lg:gap-24"
@@ -92,7 +92,7 @@ export function Counselling() {
         </div>
       </div>
 
-      {/* 3 — Approach, on the dark brand surface for rhythm */}
+      {/* 3 — Abordagem, na superfície escura da marca para dar ritmo */}
       <div className="bg-[var(--forest)] text-[var(--on-dark)]" style={{ padding: 'var(--section-y) 0' }}>
         <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
           <Reveal>
@@ -127,7 +127,7 @@ export function Counselling() {
         </div>
       </div>
 
-      {/* 4 — What we work on */}
+      {/* 4 — No que trabalhamos */}
       <div className="bg-[var(--surface)]" style={{ padding: 'var(--section-y) 0' }}>
         <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
           <Reveal>

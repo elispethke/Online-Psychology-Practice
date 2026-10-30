@@ -1,9 +1,9 @@
 import type { Lang, Page } from '@/lib/route'
 
 /**
- * Legal texts. Facts come from the code audit (docs/legal-audit.md) and official / vendor sources.
- * {{placeholders}} are filled from src/config/legal.ts; a missing value renders a visible "pending" marker.
- * This is a technical draft for the client's legal review — not legal advice.
+ * Textos legais. Os fatos vêm da auditoria do código (docs/legal-audit.md) e de fontes oficiais / dos fornecedores.
+ * Os {{placeholders}} são preenchidos por src/config/legal.ts; valor ausente vira um marcador visível de "pendente".
+ * É um rascunho técnico para a revisão jurídica da cliente — não é aconselhamento jurídico.
  */
 export interface Section { h: string; p?: string[]; list?: string[] }
 export interface Doc { title: string; lead: string; sections: Section[] }

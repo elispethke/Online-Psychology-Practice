@@ -1,9 +1,9 @@
 /**
- * Post-build SEO step. The app is a client-rendered SPA, so crawlers and social scrapers that do not run
- * JavaScript would see the Portuguese home <head> on every URL. This script writes one HTML file per route
- * (dist/en/index.html, dist/privacidade/index.html, ...) with that route's own <title>, description,
- * canonical, hreflang, robots and JSON-LD, and generates sitemap.xml + robots.txt from a single SITE_URL.
- * The body is the same SPA shell; React mounts as usual.
+ * Etapa de SEO pós-build. O app é uma SPA renderizada no cliente, então crawlers e scrapers de redes
+ * sociais que não executam JavaScript veriam o <head> da home em português em TODAS as URLs. Este script
+ * grava um HTML por rota (dist/en/index.html, dist/privacidade/index.html, ...) com <title>, description,
+ * canonical, hreflang, robots e JSON-LD próprios de cada rota, e gera sitemap.xml + robots.txt a partir
+ * de um único SITE_URL. O corpo é o mesmo shell da SPA; o React monta normalmente.
  */
 import { build } from 'esbuild'
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs'
@@ -63,7 +63,7 @@ function render(page, lang) {
     if (!re.test(o)) throw new Error(`postbuild-seo: meta ${sel} not found in dist/index.html`)
     o = o.replace(re, (_, a, b) => `${a}${esc(val)}${b}`)
   }
-  // links with data-seo are rebuilt per route
+  // os links com data-seo são reconstruídos por rota
   o = o.replace(/<link [^>]*data-seo[^>]*>\n?/g, '')
   const alts = Object.entries(PATHS[page]).map(([l, p]) => `<link rel="alternate" hreflang="${l}" href="${abs(p)}" data-seo />`)
   if (page === 'home') alts.push(`<link rel="alternate" hreflang="x-default" href="${abs('/')}" data-seo />`)
@@ -76,7 +76,7 @@ function render(page, lang) {
   return o
 }
 
-// SITE_URL replacement for the hard-coded default inside index.html (JSON-LD, og:image)
+// substitui o SITE_URL padrão fixo dentro do index.html (JSON-LD, og:image)
 const rewriteHost = s => (SITE === 'https://elaineteixeira.com' ? s : s.replaceAll('https://elaineteixeira.com', SITE))
 
 let count = 0

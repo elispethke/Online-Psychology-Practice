@@ -9,7 +9,7 @@ import { hrefFor, PATHS, type Lang, type Page } from '@/lib/route'
 const LANG_NAMES: Record<Lang, string> = { pt: 'Português', en: 'English', de: 'Deutsch' }
 const LOGO_LINES: Record<Lang, [string, string]> = { pt: ['Psicologia', 'entre Culturas'], en: ['Psychology', 'Across Cultures'], de: ['Psychology', 'Across Cultures'] }
 
-/** Fills {{placeholders}} from src/config/legal.ts; anything missing becomes a visible "pending" marker. */
+/** Preenche os {{placeholders}} com src/config/legal.ts; o que estiver faltando vira um marcador visível de "pendente". */
 function fill(text: string, lang: Lang): (string | JSX.Element)[] {
   const pending = UI[lang].pending
   const values: Record<string, string | null> = {

@@ -19,7 +19,7 @@ function Attribution({ item }: { item: TestimonialItem }) {
   )
 }
 
-/** Testimonials — one quote set large, two supporting quotes beside a portrait. No card boxes. */
+/** Depoimentos — uma citação grande e duas de apoio ao lado de um retrato. Sem cartões com caixa. */
 export function Testimonials() {
   const { t } = useTranslation()
   const items = t('testimonials.items', { returnObjects: true }) as TestimonialItem[]

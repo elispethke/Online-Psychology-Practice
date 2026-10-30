@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 /* =========================================================
-   GOOGLE FONTS FALLBACK + CSS VARIABLES
+   FALLBACK DAS GOOGLE FONTS + VARIÁVEIS CSS
 ========================================================= */
 :root {
-  /* Official palette — sampled from the "identidade-visual" board.
-     Only these five brand colours (+ the board's own paper tone) exist. */
-  --forest:  #28392F;   /* deep green  — primary, text, dark surfaces */
-  --sage:    #727B5E;   /* sage green  */
-  --teal:    #667B72;   /* grey-teal   */
-  --gold:    #BA9560;   /* gold        — accents, rules */
-  --sand:    #DDD0BF;   /* sand/cream  — borders, soft fills */
-  --surface: #F2EDE7;   /* board paper tone (matched to the logo crop so its edges disappear) */
+  /* Paleta oficial — extraída da prancha "identidade-visual".
+     Só existem estas cinco cores da marca (+ o tom de papel da própria prancha). */
+  --forest:  #28392F;   /* verde profundo — principal, texto, superfícies escuras */
+  --sage:    #727B5E;   /* verde sálvia */
+  --teal:    #667B72;   /* azul-acinzentado */
+  --gold:    #BA9560;   /* dourado — destaques, filetes */
+  --sand:    #DDD0BF;   /* areia/creme — bordas, preenchimentos suaves */
+  --surface: #F2EDE7;   /* tom de papel da prancha (igual ao recorte do logo, para as bordas sumirem) */
 
-  /* Derived from the palette (never new hues) */
+  /* Derivadas da paleta (nunca matizes novos) */
   --paper:      color-mix(in srgb, var(--sand) 34%, var(--surface));
   --ink:        var(--forest);
   --ink-soft:   color-mix(in srgb, var(--forest) 80%, var(--surface));
@@ -25,10 +25,10 @@
   --on-dark:      var(--surface);
   --on-dark-soft: color-mix(in srgb, var(--surface) 72%, var(--forest));
 
-  /* Layout & type scale */
-  /* Every layout token is in rem on purpose: the root font-size below scales on large screens,
-     so the whole layout (container, header, type, spacing) grows together instead of
-     floating as a small column in the middle of a 4K display. */
+  /* Layout e escala tipográfica */
+  /* Todo token de layout está em rem de propósito: o font-size da raiz, mais abaixo, escala em telas grandes,
+     então o layout inteiro (container, header, texto, espaçamento) cresce junto, em vez de
+     ficar como uma colunazinha flutuando no meio de uma tela 4K. */
   --header-h:   5.5rem;
   --gutter:     clamp(1.25rem, 4vw, 3rem);
   --content-w:  77.5rem;
@@ -47,7 +47,7 @@
 }
 
 /* =========================================================
-   BASE RESET
+   RESET BASE
 ========================================================= */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -57,18 +57,18 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h);
   font-size: 16px;
-  /* Safety net against horizontal scroll from off-screen entrance transforms (x: ±24). `clip`, not
-     `hidden`: `hidden` would make <html> a scroll container and break position: sticky. */
+  /* Rede de segurança contra rolagem horizontal causada por transforms de entrada fora da tela (x: ±24). `clip`, não
+     `hidden`: `hidden` faria do <html> um contêiner de rolagem e quebraria o position: sticky. */
   overflow-x: clip;
 }
 
-/* Large displays / TVs: 16px up to 1920px wide, then the root size follows the viewport
-   (≈32px at 3840px). Because tokens and Tailwind spacing are rem-based, the design scales as a unit. */
+/* Telas grandes / TVs: 16px até 1920px de largura; depois o tamanho da raiz acompanha a janela
+   (≈32px em 3840px). Como tokens e espaçamentos do Tailwind são em rem, o design escala como um todo. */
 @media (min-width: 1920px) {
   html { font-size: 0.8334vw; }
 }
 
-/* Touch devices: WCAG 2.5.8 / Apple HIG ask for ≥44px targets. Opt-in class, applied to small controls. */
+/* Dispositivos de toque: WCAG 2.5.8 / Apple HIG pedem alvos de ≥44px. Classe opcional, aplicada a controles pequenos. */
 @media (pointer: coarse) {
   .touch-target { min-width: 2.75rem; min-height: 2.75rem; display: inline-flex; align-items: center; justify-content: center; }
 }
@@ -84,14 +84,14 @@ body {
 }
 
 /* =========================================================
-   TYPOGRAPHY UTILITIES
+   UTILITÁRIOS DE TIPOGRAFIA
 ========================================================= */
 .font-display {
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-/* Small uppercase label used as an "eyebrow" above editorial headings.
-   Typography alone carries the hierarchy — no decorative rule before it. */
+/* Rótulo pequeno em caixa alta usado como "eyebrow" acima dos títulos editoriais.
+   Só a tipografia carrega a hierarquia — sem filete decorativo antes dele. */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -103,7 +103,7 @@ body {
   color: var(--forest);
 }
 
-/* Editorial drop cap — used sparingly, only on the single densest opening paragraph */
+/* Letra capitular editorial — usada com parcimônia, só no parágrafo de abertura mais denso */
 .dropcap:first-letter {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 400;
@@ -115,7 +115,7 @@ body {
   color: var(--forest);
 }
 
-/* Subtle image scale-on-hover, respects reduced motion via global rule above */
+/* Leve aumento da imagem no hover; respeita movimento reduzido pela regra global acima */
 .img-zoom {
   overflow: hidden;
 }
@@ -127,7 +127,7 @@ body {
 }
 
 /* =========================================================
-   SCROLL PROGRESS BAR
+   BARRA DE PROGRESSO DE ROLAGEM
 ========================================================= */
 #scroll-progress {
   position: fixed;
@@ -142,7 +142,7 @@ body {
 }
 
 /* =========================================================
-   CUSTOM SCROLLBAR
+   BARRA DE ROLAGEM PERSONALIZADA
 ========================================================= */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--paper); }
@@ -150,7 +150,7 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: var(--forest); }
 
 /* =========================================================
-   SELECTION COLOR
+   COR DE SELEÇÃO DE TEXTO
 ========================================================= */
 ::selection {
   background: var(--sand);
@@ -167,7 +167,7 @@ body {
 }
 
 /* =========================================================
-   NAV ACTIVE LINK
+   LINK ATIVO DA NAVEGAÇÃO
 ========================================================= */
 .nav-link {
   position: relative;
@@ -189,7 +189,7 @@ body {
 }
 
 /* =========================================================
-   CV TABLE
+   TABELA DO CV
 ========================================================= */
 .cv-table {
   width: 100%;
@@ -229,7 +229,7 @@ body {
 }
 
 /* =========================================================
-   MISSION GALLERY
+   GALERIA DA MISSÃO
 ========================================================= */
 .gallery-rail {
   scrollbar-width: none;
@@ -253,8 +253,8 @@ body {
 }
 .gallery-btn:hover { background: var(--gold); color: var(--forest); }
 
-/* Official-logo artwork pieces: the board's paper tone is darker-than-or-equal to the page,
-   so `darken` hides the crop edges without touching the artwork itself. */
+/* Peças de arte do logo oficial: o tom de papel da prancha é igual ou mais escuro que a página,
+   então `darken` esconde as bordas do recorte sem mexer na arte em si. */
 .logo-piece {
   position: absolute;
   max-width: none;

@@ -18,13 +18,13 @@ const BASE =
   'inline-flex items-center gap-2.5 font-body text-[0.72rem] font-medium tracking-[0.16em] uppercase cursor-pointer rounded-sm transition-all duration-300 no-underline'
 
 const VARIANTS: Record<ButtonVariant, string> = {
-  /** Solid forest — default call to action on light surfaces */
+  /** Verde sólido — chamada para ação padrão em fundos claros */
   primary:
     'bg-[var(--forest)] text-[var(--surface)] px-7 py-3.5 border border-[var(--forest)] hover:bg-[var(--sage)] hover:border-[var(--sage)]',
-  /** Hairline — secondary action on light surfaces */
+  /** Linha fina — ação secundária em fundos claros */
   outline:
     'bg-transparent text-[var(--forest)] px-7 py-3.5 border border-[var(--forest)] hover:bg-[var(--forest)] hover:text-[var(--surface)]',
-  /** Hairline for dark / photographic surfaces */
+  /** Linha fina para fundos escuros / fotográficos */
   light:
     'bg-[color-mix(in_srgb,var(--forest)_28%,transparent)] backdrop-blur-sm text-[var(--surface)] px-7 py-3.5 border border-[var(--surface)] hover:bg-[var(--surface)] hover:text-[var(--forest)]',
   ghost:

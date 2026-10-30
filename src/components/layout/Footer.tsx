@@ -21,7 +21,7 @@ export function Footer() {
     <footer className="bg-[var(--forest)] text-[var(--on-dark)]" style={{ paddingTop: 'clamp(4rem, 8vw, 6.5rem)', paddingBottom: '2rem' }}>
       <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
         <div className="grid items-center gap-10 border-b border-[var(--border-soft)] pb-14 md:grid-cols-[auto_1fr] md:gap-16" style={{ borderColor: 'color-mix(in srgb, var(--on-dark) 16%, transparent)' }}>
-          {/* Official reversed emblem — unmodified crop of the identity board; the wordmark beside it is live, translated text */}
+          {/* Emblema oficial invertido — recorte original da prancha de identidade; o nome ao lado é texto vivo, traduzido */}
           <img
             src={emblem}
             alt=""

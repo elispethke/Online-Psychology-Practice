@@ -5,7 +5,7 @@ interface SectionTitleProps {
   title: ReactNode
   subtitle?: string
   align?: 'left' | 'center'
-  /** Typographic weight of the moment: 'compact' for supporting sections, 'large' for the ones that carry the most content/importance. */
+  /** Peso tipográfico do momento: 'compact' para seções de apoio, 'large' para as que carregam mais conteúdo/importância. */
   scale?: 'compact' | 'default' | 'large'
   className?: string
 }
@@ -28,7 +28,7 @@ export function SectionTitle({
 
   return (
     <div className={[isCenter ? 'text-center' : '', className].join(' ')}>
-      {/* Eyebrow label */}
+      {/* Rótulo (eyebrow) */}
       <div
         className={[
           'eyebrow mb-4',
@@ -38,7 +38,7 @@ export function SectionTitle({
         {label}
       </div>
 
-      {/* Title */}
+      {/* Título */}
       <h2
         className="font-display font-light text-ink leading-[1.08] tracking-[0.01em]"
         style={{ fontSize: SCALE_SIZES[scale] }}
@@ -46,7 +46,7 @@ export function SectionTitle({
         {title}
       </h2>
 
-      {/* Optional subtitle */}
+      {/* Subtítulo opcional */}
       {subtitle && (
         <p
           className={[

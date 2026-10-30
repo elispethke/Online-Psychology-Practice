@@ -54,7 +54,7 @@ export function Header() {
     return () => window.removeEventListener('keydown', onKey)
   }, [mobileOpen])
 
-  // Language lives in the URL ("/" = pt, "/en" = en); App syncs i18n from the route.
+  // O idioma vive na URL ("/" = pt, "/en" = en); o App sincroniza o i18n a partir da rota.
   const changeLang = (code: LanguageCode) => {
     navigate(hrefFor('home', code) + window.location.hash)
     setMobileOpen(false)
@@ -71,7 +71,7 @@ export function Header() {
         className="mx-auto flex w-full items-center justify-between px-[var(--gutter)] transition-[height] duration-300"
         style={{ maxWidth: 'var(--content-w)', height: scrolled ? '4.5rem' : 'var(--header-h)' }}
       >
-        {/* Official logo — name, emblem and ornament are the original artwork; the subtitle lines follow the active language */}
+        {/* Logo oficial — nome, emblema e ornamento são a arte original; as linhas do subtítulo seguem o idioma ativo */}
         <a href="#hero" className="flex shrink-0 items-center" aria-label={t('header.logoAlt')}>
           <BrandLogo
             subtitleTop={t('brand.line1')}

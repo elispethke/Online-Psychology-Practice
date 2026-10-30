@@ -47,7 +47,7 @@ export function Prices () {
           />
         </Reveal>
 
-        {/* Editorial rate sheet — each plan is a full-width row, not a boxed card */}
+        {/* Tabela de valores editorial — cada plano é uma linha de largura total, não um cartão com caixa */}
         <div key={i18n.language} className='mt-12 border-t border-[var(--border-soft)]'>
           {plans.map((plan, index) => (
             <motion.div

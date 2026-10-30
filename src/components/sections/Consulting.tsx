@@ -22,7 +22,7 @@ function ListBlock({ title, intro, items }: { title: string; intro?: string; ite
   )
 }
 
-/** Consulting — two audiences, two compositions: the third sector first, corporate teams second. */
+/** Consultorias — dois públicos, duas composições: primeiro o terceiro setor, depois equipes corporativas. */
 export function Consulting() {
   const { t } = useTranslation()
   const areas = t('consulting.thirdSector.areas', { returnObjects: true }) as string[]

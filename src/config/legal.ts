@@ -1,36 +1,36 @@
 import { CONTACT_EMAIL } from '@/config/site'
 
 /**
- * Legal identification data for the Impressum / privacy policy.
+ * Dados de identificação legal para o Impressum / política de privacidade.
  *
- * ⚠ Only data that already exists in the project is filled in. Every `null` is a MANDATORY or
- * recommended item that the client still has to supply — the legal pages render a visible
- * "pending" marker for it instead of an invented value. Do not fill these with guesses.
+ * ⚠ Só estão preenchidos os dados que já existem no projeto. Todo `null` é um item OBRIGATÓRIO ou
+ * recomendado que a cliente ainda precisa fornecer — as páginas legais mostram um marcador visível
+ * de "pendente" no lugar, em vez de um valor inventado. Não preencha com chutes.
  */
 export const LEGAL = {
   name: 'Elaine Teixeira',
   email: CONTACT_EMAIL,
-  /** Ladungsfähige Anschrift (street, postcode, city) — required by § 5 DDG. */
+  /** Ladungsfähige Anschrift (rua, CEP, cidade) — exigida pelo § 5 DDG. */
   address: null as string | null,
-  /** Professional title as used on the site (from the existing CV copy). */
+  /** Título profissional como usado no site (do texto existente do CV). */
   professionalTitle: 'Psicóloga / Psychologin (Brasil) — CRP 06/55288',
-  /** Chamber / regulatory body — inferred from the "CRP 06" registration on the site; client must confirm. */
+  /** Conselho / órgão regulador — deduzido do registro "CRP 06" no site; a cliente precisa confirmar. */
   chamber: null as string | null,
-  /** Supervisory authority, if the activity requires authorisation in Germany. */
+  /** Autoridade de supervisão, se a atividade exigir autorização na Alemanha. */
   supervisoryAuthority: null as string | null,
-  /** USt-IdNr. (§ 27a UStG) — only if the client holds one. */
+  /** USt-IdNr. (§ 27a UStG) — somente se a cliente tiver uma. */
   vatId: null as string | null,
-  /** Hosting provider of the production site (needed for the privacy policy). */
+  /** Provedor de hospedagem do site em produção (necessário para a política de privacidade). */
   hostingProvider: null as string | null,
-  /** Mailbox provider that receives contact-form messages. */
+  /** Provedor da caixa de e-mail que recebe as mensagens do formulário de contato. */
   mailboxProvider: null as string | null,
-  /** Competent data-protection authority — Berlin DPA, valid only if the controller is based in Berlin. */
+  /** Autoridade de proteção de dados competente — a de Berlim, válida só se o responsável tiver sede em Berlim. */
   authority: {
     name: 'Berliner Beauftragte für Datenschutz und Informationsfreiheit',
     address: 'Alt-Moabit 59-61, 10555 Berlin',
     email: 'mailbox@datenschutz-berlin.de',
     web: 'https://www.datenschutz-berlin.de',
   },
-  /** Date of the last review of the legal texts (ISO). */
+  /** Data da última revisão dos textos legais (ISO). */
   updated: '2026-10-29',
 }

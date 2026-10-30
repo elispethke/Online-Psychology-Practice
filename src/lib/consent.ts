@@ -1,9 +1,9 @@
 import { useSyncExternalStore } from 'react'
 
 /**
- * Consent store (§ 25 TDDDG / Art. 7 GDPR). Only the visitor's own choice is persisted
- * (version, categories, timestamp) — it is the proof that a choice was made and is needed
- * to respect it on later visits. "Necessary" is always on and is not stored as a choice.
+ * Armazenamento do consentimento (§ 25 TDDDG / Art. 7 GDPR). Só a escolha da própria pessoa é
+ * persistida (versão, categorias, data/hora) — é a prova de que uma escolha foi feita e é necessária
+ * para respeitá-la em visitas futuras. "Necessários" está sempre ativa e não é guardada como escolha.
  */
 const KEY = 'consent_preferences'
 const VERSION = 1
@@ -21,7 +21,7 @@ const emit = () => listeners.forEach(l => l())
 
 function read(): Consent | null {
   try {
-    // Legacy key of the previous banner ("continuing = accepted") was never valid consent for anything optional.
+    // A chave legada do banner anterior ("continuar = aceitar") nunca foi consentimento válido para nada opcional.
     localStorage.removeItem('cookie_consent')
     const raw = localStorage.getItem(KEY)
     if (!raw) return null
@@ -36,7 +36,7 @@ let cache: Consent | null = read()
 
 export function setConsent(analytics: boolean) {
   cache = { v: VERSION, analytics, ts: Date.now() }
-  try { localStorage.setItem(KEY, JSON.stringify(cache)) } catch { /* storage blocked: choice only lasts for this visit */ }
+  try { localStorage.setItem(KEY, JSON.stringify(cache)) } catch { /* armazenamento bloqueado: a escolha só vale nesta visita */ }
   preferencesOpen = false
   emit()
 }

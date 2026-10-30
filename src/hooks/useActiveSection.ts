@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-/** Returns the id of the section currently crossing the middle band of the viewport. */
+/** Devolve o id da seção que está cruzando a faixa do meio da tela. */
 export function useActiveSection(ids: string[]) {
   const [active, setActive] = useState<string>('')
 

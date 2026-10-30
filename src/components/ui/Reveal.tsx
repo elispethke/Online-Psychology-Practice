@@ -11,8 +11,8 @@ interface RevealProps {
 }
 
 /**
- * Scroll-triggered entrance. Transform animations are switched off
- * automatically for visitors who prefer reduced motion (MotionConfig in App).
+ * Entrada disparada pelo scroll. As animações de transform são desligadas
+ * automaticamente para quem prefere movimento reduzido (MotionConfig no App).
  */
 export function Reveal({ children, delay = 0, y = 26, className, as = 'div' }: RevealProps) {
   const Tag = motion[as]

@@ -8,8 +8,8 @@ import group2 from '@/assets/img/group-2.webp' // foto3
 import group3 from '@/assets/img/group-3.webp' // foto5
 
 /**
- * The three photographs below were chosen by the client specifically for the group
- * work section. They must not be used anywhere else on the site.
+ * As três fotos abaixo foram escolhidas pela cliente especificamente para a seção de
+ * trabalho em grupo. Não devem ser usadas em nenhum outro lugar do site.
  */
 const PHOTOS = [group1, group2, group3] as const
 const STEPS: readonly (readonly string[])[] = [['p1', 'p2a'], ['p2b', 'p2c'], ['p3']]
@@ -17,9 +17,9 @@ const IMG_W = 1068
 const IMG_H = 1600
 
 /**
- * Sticky storytelling: on desktop the photograph stays pinned while the text steps
- * scroll past; the picture cross-fades to the one that belongs to the current step.
- * On small screens each step simply carries its own photograph.
+ * Storytelling com sticky: no desktop a foto fica fixa enquanto os passos do texto
+ * rolam; a imagem faz cross-fade para a que pertence ao passo atual.
+ * Em telas pequenas, cada passo traz a sua própria foto.
  */
 export function GroupWork() {
   const { t } = useTranslation()

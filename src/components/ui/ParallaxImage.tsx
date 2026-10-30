@@ -7,16 +7,16 @@ interface ParallaxImageProps {
   width: number
   height: number
   className?: string
-  /** CSS object-position for the crop */
+  /** object-position do CSS para o recorte */
   position?: string
-  /** Travel of the image inside its frame, as % of the frame height */
+  /** Deslocamento da imagem dentro do quadro, em % da altura do quadro */
   travel?: number
   priority?: boolean
 }
 
 /**
- * Photograph that drifts inside a fixed frame while the page scrolls (scroll-linked
- * parallax). The image is oversized by `travel`% so the frame never shows an edge.
+ * Foto que desliza dentro de um quadro fixo enquanto a página rola (parallax ligado ao
+ * scroll). A imagem é `travel`% maior que o quadro, para nunca mostrar uma borda.
  */
 export function ParallaxImage({
   src, alt, width, height, className = '', position = '50% 50%', travel = 10, priority = false,

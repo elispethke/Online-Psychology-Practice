@@ -10,7 +10,7 @@ const TIMELINE_KEYS = ['t1', 't2', 't3', 't4', 't5'] as const
 
 interface CvRow { period: string; role: string; org: string; context: string }
 
-/** About + professional experience, merged: who she is, the path in order, then the detailed CV. */
+/** Sobre + experiência profissional, juntos: quem ela é, o caminho em ordem e, por fim, o CV detalhado. */
 export function Journey() {
   const { t } = useTranslation()
   // returnObjects devolve a própria chave (string) se a tradução faltar: sem esta guarda, `rows.map` quebraria a página inteira.
@@ -18,7 +18,7 @@ export function Journey() {
   const rows = Array.isArray(rowsRaw) ? (rowsRaw as CvRow[]) : []
   const timelineRef = useRef<HTMLDivElement>(null)
 
-  // The gold rule fills as the visitor reads down the timeline
+  // A linha dourada se preenche conforme a pessoa desce pela linha do tempo
   const { scrollYProgress } = useScroll({ target: timelineRef, offset: ['start 70%', 'end 55%'] })
   const fill = useTransform(scrollYProgress, [0, 1], [0, 1])
 
@@ -109,7 +109,7 @@ export function Journey() {
           </ol>
         </div>
 
-        {/* Detailed CV — complete list kept, folded away so the story above stays readable */}
+        {/* CV detalhado — lista completa mantida, recolhida para a história acima continuar legível */}
         <Reveal className="mx-auto mt-20 max-w-[56rem]">
           <details className="group border-y border-[var(--border)]">
             <summary className="flex cursor-pointer list-none items-center justify-between py-6 font-display text-[1.5rem] font-normal text-[var(--forest)] [&::-webkit-details-marker]:hidden">

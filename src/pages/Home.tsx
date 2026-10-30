@@ -11,6 +11,7 @@ import { Testimonials } from '@/components/sections/Testimonials'
 import { Prices } from '@/components/sections/Prices'
 import { FAQ } from '@/components/sections/FAQ'
 import { Contact } from '@/components/sections/Contact'
+import { SectionTransition } from '@/components/ui/SectionTransition'
 
 export function Home () {
   return (
@@ -18,16 +19,16 @@ export function Home () {
       <Header />
       <main>
         <Hero />
-        <Intercultural />
-        <Counselling />
-        <GroupWork />
-        <Journey />
-        <AfricaGallery />
-        <Consulting />
-        <Testimonials />
-        <Prices />
-        <FAQ />
-        <Contact />
+        <SectionTransition><Intercultural /></SectionTransition>
+        <SectionTransition><Counselling /></SectionTransition>
+        <SectionTransition><GroupWork /></SectionTransition>
+        <SectionTransition><Journey /></SectionTransition>
+        <SectionTransition><AfricaGallery /></SectionTransition>
+        <SectionTransition><Consulting /></SectionTransition>
+        <SectionTransition><Testimonials /></SectionTransition>
+        <SectionTransition><Prices /></SectionTransition>
+        <SectionTransition><FAQ /></SectionTransition>
+        <SectionTransition><Contact /></SectionTransition>
       </main>
       <Footer />
     </>

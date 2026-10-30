@@ -104,7 +104,7 @@ export function Counselling() {
             </h3>
           </Reveal>
 
-          <div className="mt-14 grid gap-14 lg:grid-cols-[7fr_4fr] lg:gap-24">
+          <div className="mt-12 grid gap-14 lg:grid-cols-[7fr_4fr] lg:gap-24">
             <div className="flex max-w-[40rem] flex-col gap-6 text-[0.98rem] leading-[1.85] text-[var(--on-dark-soft)]">
               {(['p1', 'p2', 'p3', 'p4', 'p5'] as const).map(key => (
                 <Reveal key={key}><p>{t(`counselling.approach.${key}`)}</p></Reveal>

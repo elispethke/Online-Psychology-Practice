@@ -32,7 +32,7 @@
   --header-h:   5.5rem;
   --gutter:     clamp(1.25rem, 4vw, 3rem);
   --content-w:  77.5rem;
-  --section-y:  clamp(5rem, 11vw, 9.5rem);
+  --section-y:  clamp(4rem, 9vw, 7.5rem);
 
   /* Escala dos títulos: 3 níveis de h2 e 2 de h3 (h1 do hero fica à parte). */
   --fs-h2-xl: clamp(3rem, 7.4vw, 6rem);       /* aberturas editoriais */

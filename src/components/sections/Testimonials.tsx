@@ -50,7 +50,7 @@ export function Testimonials() {
           </Reveal>
         )}
 
-        <div className="mt-20 grid items-center gap-14 lg:mt-28 lg:grid-cols-[4fr_7fr] lg:gap-24">
+        <div className="mt-16 grid items-center gap-14 lg:mt-24 lg:grid-cols-[4fr_7fr] lg:gap-24">
           <ParallaxImage
             src={imgTestimonials}
             alt={t('testimonials.imageAlt')}

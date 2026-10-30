@@ -69,14 +69,14 @@ export function Journey() {
         </div>
 
         {/* Pull quote */}
-        <Reveal className="mx-auto mt-24 max-w-[56rem] text-center lg:mt-36">
+        <Reveal className="mx-auto mt-20 max-w-[56rem] text-center lg:mt-28">
           <blockquote className="m-0 font-display font-light italic leading-[1.25] text-[var(--forest)]" style={{ fontSize: 'clamp(1.7rem, 3.6vw, 2.9rem)' }}>
             {t('about.quote')}
           </blockquote>
         </Reveal>
 
         {/* Timeline */}
-        <div ref={timelineRef} className="relative mx-auto mt-24 max-w-[56rem] lg:mt-36">
+        <div ref={timelineRef} className="relative mx-auto mt-20 max-w-[56rem] lg:mt-28">
           <span aria-hidden="true" className="absolute bottom-0 left-[0.5rem] top-0 w-px bg-[var(--border)] sm:left-[9.5rem]" />
           <motion.span
             aria-hidden="true"
@@ -109,7 +109,7 @@ export function Journey() {
         </div>
 
         {/* CV detalhado — lista completa mantida, recolhida para a história acima continuar legível */}
-        <Reveal className="mx-auto mt-20 max-w-[56rem]">
+        <Reveal className="mx-auto mt-16 max-w-[56rem]">
           <details className="group border-y border-[var(--border)]">
             <summary className="flex cursor-pointer list-none items-center justify-between py-6 font-display text-[1.5rem] font-normal text-[var(--forest)] [&::-webkit-details-marker]:hidden">
               {t('about.figures.detailTitle')}

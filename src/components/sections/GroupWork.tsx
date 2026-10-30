@@ -58,7 +58,7 @@ export function GroupWork() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-10 lg:mt-20 lg:grid-cols-[5fr_6fr] lg:gap-24">
+        <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-[5fr_6fr] lg:gap-24">
           {/* Pinned photograph (desktop) */}
           <div className="relative hidden lg:block">
             <div

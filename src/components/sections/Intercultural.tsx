@@ -45,7 +45,7 @@ export function Intercultural() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-14 lg:mt-24 lg:grid-cols-[5fr_7fr] lg:gap-24">
+        <div className="mt-14 grid gap-14 lg:mt-20 lg:grid-cols-[5fr_7fr] lg:gap-24">
           {/* Sticky theme */}
           <aside className="lg:sticky lg:self-start" style={{ top: 'calc(var(--header-h) + 2.5rem)' }}>
             <ParallaxImage

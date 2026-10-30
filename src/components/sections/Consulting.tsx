@@ -56,7 +56,7 @@ export function Consulting() {
             </div>
           </div>
 
-          <div className="mt-20 grid gap-14 lg:mt-28 lg:grid-cols-[5fr_6fr] lg:gap-24">
+          <div className="mt-16 grid gap-14 lg:mt-24 lg:grid-cols-[5fr_6fr] lg:gap-24">
             <Reveal>
               <div className="bg-[var(--forest)] p-8 text-[var(--on-dark)] sm:p-12">
                 <p className="eyebrow-sm mb-5 text-[var(--gold)]">{t('consulting.thirdSector.audienceTitle')}</p>
@@ -66,7 +66,7 @@ export function Consulting() {
             <ListBlock title={t('consulting.thirdSector.areasTitle')} items={areas} />
           </div>
 
-          <Reveal className="mt-14 max-w-[40rem]">
+          <Reveal className="mt-12 max-w-[40rem]">
             <p className="text-[0.98rem] leading-[1.85] text-ink-soft">{t('consulting.thirdSector.contactDesc')}</p>
             <div className="mt-8"><Button href="#contact">{t('consulting.thirdSector.cta')}</Button></div>
           </Reveal>
@@ -86,7 +86,7 @@ export function Consulting() {
             className="aspect-[16/8] w-full"
           />
 
-          <div className="mt-16 grid gap-12 lg:mt-24 lg:grid-cols-[5fr_6fr] lg:gap-24">
+          <div className="mt-14 grid gap-12 lg:mt-20 lg:grid-cols-[5fr_6fr] lg:gap-24">
             <div>
               <Reveal><p className="eyebrow mb-6">{t('consulting.corporate.label')}</p></Reveal>
               <Reveal delay={0.08}>
@@ -106,12 +106,12 @@ export function Consulting() {
             </div>
           </div>
 
-          <div className="mt-20 grid gap-14 lg:mt-28 lg:grid-cols-2 lg:gap-24">
+          <div className="mt-16 grid gap-14 lg:mt-24 lg:grid-cols-2 lg:gap-24">
             <ListBlock title={t('consulting.corporate.topicsTitle')} intro={t('consulting.corporate.topicsIntro')} items={topics} />
             <ListBlock title={t('consulting.corporate.impactTitle')} items={impact} />
           </div>
 
-          <div className="mt-20 grid gap-12 border-t border-[var(--border)] pt-12 lg:grid-cols-[5fr_6fr] lg:gap-24">
+          <div className="mt-16 grid gap-12 border-t border-[var(--border)] pt-12 lg:grid-cols-[5fr_6fr] lg:gap-24">
             <Reveal>
               <h4 className="font-display text-[1.7rem] font-normal text-[var(--forest)]">{t('consulting.corporate.methodologyTitle')}</h4>
             </Reveal>

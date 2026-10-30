@@ -140,7 +140,7 @@ export function Contact() {
         </Reveal>
 
         <div
-          className="grid gap-12 lg:gap-14 mt-14 items-start grid-cols-1 lg:grid-cols-[0.78fr_1fr_1.15fr]"
+          className="grid gap-12 lg:gap-14 mt-12 items-start grid-cols-1 lg:grid-cols-[0.78fr_1fr_1.15fr]"
         >
           {/* Portrait column */}
           <motion.div

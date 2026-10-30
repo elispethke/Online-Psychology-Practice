@@ -242,7 +242,7 @@ export function AfricaGallery() {
         whileInView={{ clipPath: 'inset(0 0% 0 0)' }}
         viewport={{ once: true, margin: '0px 0px -10% 0px' }}
         transition={{ duration: 1.4, ease: EASE }}
-        className="mt-14 lg:mt-20"
+        className="mt-12 lg:mt-16"
         style={{ maskImage: 'linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%)', WebkitMaskImage: 'linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%)' }}
       >
         <div

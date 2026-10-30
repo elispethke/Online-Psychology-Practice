@@ -40,7 +40,6 @@
     "scroll": "Role para continuar"
   },
   "intercultural": {
-    "label": "Vivendo Entre Culturas",
     "title": "Vivendo entre culturas",
     "intro": "Viver entre culturas pode ser enriquecedor, mas também profundamente desafiador.",
     "p1": "O processo migratório e as dificuldades de adaptação no exterior podem encadear gatilhos emocionais e instabilidade emocional. É muito comum migrantes começarem a se sentir deprimidos, ansiosos e começarem a desenvolver problemas de saúde mental no exterior.",
@@ -89,7 +88,6 @@
       "title": "Aconselhamento em grupo",
       "p1": "Os encontros em grupo oferecem um espaço estruturado de partilha, reflexão e elaboração coletiva.",
       "p3": "Essa combinação entre escuta clínica e apoio entre pares permite não apenas compreender melhor as próprias vivências, mas também ampliar recursos internos e fortalecer a capacidade de lidar com os desafios do cotidiano.",
-      "label": "Encontros em grupo",
       "p2a": "A partir de uma abordagem intercultural, o trabalho em grupo integra elementos terapêuticos com a força da experiência compartilhada. A troca entre pessoas que vivem desafios semelhantes favorece identificação, pertencimento e novas formas de compreensão.",
       "p2b": "Ao mesmo tempo, o grupo é conduzido de forma cuidadosa, profissional e empática, garantindo um ambiente seguro, ético e acolhedor, onde cada participante pode se expressar no seu ritmo, sempre e quando quiser.",
       "p2c": "A construção do saber vem dessa troca, e a escuta coletiva se torna uma ferramenta de transformação e motivação para muitas situações que são para o indivíduo paralisantes.",
@@ -134,7 +132,6 @@
     "imageAlt": "Elaine Teixeira em atendimento online"
   },
   "about": {
-    "label": "Sobre Mim",
     "title": "Sobre mim",
     "desc1": "Sou Psicóloga formada pela Universidade São Marcos em São Paulo (CRP: 06/55288) e com especialização em Psicologia e Migração pela PUC Minas. Tenho mais de 20 anos de experiência em intervenção terapêutica e no aconselhamento psicológico de pessoas em situações de vulnerabilidade psicossocial e sofrimento psíquico.",
     "desc2": "No Brasil trabalhei quase 9 anos como voluntária para a Organização GIV – Grupo de Incentivo à Vida, onde oferecia psicoterapia e aconselhamento preventivo e de tratamento da terapia antiretroviral, principalmente para a comunidade LGBTQI+, mulheres, crianças e adolescentes vivendo com HIV-Aids. Além disto, atendia na minha clínica de psicoterapia em São Paulo.",
@@ -333,7 +330,6 @@
     "imageAlt": "Retrato de Elaine Teixeira sentada"
   },
   "prices": {
-    "label": "Valores",
     "title": "Valores das sessões",
     "subtitle": "Os atendimentos são realizados de forma confidencial e em conformidade com os princípios éticos da prática da psicologia. Sessões online disponíveis internacionalmente. Atendimentos presenciais iniciam em breve.",
     "plans": [

@@ -48,7 +48,6 @@ export function GroupWork() {
       style={{ padding: 'var(--section-y) 0' }}
     >
       <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
-        <Reveal><p className="eyebrow mb-6">{t('counselling.group.label')}</p></Reveal>
         <Reveal delay={0.08}>
           <h2
             id="group-title"

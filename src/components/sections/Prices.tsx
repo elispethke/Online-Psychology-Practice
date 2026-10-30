@@ -41,7 +41,6 @@ export function Prices () {
         <Reveal>
           <SectionTitle
             scale="large"
-            label={t('prices.label')}
             title={t('prices.title')}
             subtitle={t('prices.subtitle')}
           />

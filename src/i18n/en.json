@@ -40,7 +40,6 @@
     "scroll": "Scroll to continue"
   },
   "intercultural": {
-    "label": "Living Between Cultures",
     "title": "Living between cultures",
     "intro": "Living between cultures can be enriching, but also profoundly challenging.",
     "p1": "The migration process and the difficulties of adapting abroad can trigger emotional responses and emotional instability. It is very common for migrants to begin feeling depressed, anxious, and to develop mental health challenges while living in another country.",
@@ -89,7 +88,6 @@
       "title": "Group counselling",
       "p1": "Group sessions offer a structured space for sharing, reflection and collective processing.",
       "p3": "This combination of clinical listening and peer support allows participants not only to better understand their own experiences, but also to expand their internal resources and strengthen their ability to deal with everyday challenges.",
-      "label": "Group sessions",
       "p2a": "Through an intercultural approach, group work integrates therapeutic elements with the strength of shared experience. The exchange between people facing similar challenges fosters identification, belonging and new forms of understanding.",
       "p2b": "At the same time, the group is facilitated in a careful, professional and empathic way, ensuring a safe, ethical and welcoming environment where each participant can express themselves at their own pace, whenever they wish.",
       "p2c": "Knowledge is built through this exchange, and collective listening becomes a tool for transformation and motivation in situations that can feel paralysing for the individual.",
@@ -134,7 +132,6 @@
     "imageAlt": "Elaine Teixeira during an online session"
   },
   "about": {
-    "label": "About Me",
     "title": "About me",
     "desc1": "I am a Psychologist trained at Universidade São Marcos in São Paulo (CRP: 06/55288) with a postgraduate specialisation in Psychology and Migration from PUC Minas. I have over 20 years of experience in therapeutic intervention and psychological counselling with people in situations of psychosocial vulnerability and psychological distress.",
     "desc2": "In Brazil, I worked for nearly 9 years as a volunteer for GIV – Grupo de Incentivo à Vida, providing psychotherapy and preventive counselling for antiretroviral treatment, primarily for the LGBTQI+ community, women, children and adolescents living with HIV-Aids. I also held a private psychotherapy practice in São Paulo.",
@@ -333,7 +330,6 @@
     "imageAlt": "Portrait of Elaine Teixeira seated"
   },
   "prices": {
-    "label": "Fees",
     "title": "Session fees",
     "subtitle": "All sessions are conducted confidentially and in accordance with the ethical principles of psychological practice. Online sessions available worldwide. In-person sessions starting soon.",
     "plans": [

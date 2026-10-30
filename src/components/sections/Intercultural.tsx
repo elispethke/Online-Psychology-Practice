@@ -30,9 +30,6 @@ export function Intercultural() {
     >
       <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
         {/* Masthead */}
-        <Reveal>
-          <p className="eyebrow mb-6">{t('intercultural.label')}</p>
-        </Reveal>
         <Reveal delay={0.08}>
           <h2
             id="intercultural-title"

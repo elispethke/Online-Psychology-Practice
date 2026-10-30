@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react'
 
 interface SectionTitleProps {
-  label: string
+  label?: string
   title: ReactNode
   subtitle?: string
   align?: 'left' | 'center'
@@ -29,14 +29,16 @@ export function SectionTitle({
   return (
     <div className={[isCenter ? 'text-center' : '', className].join(' ')}>
       {/* Rótulo (eyebrow) */}
-      <div
-        className={[
-          'eyebrow mb-4',
-          isCenter ? 'justify-center' : '',
-        ].join(' ')}
-      >
-        {label}
-      </div>
+      {label && (
+        <div
+          className={[
+            'eyebrow mb-4',
+            isCenter ? 'justify-center' : '',
+          ].join(' ')}
+        >
+          {label}
+        </div>
+      )}
 
       {/* Título */}
       <h2

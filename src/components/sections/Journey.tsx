@@ -38,7 +38,6 @@ export function Journey() {
           />
 
           <div className="flex flex-col gap-7">
-            <Reveal><p className="eyebrow">{t('about.label')}</p></Reveal>
             <Reveal delay={0.08}>
               <h2
                 id="about-title"

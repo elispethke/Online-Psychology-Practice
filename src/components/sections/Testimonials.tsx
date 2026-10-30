@@ -34,7 +34,7 @@ export function Testimonials() {
     >
       <div className="mx-auto px-[var(--gutter)]" style={{ maxWidth: 'var(--content-w)' }}>
         <Reveal><p className="eyebrow mb-6">{t('testimonials.label')}</p></Reveal>
-        <h2 id="testimonials-title" className="sr-only">{t('testimonials.title')}</h2>
+        <h2 id="testimonials-title" className="sr-only font-display">{t('testimonials.title')}</h2>
 
         {featured && (
           <Reveal delay={0.08}>

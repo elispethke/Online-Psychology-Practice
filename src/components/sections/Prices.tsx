@@ -67,7 +67,7 @@ export function Prices () {
                 >
                   {plan.category}
                 </p>
-                <h3 className='font-display font-medium text-ink leading-snug' style={{ fontSize: '1.5rem' }}>
+                <h3 className='font-display font-medium text-ink leading-snug' style={{ fontSize: 'var(--fs-h3-sm)' }}>
                   {plan.title}
                 </h3>
                 {plan.badge && (

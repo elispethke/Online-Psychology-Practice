@@ -11,9 +11,9 @@ interface SectionTitleProps {
 }
 
 const SCALE_SIZES: Record<NonNullable<SectionTitleProps['scale']>, string> = {
-  compact: 'clamp(1.6rem, 2.6vw, 2.2rem)',
-  default: 'clamp(1.9rem, 3.4vw, 2.9rem)',
-  large: 'clamp(2.2rem, 4.4vw, 3.6rem)',
+  compact: 'var(--fs-h2-sm)',
+  default: 'var(--fs-h2-lg)',
+  large: 'var(--fs-h2-lg)',
 }
 
 export function SectionTitle({

@@ -43,7 +43,7 @@ export function Journey() {
               <h2
                 id="about-title"
                 className="font-display font-light leading-[0.98] text-[var(--forest)]"
-                style={{ fontSize: 'clamp(3rem, 7vw, 5.4rem)' }}
+                style={{ fontSize: 'var(--fs-h2-xl)' }}
               >
                 {t('about.title')}
               </h2>
@@ -99,7 +99,7 @@ export function Journey() {
                   {t(`about.timeline.${key}.period`)}
                 </p>
                 <div className="sm:pl-6">
-                  <h3 className="mb-3 font-display text-[1.6rem] font-normal leading-tight text-[var(--forest)]">
+                  <h3 className="mb-3 font-display text-[length:var(--fs-h3-sm)] font-normal leading-tight text-[var(--forest)]">
                     {t(`about.timeline.${key}.title`)}
                   </h3>
                   <p className="m-0 text-[0.95rem] leading-[1.8] text-ink-soft">{t(`about.timeline.${key}.desc`)}</p>

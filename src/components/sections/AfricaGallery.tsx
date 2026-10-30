@@ -200,7 +200,7 @@ export function AfricaGallery() {
           <div>
             <Reveal><p className="eyebrow mb-6 !text-[var(--gold)]">{t('africa.label')}</p></Reveal>
             <Reveal delay={0.08}>
-              <h2 id="africa-title" className="font-display font-light leading-[0.98]" style={{ fontSize: 'clamp(3rem, 7.4vw, 6rem)' }}>
+              <h2 id="africa-title" className="font-display font-light leading-[0.98]" style={{ fontSize: 'var(--fs-h2-xl)' }}>
                 {t('africa.title')}
               </h2>
             </Reveal>

@@ -53,7 +53,7 @@ export function GroupWork() {
           <h2
             id="group-title"
             className="max-w-[14ch] font-display font-light leading-[0.98] text-[var(--forest)]"
-            style={{ fontSize: 'clamp(3rem, 7.4vw, 6rem)', textWrap: 'balance' }}
+            style={{ fontSize: 'var(--fs-h2-xl)', textWrap: 'balance' }}
           >
             {t('counselling.group.title')}
           </h2>

@@ -37,7 +37,7 @@ export function Intercultural() {
           <h2
             id="intercultural-title"
             className="max-w-[16ch] font-display font-light leading-[0.98] tracking-[0.005em] text-[var(--forest)]"
-            style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}
+            style={{ fontSize: 'var(--fs-h2-xl)' }}
           >
             {t('intercultural.title')}
           </h2>
@@ -103,7 +103,7 @@ export function Intercultural() {
 
             <div ref={listRef} className="relative">
               <Reveal>
-                <h3 className="mb-8 font-display text-[1.5rem] font-normal text-[var(--forest)]">
+                <h3 className="mb-8 font-display text-[length:var(--fs-h3-sm)] font-normal text-[var(--forest)]">
                   {t('intercultural.challengesTitle')}
                 </h3>
               </Reveal>

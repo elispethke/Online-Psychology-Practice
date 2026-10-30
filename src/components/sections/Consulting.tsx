@@ -38,7 +38,7 @@ export function Consulting() {
             <div className="lg:sticky lg:self-start" style={{ top: 'calc(var(--header-h) + 2.5rem)' }}>
               <Reveal><p className="eyebrow mb-6">{t('consulting.label')} · {t('consulting.thirdSector.label')}</p></Reveal>
               <Reveal delay={0.08}>
-                <h2 id="consulting-title" className="font-display font-light leading-[1.02] text-[var(--forest)]" style={{ fontSize: 'clamp(2.4rem, 5vw, 4.2rem)', textWrap: 'balance' }}>
+                <h2 id="consulting-title" className="font-display font-light leading-[1.02] text-[var(--forest)]" style={{ fontSize: 'var(--fs-h2-lg)', textWrap: 'balance' }}>
                   {t('consulting.thirdSector.title')}
                 </h2>
               </Reveal>
@@ -90,7 +90,7 @@ export function Consulting() {
             <div>
               <Reveal><p className="eyebrow mb-6">{t('consulting.corporate.label')}</p></Reveal>
               <Reveal delay={0.08}>
-                <h3 className="font-display font-light leading-[1.02] text-[var(--forest)]" style={{ fontSize: 'clamp(2.2rem, 4.4vw, 3.6rem)', textWrap: 'balance' }}>
+                <h3 className="font-display font-light leading-[1.02] text-[var(--forest)]" style={{ fontSize: 'var(--fs-h3-lg)', textWrap: 'balance' }}>
                   {t('consulting.corporate.title')}
                 </h3>
               </Reveal>

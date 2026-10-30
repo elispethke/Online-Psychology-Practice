@@ -40,7 +40,7 @@ export function Counselling() {
               <h2
                 id="counselling-title"
                 className="font-display font-light leading-[1.02] text-[var(--forest)]"
-                style={{ fontSize: 'clamp(2.5rem, 5.4vw, 4.4rem)', textWrap: 'balance' }}
+                style={{ fontSize: 'var(--fs-h2-lg)', textWrap: 'balance' }}
               >
                 {t('counselling.title')}
               </h2>
@@ -70,7 +70,7 @@ export function Counselling() {
             <Reveal delay={0.08}>
               <h3
                 className="font-display font-light leading-[1.05] text-[var(--forest)]"
-                style={{ fontSize: 'clamp(2rem, 3.6vw, 3rem)', textWrap: 'balance' }}
+                style={{ fontSize: 'var(--fs-h3-lg)', textWrap: 'balance' }}
               >
                 {t('counselling.individual.title')}
               </h3>
@@ -98,7 +98,7 @@ export function Counselling() {
           <Reveal>
             <h3
               className="max-w-[18ch] font-display font-light leading-[1.05]"
-              style={{ fontSize: 'clamp(2.2rem, 4.6vw, 3.8rem)', textWrap: 'balance' }}
+              style={{ fontSize: 'var(--fs-h3-lg)', textWrap: 'balance' }}
             >
               {t('counselling.approach.title')}
             </h3>
@@ -133,7 +133,7 @@ export function Counselling() {
           <Reveal>
             <h3
               className="mb-12 max-w-[20ch] font-display font-light leading-[1.05] text-[var(--forest)]"
-              style={{ fontSize: 'clamp(2rem, 3.8vw, 3.2rem)', textWrap: 'balance' }}
+              style={{ fontSize: 'var(--fs-h3-lg)', textWrap: 'balance' }}
             >
               {t('counselling.challenges.title')}
             </h3>

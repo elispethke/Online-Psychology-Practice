@@ -58,7 +58,7 @@ function Tile({ photo, index, lang }: { photo: MissionPhoto; index: number; lang
               }}
             >
               <span aria-hidden="true" />
-              <span className="text-[0.66rem] font-medium uppercase tracking-[0.22em] opacity-85">
+              <span className="eyebrow-sm opacity-85">
                 {import.meta.env.DEV ? `${t('africa.placeholder')} · ${photo.id}` : t('africa.soon')}
               </span>
             </div>

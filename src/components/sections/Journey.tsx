@@ -54,11 +54,11 @@ export function Journey() {
             <Reveal>
               <dl className="mt-4 flex gap-12 border-t border-[var(--border-soft)] pt-8">
                 <div>
-                  <dt className="order-2 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ink-faint">{t('about.figures.years')}</dt>
+                  <dt className="order-2 eyebrow-sm text-ink-faint">{t('about.figures.years')}</dt>
                   <dd className="m-0 font-display text-[3.4rem] font-light leading-none text-[var(--forest)]">{t('about.figures.yearsValue')}</dd>
                 </div>
                 <div>
-                  <dt className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-ink-faint">{t('about.figures.languages')}</dt>
+                  <dt className="eyebrow-sm text-ink-faint">{t('about.figures.languages')}</dt>
                   <dd className="m-0 font-display text-[3.4rem] font-light leading-none text-[var(--forest)]">
                     {t('about.figures.languagesValue')}
                     <span className="ml-3 align-middle text-[0.75rem] font-body tracking-[0.2em] text-[var(--gold)]">{t('about.figures.langList')}</span>
@@ -95,7 +95,7 @@ export function Journey() {
                 className="relative grid gap-3 pl-9 sm:grid-cols-[9rem_1fr] sm:gap-12 sm:pl-0"
               >
                 <span aria-hidden="true" className="absolute left-0 top-[0.55rem] size-[1.1rem] rounded-full border border-[var(--gold)] bg-[var(--surface)] sm:left-[9rem]" />
-                <p className="m-0 pt-1 text-[0.7rem] font-medium uppercase leading-relaxed tracking-[0.16em] text-[var(--gold)] sm:text-right">
+                <p className="eyebrow-sm m-0 pt-1 leading-relaxed text-[var(--gold)] sm:text-right">
                   {t(`about.timeline.${key}.period`)}
                 </p>
                 <div className="sm:pl-6">

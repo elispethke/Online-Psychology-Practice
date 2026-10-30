@@ -113,7 +113,7 @@ export function Counselling() {
 
             <Reveal delay={0.1}>
               <div className="border-t border-[var(--gold)] pt-6">
-                <p className="mb-5 text-[0.7rem] font-medium uppercase tracking-[0.24em] text-[var(--gold)]">
+                <p className="eyebrow-sm mb-5 text-[var(--gold)]">
                   {t('counselling.techniques.title')}
                 </p>
                 <ul className="m-0 flex list-none flex-col gap-4 p-0">

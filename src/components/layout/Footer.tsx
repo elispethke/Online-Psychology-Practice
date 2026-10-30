@@ -11,7 +11,7 @@ import emblem from '@/assets/brand/logo-emblem-reverse.webp'
 
 const STUDIO_URL = 'https://www.eproxstudio.com/de'
 const LINK = 'text-[0.85rem] text-[var(--on-dark-soft)] transition-colors duration-200 hover:text-[var(--gold)]'
-const HEADING = 'mb-5 text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[var(--gold)]'
+const HEADING = 'eyebrow-sm mb-5 text-[var(--gold)]'
 
 export function Footer() {
   const { t } = useTranslation()

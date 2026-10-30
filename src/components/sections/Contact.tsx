@@ -29,7 +29,7 @@ interface ContactInfoItem {
 function Field({ id, label, error, children }: { id: string; label: string; error?: string | false; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className="text-[0.73rem] font-medium tracking-[0.1em] uppercase text-ink-soft">{label}</label>
+      <label htmlFor={id} className="eyebrow-sm text-ink-soft">{label}</label>
       {children}
       {error && <p id={`${id}-err`} className="m-0 text-[0.75rem] text-[var(--forest)]">{error}</p>}
     </div>
@@ -183,7 +183,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p
-                    className="text-2xs font-medium tracking-[0.12em] uppercase mb-0.5"
+                    className="eyebrow-sm mb-0.5"
                     style={{ color: 'var(--ink-faint)' }}
                   >
                     {item.label}
@@ -208,7 +208,7 @@ export function Contact() {
             {/* Language tags */}
             <div className="mt-6">
               <p
-                className="text-2xs font-medium tracking-[0.12em] uppercase mb-3"
+                className="eyebrow-sm mb-3"
                 style={{ color: 'var(--gold)' }}
               >
                 {t('contact.langsLabel')}

@@ -59,7 +59,7 @@ export function Consulting() {
           <div className="mt-20 grid gap-14 lg:mt-28 lg:grid-cols-[5fr_6fr] lg:gap-24">
             <Reveal>
               <div className="bg-[var(--forest)] p-8 text-[var(--on-dark)] sm:p-12">
-                <p className="mb-5 text-[0.7rem] font-medium uppercase tracking-[0.24em] text-[var(--gold)]">{t('consulting.thirdSector.audienceTitle')}</p>
+                <p className="eyebrow-sm mb-5 text-[var(--gold)]">{t('consulting.thirdSector.audienceTitle')}</p>
                 <p className="m-0 font-display text-[clamp(1.3rem,2.1vw,1.7rem)] font-light leading-snug">{t('consulting.thirdSector.audience')}</p>
               </div>
             </Reveal>
